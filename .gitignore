@@ -1,0 +1,66 @@
+# Copyright 2017-2019 Xeno Innovations, Inc
+
+
+# Visual Studio User-specific files
+*.suo
+*.user
+*.sln.docstates
+*.opensdf
+*.sdf
+*.~vsdx
+*.userprefs
+*.vbw
+*.ipch
+*.exe
+*.exe.config
+# Other extensions
+*~
+*.swp
+*.bak
+*.orig
+*.lnk
+
+# Build results
+[Oo]utput/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+.vs/
+
+# Xamarin.Android Resource.Designer.cs files
+**/*.Android/**/[Rr]esource.[Dd]esigner.cs
+**/*.Droid/**/[Rr]esource.[Dd]esigner.cs
+**/Android/**/[Rr]esource.[Dd]esigner.cs
+**/Droid/**/[Rr]esource.[Dd]esigner.cs
+
+# All test SQLite datbases
+*.db3
+
+# MSBUILD Resource Directory
+## Ignore all files & subdirectories
+Resource/*
+## Except for Build subdirectory & these specific files
+!Resource/Build/
+!Resource/CustomTargets.proj
+!Resource/FirstRun.proj
+
+# NuGet Packages
+*.nupkg
+## The packages folder can be ignored because of Package Restore
+**/packages/*
+## Except build/, which is used as an MSBuild target.
+!**/packages/build/
+## Uncomment if necessary however generally it will be regenerated when needed
+!**/packages/repositories.config
+## NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+
+
+# Custom ignore crap
+
