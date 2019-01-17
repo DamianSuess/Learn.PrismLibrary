@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using System;
+using Prism;
 using Prism.Ioc;
 using Test.PrismXF.ViewModels;
 using Test.PrismXF.Views;
@@ -24,12 +25,32 @@ namespace Test.PrismXF
       InitializeComponent();
 
       await NavigationService.NavigateAsync("NavigationPage/MainPage");
+
+      // Starts at 2nd page and click back button for Main Page
+      //await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
+
+      // Deep linking and creates a crazy nav stack
+      // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage/ThirdPage?id=3/MyMasterDetail/MyNavigatinPage/MainPage/ThirdPage/SecondPage");
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
       containerRegistry.RegisterForNavigation<NavigationPage>();
-      containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+
+      // Use types for View & ViewModel so we don't have a reflection performance hit
+      containerRegistry.RegisterForNavigation<MainPage, MainViewModel>("MainPage");
+      containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>("SecondPage");
+      containerRegistry.RegisterForNavigation<ThirdPage, ThirdViewModel>("ThirdPage");
+
+      // Use reflection to find pages
+      //containerRegistry.RegisterForNavigation<MainPage>("MainPage");
+      //containerRegistry.RegisterForNavigation<SecondPage>("SecondPage");
+      //containerRegistry.RegisterForNavigation<ThirdPage>("ThirdPage");
+    }
+
+    protected override void OnAppLinkRequestReceived(Uri uri)
+    {
+      NavigationService.NavigateAsync(uri);
     }
   }
 }
