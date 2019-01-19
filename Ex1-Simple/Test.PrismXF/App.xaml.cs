@@ -24,14 +24,18 @@ namespace Test.PrismXF
     {
       InitializeComponent();
 
+      // Simple Navigation --------------
+      // NOTICE: "NavigationPage" matches our RegisteredTypes(..) below
+      //
+      // EX 1: Simple
       await NavigationService.NavigateAsync("NavigationPage/MainPage");
 
-      // Starts at 2nd page and click back button for Main Page
-      //await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
-
-      // Deep linking and creates a crazy nav stack
+      // EX 2: Deep linking - starts at 2nd page and click back button for Main Page
+      // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
+      //
+      // EX 3: Deep linking and creates a crazy nav stack with params
       // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage/ThirdPage?id=3/MyMasterDetail/MyNavigatinPage/MainPage/ThirdPage/SecondPage");
-    }
+   }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {

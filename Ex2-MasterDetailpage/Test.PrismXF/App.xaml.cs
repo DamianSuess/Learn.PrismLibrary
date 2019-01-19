@@ -24,19 +24,24 @@ namespace Test.PrismXF
     {
       InitializeComponent();
 
-      await NavigationService.NavigateAsync("NavigationPage/MainPage");
+      // Master Detail Nav --------------
+      await NavigationService.NavigateAsync("CustomMDPage/MainPage");
 
-      // Starts at 2nd page and click back button for Main Page
-      //await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
-
-      // Deep linking and creates a crazy nav stack
+      // Simple Navigation --------------
+      // NOTICE: "NavigationPage" matches our RegisteredTypes(..) below
+      //
+      // EX 1: Simple
+      // await NavigationService.NavigateAsync("NavigationPage/MainPage");
+      //
+      // EX 2: Deep linking - starts at 2nd page and click back button for Main Page
+      // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
+      //
+      // EX 3: Deep linking and creates a crazy nav stack with params
       // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage/ThirdPage?id=3/MyMasterDetail/MyNavigatinPage/MainPage/ThirdPage/SecondPage");
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-      containerRegistry.RegisterForNavigation<NavigationPage>();
-
       // Use types for View & ViewModel so we don't have a reflection performance hit
       containerRegistry.RegisterForNavigation<MainPage, MainViewModel>("MainPage");
       containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>("SecondPage");
@@ -46,6 +51,8 @@ namespace Test.PrismXF
       //containerRegistry.RegisterForNavigation<MainPage>("MainPage");
       //containerRegistry.RegisterForNavigation<SecondPage>("SecondPage");
       //containerRegistry.RegisterForNavigation<ThirdPage>("ThirdPage");
+      containerRegistry.RegisterForNavigation<CustomMDPage, CustomMDViewModel>();
+      containerRegistry.RegisterForNavigation<NavigationPage>();
     }
 
     protected override void OnAppLinkRequestReceived(Uri uri)
