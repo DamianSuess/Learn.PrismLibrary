@@ -5,11 +5,23 @@
                   prism:ViewModelLocator.AutowireViewModel="True"
                   x:Class="Test.PrismXF.Views.CustomMDPage">
 
+  <!-- Sidebar -->
   <MasterDetailPage.Master>
     <ContentPage Title="Menu">
       <StackLayout Padding="20">
         <!-- TODO: // Update the Layout and add some real menu items  -->
-        <Button Text="ViewA" Command="{Binding NavigateCommand}" CommandParameter="ViewA" />
+        <Button Text="Main Page"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="NavigationPage/MainPage" />
+
+        <Button Text="2nd Page"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="NavigationPage/SecondPage" />
+
+        <Button Text="3rd Page"
+                Command="{Binding NavigateCommand}"
+                CommandParameter="NavigationPage/ThirdPage" />
+
       </StackLayout>
     </ContentPage>
   </MasterDetailPage.Master>

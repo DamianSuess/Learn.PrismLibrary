@@ -9,6 +9,8 @@
       <Label Text="Second page!"
              VerticalOptions="CenterAndExpand"
              HorizontalOptions="CenterAndExpand" />
+
+      <Button Text="Go Back" Command="{Binding GoBackCommand}" />
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class MainViewModel : ViewModelBase, IConfirmNavigationAsync
+  public class MainViewModel : ViewModelBase
   {
     private INavigationService _navigateService;
     private IPageDialogService _dialogService;
@@ -25,34 +26,25 @@ namespace Test.PrismXF.ViewModels
 
     public DelegateCommand NavigatePage3Command => new DelegateCommand(NavigatePage3);
 
-    public Task<bool> CanNavigateAsync(INavigationParameters parameters)
-    { // IConfirmNavigationAsync - Am i allowed to navigate?
-      return _dialogService.DisplayAlertAsync("Title", "This form is dirty, fix it", "Accept", "Cancel");
-    }
+    // Display warnings before navigating
+    // REQUIRES: IConfirmNavigationAsync class reference
+    ////public Task<bool> CanNavigateAsync(INavigationParameters parameters)
+    ////{ // IConfirmNavigationAsync - Am i allowed to navigate?
+    ////  return _dialogService.DisplayAlertAsync("Title", "This form is dirty, fix it", "Accept", "Cancel");
+    ////}
 
     private async void NavigatePage2()
     {
-      // await _navigateService.NavigateAsync("NavigationPage/SecondPage");
-      await _navigateService.NavigateAsync("SecondPage");
+      await _navigateService.NavigateAsync(new Uri("CustomMDPage/NavigationPage/SecondPage", UriKind.Relative));
+      // DONE USE: This will loose our MasterDetailPage
+      // await _navigateService.NavigateAsync("SecondPage");
     }
 
     private async void NavigatePage3()
     {
-      var p = new NavigationParameters();
-      p.Add("id", "hello");
-      await _navigateService.NavigateAsync("ThirdPage", p);
+      var p = new NavigationParameters("?id=2&name=damian");
+      await _navigateService.NavigateAsync("CustomMDPage/NavigationPage/ThirdPage", p);
+      ////  await _navigateService.NavigateAsync("FifthPage?id=2&name=damian");
     }
-
-    //// Alternatives for URI parameters to nav to a page
-    ////private async void NavigatePage4()
-    ////{
-    ////  var p = new NavigationParameters("?id=3&name=damian");
-    ////  await _navigateService.NavigateAsync("FourthPage", p);
-    ////}
-    ////
-    ////private async void NavigatePage5()
-    ////{
-    ////  await _navigateService.NavigateAsync("FifthPage?id=2&name=damian");
-    ////}
   }
 }
