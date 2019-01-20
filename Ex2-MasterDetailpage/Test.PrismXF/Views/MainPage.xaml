@@ -10,10 +10,6 @@
     <Label Text="Welcome to Xamarin Forms and Prism!" />
     <Button Text="Second Page" Command="{Binding NavigatePage2Command}" />
     <Button Text="Third Page" Command="{Binding NavigatePage3Command}" />
-    
-    <!--
-    <Button Text="Third Page" Command="{Binding NavigatePage4Command}" />
-    <Button Text="Third Page" Command="{Binding NavigatePage5Command}" />
-    -->
+    <Button Text="Dbl Forward to 3rd" Command="{Binding DoubleFwdTo3rdCommand}" />
   </StackLayout>
 </ContentPage>

@@ -21,7 +21,6 @@
         <Button Text="3rd Page"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="NavigationPage/ThirdPage" />
-
       </StackLayout>
     </ContentPage>
   </MasterDetailPage.Master>

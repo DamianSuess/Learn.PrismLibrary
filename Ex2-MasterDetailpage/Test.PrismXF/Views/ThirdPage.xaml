@@ -9,6 +9,10 @@
       <Label Text="Third page!"
              VerticalOptions="CenterAndExpand"
              HorizontalOptions="CenterAndExpand" />
+      <Button Text="Go Back One" Command="{Binding GoBackOneCommand}" />
+      <Button Text="Go Back Root" Command="{Binding GoBackRootCommand}" />
+      <Button Text="Force Back One (../)" Command="{Binding ForceBackOneCommand}" />
+      <Button Text="Force Back Two (../../)" Command="{Binding ForceBackTwoCommand}" />
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>

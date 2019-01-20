@@ -4,17 +4,15 @@ using Prism.Services;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class SecondViewModel : ViewModelBase
+  public class SecondViewModel : BaseViewModel
   {
     private IPageDialogService _pageDialog;
-    private INavigationService _navigateService;
 
     public SecondViewModel(INavigationService navigationService, IPageDialogService pageDialog)
         : base(navigationService)
     {
       Title = "Second Page";
 
-      _navigateService = navigationService;
       _pageDialog = pageDialog;
     }
 
@@ -22,8 +20,13 @@ namespace Test.PrismXF.ViewModels
 
     private async void OnGoBack()
     {
-      // nothing
-      // await _navigateService.GoBackToRootAsync();
+      await NavigationService.GoBackAsync();
+
+      // NOTE: This will fail under the following scenerio
+      //  1. [Main] => Nav."Second/Third"
+      //  2. [3rd]  => Nav.GoBackOne()
+      //  3. [2nd]  => Nav.GoBackToRoot() !FAIL! must use, GoBackOne
+      // await NavigationService.GoBackToRootAsync();
     }
   }
 }

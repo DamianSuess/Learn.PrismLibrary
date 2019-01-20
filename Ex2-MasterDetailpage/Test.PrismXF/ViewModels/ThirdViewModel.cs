@@ -1,27 +1,14 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class ThirdViewModel : ViewModelBase, INavigatedAware
+  public class ThirdViewModel : BaseViewModel, INavigatedAware
   {
-    private INavigationService _navigateService;
-
     public ThirdViewModel(INavigationService navigationService)
       : base(navigationService)
     {
       Title = "Main Page";
-
-      _navigateService = navigationService;
-    }
-
-    public void OnNavigatedFrom(NavigationParameters parameters)
-    { // INavigatedAware
-      // Navigated away from the page
-    }
-
-    public void OnNavigatedTo(NavigationParameters parameters)
-    { // INavigatedAware
-      // After the page has been pushed onto the stack, and it is now visible
     }
 
     public void OnNavigatingTo(NavigationParameters parameters)
@@ -29,6 +16,40 @@ namespace Test.PrismXF.ViewModels
       // Executed before the page is pushed onto the stack
       if (parameters.ContainsKey("id"))
         Title = (string)parameters["id"];
+    }
+
+    public DelegateCommand GoBackOneCommand => new DelegateCommand(OnGoBackOne);
+
+    public DelegateCommand GoBackRootCommand => new DelegateCommand(OnGoBackRoot);
+
+    public DelegateCommand ForceBackOneCommand => new DelegateCommand(OnForceBackOne);
+
+    public DelegateCommand ForceBackTwoCommand => new DelegateCommand(OnForceBackTwo);
+
+    private void OnGoBackOne()
+    {
+      NavigationService.GoBackAsync();
+    }
+
+    private void OnGoBackRoot()
+    {
+      NavigationService.GoBackToRootAsync();
+    }
+
+    private void OnForceBackOne()
+    {
+      NavigationService.NavigateAsync("../");
+    }
+
+    private void OnForceBackTwo()
+    {
+      // Always use proper navigation flows
+      //
+      // NOTE: This will break navigation if
+      //  1. [Main] => Nav."ThirdPage"
+      //  2. [3rd]  => Nav."../../"
+      //  3. [3rd]  (now back button is GONE!)
+      NavigationService.NavigateAsync("../../");
     }
   }
 }

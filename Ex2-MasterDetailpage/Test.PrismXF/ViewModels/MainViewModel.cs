@@ -1,50 +1,42 @@
-﻿using System;
-using System.Threading.Tasks;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class MainViewModel : ViewModelBase
+  public class MainViewModel : BaseViewModel
   {
-    private INavigationService _navigateService;
     private IPageDialogService _dialogService;
 
     public MainViewModel(INavigationService navigationService, IPageDialogService dialogService)
         : base(navigationService)
     {
       Title = "Main Page";
-      _navigateService = navigationService;
       _dialogService = dialogService;
     }
-
-    //// Tell other property to update as well :)
-    //// public DelegateCommand NavigatePage4Command => new DelegateCommand(Navigate).ObservesProperty(() => Title);
 
     public DelegateCommand NavigatePage2Command => new DelegateCommand(NavigatePage2);
 
     public DelegateCommand NavigatePage3Command => new DelegateCommand(NavigatePage3);
 
-    // Display warnings before navigating
-    // REQUIRES: IConfirmNavigationAsync class reference
-    ////public Task<bool> CanNavigateAsync(INavigationParameters parameters)
-    ////{ // IConfirmNavigationAsync - Am i allowed to navigate?
-    ////  return _dialogService.DisplayAlertAsync("Title", "This form is dirty, fix it", "Accept", "Cancel");
-    ////}
+    public DelegateCommand DoubleFwdTo3rdCommand => new DelegateCommand(OnDoubleFwdTo3rd);
 
     private async void NavigatePage2()
     {
-      await _navigateService.NavigateAsync(new Uri("CustomMDPage/NavigationPage/SecondPage", UriKind.Relative));
-      // DONE USE: This will loose our MasterDetailPage
-      // await _navigateService.NavigateAsync("SecondPage");
+      await NavigationService.NavigateAsync("SecondPage");
     }
 
     private async void NavigatePage3()
     {
       var p = new NavigationParameters("?id=2&name=damian");
-      await _navigateService.NavigateAsync("CustomMDPage/NavigationPage/ThirdPage", p);
-      ////  await _navigateService.NavigateAsync("FifthPage?id=2&name=damian");
+      await NavigationService.NavigateAsync("ThirdPage", p);
+      ////  await NavigationService.NavigateAsync("FifthPage?id=2&name=damian");
+    }
+
+    private async void OnDoubleFwdTo3rd()
+    {
+      // use BaseViewModel, not _navService directly
+      await NavigationService.NavigateAsync("SecondPage/ThirdPage");
     }
   }
 }

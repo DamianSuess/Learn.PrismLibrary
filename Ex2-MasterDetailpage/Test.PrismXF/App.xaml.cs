@@ -25,34 +25,30 @@ namespace Test.PrismXF
       InitializeComponent();
 
       // Master Detail Nav --------------
-      await NavigationService.NavigateAsync("CustomMDPage/MainPage");
+      await NavigationService.NavigateAsync("CustomMDPage/NavigationPage/MainPage");
 
-      // Simple Navigation --------------
-      // NOTICE: "NavigationPage" matches our RegisteredTypes(..) below
-      //
-      // EX 1: Simple
-      // await NavigationService.NavigateAsync("NavigationPage/MainPage");
-      //
-      // EX 2: Deep linking - starts at 2nd page and click back button for Main Page
-      // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
-      //
-      // EX 3: Deep linking and creates a crazy nav stack with params
-      // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage/ThirdPage?id=3/MyMasterDetail/MyNavigatinPage/MainPage/ThirdPage/SecondPage");
+      // DON'T skip the NavigatinPage or else things won't push/pop correctly
+      // await NavigationService.NavigateAsync("CustomMDPage/MainPage");
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
       // Use types for View & ViewModel so we don't have a reflection performance hit
-      containerRegistry.RegisterForNavigation<MainPage, MainViewModel>("MainPage");
-      containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>("SecondPage");
-      containerRegistry.RegisterForNavigation<ThirdPage, ThirdViewModel>("ThirdPage");
+      containerRegistry.RegisterForNavigation<MainPage, MainViewModel>();
+      containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>();
+      containerRegistry.RegisterForNavigation<ThirdPage, ThirdViewModel>();
+      containerRegistry.RegisterForNavigation<CustomMDPage, CustomMDViewModel>();
+      containerRegistry.RegisterForNavigation<NavigationPage>();
 
-      // Use reflection to find pages
+      // Use types for View & ViewModel so we don't have a reflection performance hit
+      //containerRegistry.RegisterForNavigation<MainPage, MainViewModel>("MainPage");
+      //containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>("SecondPage");
+      //containerRegistry.RegisterForNavigation<ThirdPage, ThirdViewModel>("ThirdPage");
+
+      // Use (slower) reflection to find pages
       //containerRegistry.RegisterForNavigation<MainPage>("MainPage");
       //containerRegistry.RegisterForNavigation<SecondPage>("SecondPage");
       //containerRegistry.RegisterForNavigation<ThirdPage>("ThirdPage");
-      containerRegistry.RegisterForNavigation<CustomMDPage, CustomMDViewModel>();
-      containerRegistry.RegisterForNavigation<NavigationPage>();
     }
 
     protected override void OnAppLinkRequestReceived(Uri uri)
