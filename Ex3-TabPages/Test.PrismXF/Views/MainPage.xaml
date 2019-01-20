@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Test.PrismXF.Views.MainPage"
+             Title="{Binding Title}">
+
+  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <Label Text="Welcome to Xamarin Forms and Prism!" />
+    <Button Text="Second Page" Command="{Binding NavigatePage2Command}" />
+    <Button Text="Third Page" Command="{Binding NavigatePage3Command}" />
+    <Button Text="Dbl Forward to 3rd" Command="{Binding DoubleFwdTo3rdCommand}" />
+  </StackLayout>
+</ContentPage>
