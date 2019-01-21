@@ -10,6 +10,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>..\..\output\Client</OutputPath>
+    <DefineConstants>TRACE;GORILLA</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

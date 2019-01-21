@@ -25,10 +25,10 @@ namespace Test.PrismXF
       InitializeComponent();
 
       // Master Detail Nav --------------
-      await NavigationService.NavigateAsync("CustomMDPage/NavigationPage/MainPage");
+      await NavigationService.NavigateAsync("RootMasterDetailPage/NavigationPage/MainPage");
 
       // DON'T skip the NavigatinPage or else things won't push/pop correctly
-      // await NavigationService.NavigateAsync("CustomMDPage/MainPage");
+      // await NavigationService.NavigateAsync("RootMasterDetailPage/MainPage");
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
