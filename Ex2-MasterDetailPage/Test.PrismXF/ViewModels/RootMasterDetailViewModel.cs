@@ -5,12 +5,12 @@ using Prism.Navigation;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class CustomMDViewModel : BindableBase
+  public class RootMasterDetailViewModel : BindableBase
   {
     private INavigationService _navigationService;
 
 
-    public CustomMDViewModel(INavigationService navService)
+    public RootMasterDetailViewModel(INavigationService navService)
     {
       _navigationService = navService;
     }

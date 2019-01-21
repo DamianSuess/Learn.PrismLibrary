@@ -37,7 +37,7 @@ namespace Test.PrismXF
       containerRegistry.RegisterForNavigation<MainPage, MainViewModel>();
       containerRegistry.RegisterForNavigation<SecondPage, SecondViewModel>();
       containerRegistry.RegisterForNavigation<ThirdPage, ThirdViewModel>();
-      containerRegistry.RegisterForNavigation<CustomMDPage, CustomMDViewModel>();
+      containerRegistry.RegisterForNavigation<RootMasterDetailPage, RootMasterDetailViewModel>();
       containerRegistry.RegisterForNavigation<NavigationPage>();
 
       // Use types for View & ViewModel so we don't have a reflection performance hit

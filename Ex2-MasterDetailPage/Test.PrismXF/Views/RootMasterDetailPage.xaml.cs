@@ -2,9 +2,9 @@
 
 namespace Test.PrismXF.Views
 {
-  public partial class CustomMDPage : MasterDetailPage, IMasterDetailPageController
+  public partial class RootMasterDetailPage : MasterDetailPage, IMasterDetailPageController
   {
-    public CustomMDPage()
+    public RootMasterDetailPage()
     {
       InitializeComponent();
     }
