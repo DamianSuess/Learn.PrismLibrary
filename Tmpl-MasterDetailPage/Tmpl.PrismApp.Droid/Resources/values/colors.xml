@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright Omnicell, Inc. 2017-2019
+ * Author:  Damian Suess
+ * Date:    2019-1-8
+ * File:    colors.xml
+ * Description:
+ *
+-->
+
+<resources>
+    <color name="launcher_background">#FFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+</resources>

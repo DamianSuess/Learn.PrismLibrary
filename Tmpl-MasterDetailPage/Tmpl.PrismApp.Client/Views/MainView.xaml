@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2017-2019
+ * Author:  Damian Suess
+ * Date:    2019-3-22
+ * File:    MainView.xaml
+ * Description:
+ *
+-->
+
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:Tmpl.PrismApp.Client.Views"
+             x:Class="Tmpl.PrismApp.Client.Views.MainView"
+                  Title="{Binding Title}">
+
+  <MasterDetailPage.Master>
+    <NavigationPage Title="Required" Icon="Hamburger.png">
+      <x:Arguments>
+        <ContentPage Title="Menu">
+          <StackLayout Padding="20"
+                       Orientation="Vertical"
+                       HorizontalOptions="Center">
+            <Label Text="Test Some Robots!" />
+            <!-- Cheap layout menu items -->
+            <Button Text="Dashboard" Command="{Binding CmdNavigate}" CommandParameter="NavigationPage/WelcomeView" />
+            <Button Text="Settings" Command="{Binding CmdNavigate}" CommandParameter="NavigationPage/SettingsView" />
+          </StackLayout>
+        </ContentPage>
+      </x:Arguments>
+    </NavigationPage>
+  </MasterDetailPage.Master>
+</MasterDetailPage>
