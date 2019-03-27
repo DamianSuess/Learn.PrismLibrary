@@ -1,0 +1,19 @@
+extensions: .cs .cpp .h .sql
+/* Copyright 2017-%CurrentYear%
+ * Author:  %UserDisplayName%
+ * Date:    %CurrentYear%-%CurrentMonth%-%CurrentDay%
+ * File:    %FileName%
+ * Description:
+ *
+ */
+
+
+extensions:  .xml .config .xsd .xaml
+<!--
+Copyright 2017-%CurrentYear%
+ * Author:  %UserDisplayName%
+ * Date:    %CurrentYear%-%CurrentMonth%-%CurrentDay%
+ * File:    %FileName%
+ * Description:
+ *
+-->

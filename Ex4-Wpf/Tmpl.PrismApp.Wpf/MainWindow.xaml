@@ -1,0 +1,22 @@
+﻿<!--
+Copyright Omnicell, Inc. 2017-2019
+ * Author:  Damian Suess
+ * Date:    2019-1-8
+ * File:    MainWindow.xaml
+ * Description:
+ *
+-->
+
+<wpf:FormsApplicationPage x:Class="Tmpl.PrismApp.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
+        xmlns:local="clr-namespace:Tmpl.PrismApp.WPF"
+        mc:Ignorable="d"
+        Title="XR2 Mobile Bridge" Height="450" Width="800">
+    <Grid>
+        
+    </Grid>
+</wpf:FormsApplicationPage>

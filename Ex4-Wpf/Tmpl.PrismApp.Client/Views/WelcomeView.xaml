@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright 2017-2019
+ * Author:  Damian Suess
+ * Date:    2019-1-8
+ * File:    WelcomeView.xaml
+ * Description:
+ *
+-->
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Tmpl.PrismApp.Client.Views.WelcomeView">
+  <ContentPage.Content>
+    <Grid Padding="20">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height ="Auto" />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+
+          <Label x:Name="StatusLabel"
+                 Text="{Binding StatusMessage}"
+                 HorizontalOptions="Center"
+                 Margin="0" />
+
+          <Button x:Name="TurnOnBluetoothButton" Text="Tap to check if its turned on" HorizontalOptions="Fill" Margin="0" />
+          <Button x:Name="GetPairedDevicesButton" Text="Get paired devices" HorizontalOptions="Fill" Margin="0" Grid.Row="2" />
+        </StackLayout>
+      </Grid>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
