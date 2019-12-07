@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ioc="clr-namespace:Prism.Ioc;assembly=Prism.Forms"
+             xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:views="clr-namespace:Test.PrismXF.Views"
+             x:Class="Test.PrismXF.Views.MainPage"
+             x:Name="MainPageView"
+             Title="{Binding Title}"
+             mvvm:ViewModelLocator.AutowireViewModel="True">
+
+  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+    <!--  Our ContentView is a auto-wired PartialView  -->
+    <views:ConnectionContentView mvvm:ViewModelLocator.AutowirePartialView="{x:Reference MainPageView}" />
+
+    <Label Text="Welcome to Xamarin Forms and Prism!" />
+    <Button Command="{Binding NavigatePage2Command}" Text="Second Page" />
+    <Button Command="{Binding NavigatePage3Command}" Text="Third Page" />
+    <Button Command="{Binding DoubleFwdTo3rdCommand}" Text="Dbl Forward to 3rd" />
+  </StackLayout>
+</ContentPage>
