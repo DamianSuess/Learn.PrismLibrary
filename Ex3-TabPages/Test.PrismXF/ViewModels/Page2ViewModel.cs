@@ -4,11 +4,11 @@ using Prism.Services;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class SecondViewModel : BaseViewModel
+  public class Page2ViewModel : BaseViewModel
   {
     private IPageDialogService _pageDialog;
 
-    public SecondViewModel(INavigationService navigationService, IPageDialogService pageDialog)
+    public Page2ViewModel(INavigationService navigationService, IPageDialogService pageDialog)
         : base(navigationService)
     {
       Title = "Second Page";

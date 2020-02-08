@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Test.PrismXF.Views.Page3View"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True">
+  <ContentPage.Content>
+    <StackLayout>
+      <Label HorizontalOptions="CenterAndExpand"
+             Text="Third page!"
+             VerticalOptions="CenterAndExpand" />
+      <Button Command="{Binding GoBackOneCommand}" Text="Go Back One" />
+      <Button Command="{Binding GoBackRootCommand}" Text="Go Back Root" />
+      <Button Command="{Binding ForceBackOneCommand}" Text="Force Back One (../)" />
+      <Button Command="{Binding ForceBackTwoCommand}" Text="Force Back Two (../../)" />
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

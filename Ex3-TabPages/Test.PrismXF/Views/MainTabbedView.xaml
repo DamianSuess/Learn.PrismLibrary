@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage x:Class="Test.PrismXF.Views.MainTabbedView"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:views="clr-namespace:Test.PrismXF.Views"
+            prism:ViewModelLocator.AutowireViewModel="True">
+  <TabbedPage.ToolbarItems>
+    <ToolbarItem Command="{Binding ApplicationCommands.SaveCommand}" Text="Save" />
+    <ToolbarItem Command="{Binding ApplicationCommands.ResetCommand}" Text="Reset" />
+  </TabbedPage.ToolbarItems>
+
+  <NavigationPage Title="Tab One with Navigation">
+    <x:Arguments>
+      <views:Page1View Title="Tab 1" />
+    </x:Arguments>
+  </NavigationPage>
+
+  <NavigationPage Title="Tab Two with Navigation">
+    <x:Arguments>
+      <views:Page2View Title="Tab 2" />
+    </x:Arguments>
+  </NavigationPage>
+
+  <!--  In-line references do not provide a Navigation title  -->
+  <views:Page3View Title="Tab 2" />
+
+</TabbedPage>

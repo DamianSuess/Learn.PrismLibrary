@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace Test.PrismXF.Views
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class SecondPage : ContentPage
+  public partial class Page2View : ContentPage
   {
-    public SecondPage()
+    public Page2View()
     {
       InitializeComponent();
     }

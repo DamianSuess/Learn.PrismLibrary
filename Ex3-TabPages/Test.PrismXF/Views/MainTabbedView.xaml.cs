@@ -2,9 +2,9 @@
 
 namespace Test.PrismXF.Views
 {
-  public partial class RootTabbedPage : TabbedPage
+  public partial class MainTabbedView : TabbedPage
   {
-    public RootTabbedPage()
+    public MainTabbedView()
     {
       InitializeComponent();
     }

@@ -3,9 +3,9 @@ using Prism.Navigation;
 
 namespace Test.PrismXF.ViewModels
 {
-  public class ThirdViewModel : BaseViewModel, INavigatedAware
+  public class Page3ViewModel : BaseViewModel, INavigatedAware
   {
-    public ThirdViewModel(INavigationService navigationService)
+    public Page3ViewModel(INavigationService navigationService)
       : base(navigationService)
     {
       Title = "Main Page";

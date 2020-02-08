@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF", "Test.PrismXF\Test.PrismXF.csproj", "{2CA9F2BE-BDEB-4F97-8595-119786DA4B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.PrismXF.Tabs", "Test.PrismXF\Test.PrismXF.Tabs.csproj", "{2CA9F2BE-BDEB-4F97-8595-119786DA4B0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF.Android", "Test.PrismXF.Android\Test.PrismXF.Android.csproj", "{36115F57-A48E-4BB1-A05C-4F0876F9BA7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF.UWP", "Test.PrismXF.UWP\Test.PrismXF.UWP.csproj", "{548B00C3-D345-4E3D-80F0-2A478EF68729}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{040DBD57-7BD7-4903-835E-D2ACAEF7A5C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +86,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36115F57-A48E-4BB1-A05C-4F0876F9BA7D} = {040DBD57-7BD7-4903-835E-D2ACAEF7A5C0}
+		{548B00C3-D345-4E3D-80F0-2A478EF68729} = {040DBD57-7BD7-4903-835E-D2ACAEF7A5C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6483B2F5-ACC7-4485-B916-06E9A75320B4}

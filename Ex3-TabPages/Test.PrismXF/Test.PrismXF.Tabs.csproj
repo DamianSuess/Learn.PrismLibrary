@@ -18,22 +18,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\CustomMDPage.xaml.cs">
-      <DependentUpon>CustomMDPage.xaml</DependentUpon>
+    <Compile Update="Views\Page1View.xaml.cs">
+      <DependentUpon>Page1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Page2View.xaml.cs">
+      <DependentUpon>Page2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Page3View.xaml.cs">
+      <DependentUpon>Page3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainTabbedView.xaml.cs">
+      <DependentUpon>MainTabbedView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\CustomMDPage.xaml">
+    <EmbeddedResource Update="Views\MainTabbedView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\RootTabbedPage.xaml">
+    <EmbeddedResource Update="Views\Page2View.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\SecondPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\ThirdPage.xaml">
+    <EmbeddedResource Update="Views\Page3View.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

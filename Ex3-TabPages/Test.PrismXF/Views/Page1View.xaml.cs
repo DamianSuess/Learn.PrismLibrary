@@ -2,9 +2,9 @@
 
 namespace Test.PrismXF.Views
 {
-  public partial class MainPage : ContentPage
+  public partial class Page1View : ContentPage
   {
-    public MainPage()
+    public Page1View()
     {
       InitializeComponent();
     }
