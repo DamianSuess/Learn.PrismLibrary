@@ -11,8 +11,11 @@ The project works best if you include the [Prism Template Pack](https://marketpl
 
 # Resources
 * [Prism Library](https://prismlibrary.github.io/)
-* [Prism Template Pack](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack)
 * [Prism on GitHub](https://github.com/PrismLibrary/Prism)
+* [Prism Template Pack](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack)
+* [Prism official samples](https://github.com/PrismLibrary/Prism-Samples-Forms)
+* [Plugin Popups](https://github.com/dansiegel/Prism.Plugin.Popups)
+
 
 ### Learn
 * [Prism for Xamarin.Forms - Create your first application](https://www.youtube.com/watch?v=81Q2fxFWIqA) - Created 2018-12-04
