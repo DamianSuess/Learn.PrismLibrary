@@ -37,9 +37,9 @@ namespace Test.PrismForms
       containerRegistry.RegisterForNavigation<NavigationPage>();
 
       // Use types for View & ViewModel so we don't have a reflection performance hit
-      containerRegistry.RegisterForNavigation<MainView, MainViewModel>(nameof(MainView));
-      containerRegistry.RegisterForNavigation<Page2View, Page2ViewModel>(nameof(Page2View));
-      containerRegistry.RegisterForNavigation<Page3View, Page3ViewModel>(nameof(Page3View));
+      containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+      containerRegistry.RegisterForNavigation<Page2View, Page2ViewModel>();
+      containerRegistry.RegisterForNavigation<Page3View, Page3ViewModel>();
     }
 
     protected override void OnAppLinkRequestReceived(Uri uri)
