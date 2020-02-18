@@ -90,7 +90,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Test.PrismXF\Test.PrismForms.csproj">
+    <ProjectReference Include="..\Test.PrismForms\Test.PrismForms.csproj">
       <Project>{2CA9F2BE-BDEB-4F97-8595-119786DA4B0D}</Project>
       <Name>Test.PrismForms</Name>
     </ProjectReference>
