@@ -25,21 +25,18 @@ namespace Test.PrismForms
     {
       InitializeComponent();
 
-      // Simple Navigation --------------
-      // NOTICE: "NavigationPage" matches our RegisteredTypes(..) below
-      //
-      // EX 1: Simple
+      // Navigation to our main page
+      // We're using NavigationPage to give us the Push/Pop layering of pages
       await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
    }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-      containerRegistry.RegisterForNavigation<NavigationPage>();
-
-      // Use types for View & ViewModel so we don't have a reflection performance hit
-      containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
-      containerRegistry.RegisterForNavigation<Page2View, Page2ViewModel>();
-      containerRegistry.RegisterForNavigation<Page3View, Page3ViewModel>();
+      // [AutoRegisterForNavigation] removes the need for manual registration 
+      ////containerRegistry.RegisterForNavigation<NavigationPage>();
+      ////containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+      ////containerRegistry.RegisterForNavigation<Page2View, Page2ViewModel>();
+      ////containerRegistry.RegisterForNavigation<Page3View, Page3ViewModel>();
     }
 
     protected override void OnAppLinkRequestReceived(Uri uri)

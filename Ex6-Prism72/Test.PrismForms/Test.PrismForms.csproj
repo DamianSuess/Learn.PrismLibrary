@@ -24,8 +24,8 @@
     <Compile Update="Views\Page2View.xaml.cs">
       <DependentUpon>Page2View.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Page3View.xaml.cs">
-      <DependentUpon>Page3View.xaml</DependentUpon>
+    <Compile Update="Views\Page3AutoInitView.xaml.cs">
+      <DependentUpon>Page3AutoInitView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -33,7 +33,7 @@
     <EmbeddedResource Update="Views\Page2View.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Page3View.xaml">
+    <EmbeddedResource Update="Views\Page3AutoInitView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
