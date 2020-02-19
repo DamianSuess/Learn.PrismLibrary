@@ -21,9 +21,9 @@ namespace Test.PrismForms.ViewModels
     //// Tell other property to update as well :)
     //// public DelegateCommand NavigatePage4Command => new DelegateCommand(Navigate).ObservesProperty(() => Title);
 
-    public DelegateCommand NavigatePage2Command => new DelegateCommand(NavigatePage2);
+    public DelegateCommand CmdNavigatePage2 => new DelegateCommand(NavigatePage2);
 
-    public DelegateCommand NavigatePage3Command => new DelegateCommand(NavigatePage3);
+    public DelegateCommand CmdNavigatePage3 => new DelegateCommand(NavigatePage3);
 
     public Task<bool> CanNavigateAsync(INavigationParameters parameters)
     { // IConfirmNavigationAsync - Am i allowed to navigate?
