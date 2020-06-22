@@ -6,7 +6,7 @@ This is an example using Prism Barcode scanner with Prism.Forms and a but of oth
 This project was created using the Prism QuickStart Templates.
 
 It contains:
-* Prism Barcode Scanner
+* [Prism Barcode Scanner](https://github.com/dansiegel/BarcodeScanner)
 * Prism.Forms
 * Xamarin.Forms
 * i18n - internationalization
