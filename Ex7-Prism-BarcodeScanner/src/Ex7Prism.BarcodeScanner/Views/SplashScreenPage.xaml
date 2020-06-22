@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:i18n="clr-namespace:Ex7Prism.BarcodeScanner.i18n;assembly=Ex7Prism.BarcodeScanner"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Ex7Prism.BarcodeScanner.Views.SplashScreenPage"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource PrimaryDark}">
+
+  <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <ffimageloading:CachedImage Aspect="AspectFill"
+                                DownsampleToViewSize="true"
+                                HeightRequest="100"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                WidthRequest="100">
+      <ffimageloading:CachedImage.Source>
+        <OnPlatform x:TypeArguments="ImageSource">
+          <On Platform="Android">launchscreen_icon.png</On>
+          <On Platform="iOS">AppIcon.png</On>
+        </OnPlatform>
+      </ffimageloading:CachedImage.Source>
+
+      <ffimageloading:CachedImage.Transformations>
+        <fftransformations:CircleTransformation />
+      </ffimageloading:CachedImage.Transformations>
+
+    </ffimageloading:CachedImage>
+
+    <ActivityIndicator IsRunning="true" Color="{StaticResource Accent}" />
+    <Label Text="{i18n:Translate LoadingText}" TextColor="{StaticResource Accent}" />
+
+  </StackLayout>
+
+</ContentPage>
