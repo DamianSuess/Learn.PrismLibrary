@@ -19,13 +19,16 @@ namespace Ex7Prism.BarcodeScanner.Droid
       base.OnCreate(savedInstanceState);
 
       global::Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+
       global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
       global::FFImageLoading.Forms.Droid.CachedImageRenderer.Init(enableFastRenderer: true);
       global::FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration()
       {
         Logger = new Ex7Prism.BarcodeScanner.Services.DebugLogger()
       });
+
       global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
       LoadApplication(new App(new AndroidInitializer()));
@@ -33,7 +36,7 @@ namespace Ex7Prism.BarcodeScanner.Droid
 
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
     {
-      global::ZXing.Net.Mobile
+      global::ZXing.Net.Mobile  ///.Forms
                        .Android
                        .PermissionsHandler
                        .OnRequestPermissionsResult(requestCode, permissions, grantResults);

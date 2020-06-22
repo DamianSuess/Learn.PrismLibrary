@@ -1,11 +1,21 @@
-# Ex7Prism.BarcodeScanner
+# Example using Prism.Forms with Barcode Scanner
 
-This project was created using the Prism QuickStart Templates by Dan Siegel. Be sure
-to follow Dan on Twitter @DanJSiegel.
+This is an example using Prism Barcode scanner with Prism.Forms and a but of other goodies.
+
+### What In The Box?!
+This project was created using the Prism QuickStart Templates.
+
+It contains:
+* Prism Barcode Scanner
+* Prism.Forms
+* Xamarin.Forms
+* i18n - internationalization
+* Splash screen with delayed loading spinner
+
 
 ## Developer Notes
 
-This Project uses Mobile.BuildTools to inject sensitive variables at build time. 
+This Project uses Mobile.BuildTools to inject sensitive variables at build time.
 After cloning this repository you will need to make sure that you have taken some
 time to do some basic setup in your environment prior to building.
 
@@ -29,10 +39,10 @@ for local builds.
 #### Build Server Secrets
 
 Because `secrets.json` does not exist within the checked in code and `Helpers/Secrets.cs`
-is also not checked in, the Build Server must generate the `secrets.json` as part of the 
-build. This is done automatically by including prefixed Environmental variables in the 
+is also not checked in, the Build Server must generate the `secrets.json` as part of the
+build. This is done automatically by including prefixed Environmental variables in the
 build. For instance the secret for `AppCenter_iOS_Secret` would be added as
-`Secret_AppCenter_iOS_Secret` to the build environment. You can additionally add 
+`Secret_AppCenter_iOS_Secret` to the build environment. You can additionally add
 platform specific secrets that are not compiled as part of the shared code by using
 the following Prefix Matrix:
 
@@ -45,7 +55,7 @@ the following Prefix Matrix:
 | Tizen | TizenSecret_ |
 | Default | Secret_ |
 
-If you need to inject secrets into multiple shared libraries that are part of the same 
+If you need to inject secrets into multiple shared libraries that are part of the same
 solution you can do this by adding an override value for `BuildHostSecretPrefix` in
 the PropertyGroup of your CSProj like:
 
@@ -76,13 +86,13 @@ the template manifest. This will then be replaced automatically on the build ser
 #### Build Server Setup
 
 Any variables that may exist within the Manifest templates can be injected via a
-token replacement. By default the Build Task will look for `$$` before and after 
+token replacement. By default the Build Task will look for `$$` before and after
 the variable name that you wish to replace. The build task will use any environment
 variables that start with `Manifest_` to help facilitate token replacement.
 
 For example, you may add `Manifest_AADClientId` to the build environment, and have
 `$$AADClientId$$` as a token within your manifest. The Mobile.BuildTools by default
 will only copy Manifests when building a Platform target such as iOS, Android, UWP.
-If the build definition builds more than one platform target, any variables that 
+If the build definition builds more than one platform target, any variables that
 should be different from one platform to the next should use platform specific
 tokens within the manifest.

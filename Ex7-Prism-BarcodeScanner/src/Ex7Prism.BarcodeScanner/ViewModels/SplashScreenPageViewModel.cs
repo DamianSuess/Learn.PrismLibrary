@@ -1,6 +1,8 @@
 using System.Threading.Tasks;
+using Ex7Prism.BarcodeScanner.Views;
 using Prism.Navigation;
 using Prism.Services;
+using Xamarin.Forms;
 
 namespace Ex7Prism.BarcodeScanner.ViewModels
 {
@@ -20,12 +22,12 @@ namespace Ex7Prism.BarcodeScanner.ViewModels
     {
       // TODO: Implement any initialization logic you need here. Example would be to handle automatic user login
 
-      // Simulated long running task. You should remove this in your app.
-      await Task.Delay(4000);
+      // Simulated long running task.
+      await Task.Delay(2000);
 
       // After performing the long running task we perform an absolute Navigation to remove the SplashScreen from
       // the Navigation Stack.
-      await _navigationService.NavigateAsync("/NavigationPage/MainPage?todo=Item1&todo=Item2&todo=Item3");
+      await _navigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(MainPage)}?todo=Item1&todo=Item2&todo=Item3");
     }
   }
 }
