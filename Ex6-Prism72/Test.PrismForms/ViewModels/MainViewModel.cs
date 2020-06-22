@@ -2,10 +2,11 @@
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Services;
+using Test.PrismForms.Views;
 
 namespace Test.PrismForms.ViewModels
 {
-  public class MainViewModel : ViewModelBase, IConfirmNavigationAsync
+  public class MainViewModel : ViewModelBase, IConfirmNavigationAsync, IInitializeAsync
   {
     private INavigationService _navigateService;
     private IPageDialogService _dialogService;
@@ -21,38 +22,49 @@ namespace Test.PrismForms.ViewModels
     //// Tell other property to update as well :)
     //// public DelegateCommand NavigatePage4Command => new DelegateCommand(Navigate).ObservesProperty(() => Title);
 
-    public DelegateCommand NavigatePage2Command => new DelegateCommand(NavigatePage2);
+    public DelegateCommand CmdNavigatePage2 => new DelegateCommand(OnNavigatePage2);
 
-    public DelegateCommand NavigatePage3Command => new DelegateCommand(NavigatePage3);
+    public DelegateCommand CmdNavigatePage3 => new DelegateCommand(OnNavigatePage3);
 
     public Task<bool> CanNavigateAsync(INavigationParameters parameters)
-    { // IConfirmNavigationAsync - Am i allowed to navigate?
+    {
+      // IConfirmNavigationAsync - Am i allowed to navigate?
       return _dialogService.DisplayAlertAsync("Title", "This form is dirty, fix it", "Accept", "Cancel");
     }
 
-    private async void NavigatePage2()
+    public async Task InitializeAsync(INavigationParameters parameters)
+    {
+      System.Console.WriteLine($"Initializing MainViewModel...");
+
+      await Task.Delay(3000);
+
+      System.Console.WriteLine($"Initialize MainViewModel completed. ");
+    }
+
+    private async void OnNavigatePage2()
     {
       // await _navigateService.NavigateAsync("NavigationPage/SecondPage");
-      await _navigateService.NavigateAsync("SecondPage");
+      await _navigateService.NavigateAsync(nameof(Page2View));
     }
 
-    private async void NavigatePage3()
-    {
-      var p = new NavigationParameters();
-      p.Add("id", "hello");
-      await _navigateService.NavigateAsync("ThirdPage", p);
+    private async void OnNavigatePage3()
+    { 
+      // 7.2 - We can pass parameters in-line now
+      await _navigateService.NavigateAsync(nameof(Page3AutoInitView), ("NavMessage", "hello"));
+
+      // Alternative Methods
+      // -------------------
+      // #2 - Manually define parameters. Best use when passing objects
+      // var p = new NavigationParameters();
+      // p.Add("NavMessage", "hello");
+      // 
+      // #3 - URI parameters to nav to a page
+      // var p = new NavigationParameters("?NavMessage=HelloThere&name=Damian");
+      // await _navigateService.NavigateAsync(nameof(Page3AutoInitView), p);
+      //
+      // #4 - URI in-line
+      // await _navigateService.NavigateAsync($"{nameof(Page3AutoInitView)}?NavMessage=HelloThere&name=Damian");
     }
 
-    //// Alternatives for URI parameters to nav to a page
-    ////private async void NavigatePage4()
-    ////{
-    ////  var p = new NavigationParameters("?id=3&name=damian");
-    ////  await _navigateService.NavigateAsync("FourthPage", p);
-    ////}
-    ////
-    ////private async void NavigatePage5()
-    ////{
-    ////  await _navigateService.NavigateAsync("FifthPage?id=2&name=damian");
-    ////}
   }
 }
