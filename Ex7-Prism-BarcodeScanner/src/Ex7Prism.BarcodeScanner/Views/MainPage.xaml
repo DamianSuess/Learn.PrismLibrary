@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:i18n="clr-namespace:Ex7Prism.BarcodeScanner.i18n;assembly=Ex7Prism.BarcodeScanner"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
-             Title="{Binding Title}"
+             x:Class="Ex7Prism.BarcodeScanner.Views.MainPage"
              x:Name="view"
-             x:Class="Ex7Prism.BarcodeScanner.Views.MainPage">
+             Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{i18n:Translate AddButton}"
-                     Command="{Binding AddItemCommand}" />
-    </ContentPage.ToolbarItems>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Command="{Binding AddItemCommand}" Text="{i18n:Translate AddButton}" />
+    <ToolbarItem Command="{Binding ScanCommand}" Text="{i18n:Translate ScanButton}" />
+  </ContentPage.ToolbarItems>
 
-    <ListView ItemsSource="{Binding TodoItems}"
-              IsRefreshing="{Binding IsBusy}"
-              ItemTapped="Handle_ItemTapped">
-        <ListView.Behaviors>
-            <behaviors:EventToCommandBehavior Command="{Binding TodoItemTappedCommand}" 
-                                              EventName="ItemTapped"
-                                              EventArgsParameterPath="Item" />
-        </ListView.Behaviors>
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}">
-                    <TextCell.ContextActions>
-                        <MenuItem Text="{i18n:Translate DeleteButton}"
-                                  IsDestructive="true"
-                                  Command="{Binding BindingContext.DeleteItemCommand,Source={x:Reference view}}"
-                                  CommandParameter="{Binding .}" />
-                    </TextCell.ContextActions>
-                </TextCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+  <ListView IsRefreshing="{Binding IsBusy}"
+            ItemTapped="Handle_ItemTapped"
+            ItemsSource="{Binding TodoItems}">
+    <ListView.Behaviors>
+      <behaviors:EventToCommandBehavior Command="{Binding TodoItemTappedCommand}"
+                                        EventArgsParameterPath="Item"
+                                        EventName="ItemTapped" />
+    </ListView.Behaviors>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <TextCell Text="{Binding Name}">
+          <TextCell.ContextActions>
+            <MenuItem Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference view}}"
+                      CommandParameter="{Binding .}"
+                      IsDestructive="true"
+                      Text="{i18n:Translate DeleteButton}" />
+          </TextCell.ContextActions>
+        </TextCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
 
 </ContentPage>

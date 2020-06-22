@@ -48,7 +48,7 @@ namespace Test.PrismForms.ViewModels
     }
 
     private async void OnNavigatePage3()
-    {
+    { 
       // 7.2 - We can pass parameters in-line now
       await _navigateService.NavigateAsync(nameof(Page3AutoInitView), ("NavMessage", "hello"));
 

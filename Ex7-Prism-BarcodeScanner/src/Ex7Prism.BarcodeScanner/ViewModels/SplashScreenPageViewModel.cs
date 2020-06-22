@@ -13,7 +13,7 @@ namespace Ex7Prism.BarcodeScanner.ViewModels
 
     public override void OnAppearing()
     {
-      ;
+      ; // Gets called after, OnNavigatedTo, but still gets called before page is rendered
     }
 
     public override async void OnNavigatedTo(NavigationParameters parameters)

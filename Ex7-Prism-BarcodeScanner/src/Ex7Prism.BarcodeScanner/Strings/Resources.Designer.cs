@@ -124,6 +124,15 @@ namespace Ex7Prism.BarcodeScanner.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Scan.
+        /// </summary>
+        internal static string ScanButton {
+            get {
+                return ResourceManager.GetString("ScanButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Item Detail.
         /// </summary>
         internal static string TodoItemDetailTitle {
