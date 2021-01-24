@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using BarcodeScanner;
 using DryIoc;
 using Ex7Prism.BarcodeScanner.Views;
@@ -36,7 +37,14 @@ namespace Ex7Prism.BarcodeScanner
       InitializeComponent();
       LogUnobservedTaskExceptions();
 
-      await NavigationService.NavigateAsync("SplashScreenPage");
+      await NavigationService.NavigateAsync($"{nameof(SplashScreenPage)}");
+      // var nav = await NavigationService.NavigateAsync($"{nameof(SplashScreenPage)}");
+      //if (!nav.Success)
+      //{
+      //  // Log the message
+      //  Console.WriteLine(nav.Exception.Message);
+      //  throw new System.Exception(nav.Exception.Message);
+      //}
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
