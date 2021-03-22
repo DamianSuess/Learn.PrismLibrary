@@ -8,7 +8,12 @@ using Prism.Services;
 
 namespace Ex7Prism.BarcodeScanner.ViewModels
 {
-  public class ViewModelBase : BaseViewModel, IActiveAware, INavigationAware, IDestructible, IConfirmNavigation, IConfirmNavigationAsync, IApplicationLifecycleAware, IPageLifecycleAware
+  public class ViewModelBase
+    : BaseViewModel,
+    IActiveAware,
+    // INavigationAware, IConfirmNavigation, IConfirmNavigationAsync,
+    IDestructible,    
+    IApplicationLifecycleAware, IPageLifecycleAware
   {
     protected IPageDialogService _pageDialogService { get; }
 
