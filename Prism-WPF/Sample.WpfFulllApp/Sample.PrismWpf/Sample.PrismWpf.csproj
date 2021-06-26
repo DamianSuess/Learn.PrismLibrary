@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Test.PrismWpf</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.PrismWpf.Core\Test.PrismWpf.Core.csproj" />
+    <ProjectReference Include="..\Modules\Test.PrismWpf.Modules.ModuleName\Test.PrismWpf.Modules.ModuleName.csproj" />
+    <ProjectReference Include="..\Services\Test.PrismWpf.Services.Interfaces\Test.PrismWpf.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\Test.PrismWpf.Services\Test.PrismWpf.Services.csproj" />
+  </ItemGroup>
+</Project>
