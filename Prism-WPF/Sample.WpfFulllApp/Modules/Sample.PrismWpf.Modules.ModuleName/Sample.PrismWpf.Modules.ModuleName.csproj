@@ -8,6 +8,8 @@
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Sample.PrismWpf.Core\Sample.PrismWpf.Core.csproj" />
+    <ProjectReference Include="..\..\Services\Sample.PrismWpf.Services.Interfaces\Sample.PrismWpf.Services.Interfaces.csproj" />
     <ProjectReference Include="..\..\Test.PrismWpf.Core\Test.PrismWpf.Core.csproj" />
     <ProjectReference Include="..\..\Services\Test.PrismWpf.Services.Interfaces\Test.PrismWpf.Services.Interfaces.csproj" />
   </ItemGroup>

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sample.PrismWpf.Services.Interfaces\Sample.PrismWpf.Services.Interfaces.csproj" />
     <ProjectReference Include="..\Test.PrismWpf.Services.Interfaces\Test.PrismWpf.Services.Interfaces.csproj" />
   </ItemGroup>
 

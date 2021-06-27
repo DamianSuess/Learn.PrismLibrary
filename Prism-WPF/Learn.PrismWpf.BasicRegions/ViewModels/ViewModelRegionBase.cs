@@ -1,11 +1,11 @@
 ﻿using System;
 using Prism.Regions;
 
-namespace Test.PrismWpf.Core.Mvvm
+namespace Learn.PrismWpf.BasicRegions.ViewModels
 {
-  public class RegionViewModelBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
+  public class ViewModelRegionBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
   {
-    public RegionViewModelBase(IRegionManager regionManager)
+    public ViewModelRegionBase(IRegionManager regionManager)
     {
       RegionManager = regionManager;
     }

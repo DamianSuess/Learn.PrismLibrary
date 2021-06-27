@@ -1,6 +1,6 @@
-﻿namespace Test.PrismWpf.Core
+﻿namespace Learn.PrismWpf.BasicRegions
 {
-  public static class RegionNames
+  public static class Regions
   {
     public const string ContentRegion = "ContentRegion";
     public const string SidebarRegion = "SidebarRegion";

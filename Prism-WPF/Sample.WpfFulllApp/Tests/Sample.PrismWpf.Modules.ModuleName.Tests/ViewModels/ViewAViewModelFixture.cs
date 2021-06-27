@@ -8,10 +8,9 @@ namespace Test.PrismWpf.Modules.ModuleName.Tests.ViewModels
 {
   public class ViewAViewModelFixture
   {
+    const string MessageServiceDefaultMessage = "Some Value";
     Mock<IMessageService> _messageServiceMock;
     Mock<IRegionManager> _regionManagerMock;
-    const string MessageServiceDefaultMessage = "Some Value";
-
     public ViewAViewModelFixture()
     {
       var messageService = new Mock<IMessageService>();
@@ -22,6 +21,13 @@ namespace Test.PrismWpf.Modules.ModuleName.Tests.ViewModels
     }
 
     [Fact]
+    public void MessageINotifyPropertyChangedCalled()
+    {
+      var vm = new ViewAViewModel(_regionManagerMock.Object, _messageServiceMock.Object);
+      Assert.PropertyChanged(vm, nameof(vm.Message), () => vm.Message = "Changed");
+    }
+
+    [Fact]
     public void MessagePropertyValueUpdated()
     {
       var vm = new ViewAViewModel(_regionManagerMock.Object, _messageServiceMock.Object);
@@ -29,13 +35,6 @@ namespace Test.PrismWpf.Modules.ModuleName.Tests.ViewModels
       _messageServiceMock.Verify(x => x.GetMessage(), Times.Once);
 
       Assert.Equal(MessageServiceDefaultMessage, vm.Message);
-    }
-
-    [Fact]
-    public void MessageINotifyPropertyChangedCalled()
-    {
-      var vm = new ViewAViewModel(_regionManagerMock.Object, _messageServiceMock.Object);
-      Assert.PropertyChanged(vm, nameof(vm.Message), () => vm.Message = "Changed");
     }
   }
 }
