@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PrismUno.Shared", "PrismUno\PrismUno.Shared\PrismUno.Shared.shproj", "{AE13C03A-380B-4EC7-AFE5-C69AAE2D3199}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PrismUno.Shared", "Ex9-PrismUno\PrismUno.Shared\PrismUno.Shared.shproj", "{AE13C03A-380B-4EC7-AFE5-C69AAE2D3199}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismUno.Core", "PrismUno\PrismUno.Core\PrismUno.Core.csproj", "{4F80EBB9-83F4-4346-B144-5EFAA6DC971D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismUno.Core", "Ex9-PrismUno\PrismUno.Core\PrismUno.Core.csproj", "{4F80EBB9-83F4-4346-B144-5EFAA6DC971D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{DACD4512-462E-4154-8173-8F6815BBDB8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismUno.UWP", "PrismUno\Platforms\PrismUno.UWP\PrismUno.UWP.csproj", "{F7700DE0-9460-4398-AA3B-2B810E243193}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismUno.UWP", "Ex9-PrismUno\Platforms\PrismUno.UWP\PrismUno.UWP.csproj", "{F7700DE0-9460-4398-AA3B-2B810E243193}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
