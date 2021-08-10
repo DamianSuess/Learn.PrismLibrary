@@ -6,8 +6,8 @@
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Prism.Uno" Version="8.0.0.1909" />
-    <PackageReference Include="Uno.UI" Version="3.0.17" />
+    <PackageReference Include="Prism.Uno" Version="8.1.97" />
+    <PackageReference Include="Uno.UI" Version="3.9.7" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
