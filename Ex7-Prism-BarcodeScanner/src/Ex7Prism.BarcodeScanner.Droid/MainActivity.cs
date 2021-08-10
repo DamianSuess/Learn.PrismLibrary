@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
 using Xamarin.Forms.Platform.Android;
 
 namespace Ex7Prism.BarcodeScanner.Droid
@@ -23,11 +24,27 @@ namespace Ex7Prism.BarcodeScanner.Droid
       global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
       global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-      global::FFImageLoading.Forms.Droid.CachedImageRenderer.Init(enableFastRenderer: true);
-      global::FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration()
+      // FFImage
+
+      ////// OLD:
+      //// global::FFImageLoading.Forms.Droid.CachedImageRenderer.Init(enableFastRenderer: true);
+      ////global::FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration()
+      ////{
+      ////  Logger = new Ex7Prism.BarcodeScanner.Services.DebugLogger()
+      ////});
+
+      var config = new FFImageLoading.Config.Configuration()
       {
-        Logger = new Ex7Prism.BarcodeScanner.Services.DebugLogger()
-      });
+        VerboseLogging = false,
+        VerbosePerformanceLogging = false,
+        VerboseMemoryCacheLogging = false,
+        VerboseLoadingCancelledLogging = false,
+        Logger = new Ex7Prism.BarcodeScanner.Services.DebugLogger(),
+      };
+
+      FFImageLoading.ImageService.Instance.Initialize(config);
+      //CachedImageRenderer.Init(true);
+      CachedImageRenderer.InitImageViewHandler();    // Missing reference
 
       global::ZXing.Net.Mobile.Forms.Android.Platform.Init();
 
