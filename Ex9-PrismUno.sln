@@ -11,8 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismUno.UWP", "Ex9-PrismUno\Platforms\PrismUno.UWP\PrismUno.UWP.csproj", "{F7700DE0-9460-4398-AA3B-2B810E243193}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnUno.Skia.Gtk", "Ex9-PrismUno\Platforms\PrismUno.Skia.Gtk\LearnUno.Skia.Gtk.csproj", "{716944FB-A161-41F6-B182-D84082FBE22D}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Ex9-PrismUno\PrismUno.Shared\PrismUno.Shared.projitems*{716944fb-a161-41f6-b182-d84082fbe22d}*SharedItemsImports = 5
 		Ex9-PrismUno\PrismUno.Shared\PrismUno.Shared.projitems*{ae13c03a-380b-4ec7-afe5-c69aae2d3199}*SharedItemsImports = 13
 		Ex9-PrismUno\PrismUno.Shared\PrismUno.Shared.projitems*{f7700de0-9460-4398-aa3b-2b810e243193}*SharedItemsImports = 4
 	EndGlobalSection
@@ -53,12 +56,25 @@ Global
 		{F7700DE0-9460-4398-AA3B-2B810E243193}.Release|x86.ActiveCfg = Release|x86
 		{F7700DE0-9460-4398-AA3B-2B810E243193}.Release|x86.Build.0 = Release|x86
 		{F7700DE0-9460-4398-AA3B-2B810E243193}.Release|x86.Deploy.0 = Release|x86
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|x64.Build.0 = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Debug|x86.Build.0 = Debug|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|x64.ActiveCfg = Release|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|x64.Build.0 = Release|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|x86.ActiveCfg = Release|Any CPU
+		{716944FB-A161-41F6-B182-D84082FBE22D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F7700DE0-9460-4398-AA3B-2B810E243193} = {DACD4512-462E-4154-8173-8F6815BBDB8F}
+		{716944FB-A161-41F6-B182-D84082FBE22D} = {DACD4512-462E-4154-8173-8F6815BBDB8F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4116378A-19AA-4F2D-9FF5-59A76823167E}
