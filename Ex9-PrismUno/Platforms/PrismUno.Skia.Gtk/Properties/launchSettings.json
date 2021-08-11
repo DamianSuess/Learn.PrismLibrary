@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "LearnWSL.UnoApp.Skia.Gtk": {
+      "commandName": "Project"
+    },
+    "WSL 2": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DISPLAY": ":0"
+      },
+      "remoteDebugEnabled": false,
+      "distributionName": ""
+    },
+    "WSL 2_1": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    }
+  }
+}
