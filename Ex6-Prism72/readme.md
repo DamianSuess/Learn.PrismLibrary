@@ -9,7 +9,9 @@ Only some of the features are captured by this sample. Please see the project's 
 * [Automatic View Registration - PR 1780](https://github.com/PrismLibrary/Prism/pull/1780)
 
 ## What's new
+
 * INavigatingAware is no longer supported
 
 ### Not yet implemented
+
 * View/ViewModel Initialization - 7.2.0.1367 - 2019-07-24

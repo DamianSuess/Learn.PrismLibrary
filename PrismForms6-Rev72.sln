@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF", "Test.PrismXF\Test.PrismXF.csproj", "{2CA9F2BE-BDEB-4F97-8595-119786DA4B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.PrismForms", "Ex6-Prism72\Test.PrismForms\Test.PrismForms.csproj", "{2CA9F2BE-BDEB-4F97-8595-119786DA4B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF.Android", "Test.PrismXF.Android\Test.PrismXF.Android.csproj", "{36115F57-A48E-4BB1-A05C-4F0876F9BA7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismForms.Droid", "Ex6-Prism72\Test.PrismForms.Android\Test.PrismForms.Droid.csproj", "{36115F57-A48E-4BB1-A05C-4F0876F9BA7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismXF.UWP", "Test.PrismXF.UWP\Test.PrismXF.UWP.csproj", "{548B00C3-D345-4E3D-80F0-2A478EF68729}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.PrismForms.UWP", "Ex6-Prism72\Test.PrismForms.UWP\Test.PrismForms.UWP.csproj", "{548B00C3-D345-4E3D-80F0-2A478EF68729}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
