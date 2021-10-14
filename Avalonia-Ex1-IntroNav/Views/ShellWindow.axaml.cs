@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Learn.AvaloniaNix.Views
+namespace Learn.PrismAvalonia.Views
 {
-  public partial class MainWindow : Window
+  public partial class ShellWindow : Window
   {
-    public MainWindow()
+    public ShellWindow()
     {
       InitializeComponent();
 #if DEBUG
