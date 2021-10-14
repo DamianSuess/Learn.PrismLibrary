@@ -14,7 +14,7 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 ## Prism.Avalonia
 
-All AvaloniaUI samples are cross-platform ready!  Yes, you can use Linux, Mac, or Windows.
+All AvaloniaUI samples are cross-platform ready!  That's right, you can use Linux, Mac, Windows, or Windows with WSL.
 
 In these lessons repo, we'll explore how to wire-up Avalonia with Prism.Avalonia and some of the key user controls that Avalonia has to offer.
 
