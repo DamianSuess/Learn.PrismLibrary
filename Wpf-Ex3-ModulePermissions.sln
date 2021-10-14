@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Client", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.ModulePermissions\Learn.PrismWpf.Client.csproj", "{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.PrismWpf", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.ModulePermissions\Learn.PrismWpf.csproj", "{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Modules.AdminModule", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.AdminModule\Learn.PrismWpf.Modules.AdminModule.csproj", "{F19CC414-145C-4983-B050-74BF4CFEBDF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Admin", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.AdminModule\Modules.Admin.csproj", "{F19CC414-145C-4983-B050-74BF4CFEBDF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Modules.GenericModule", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.GenericModule\Learn.PrismWpf.Modules.GenericModule.csproj", "{109A87C3-804D-4AB7-87D7-4A5678C0916E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules.Generic", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.GenericModule\Modules.Generic.csproj", "{109A87C3-804D-4AB7-87D7-4A5678C0916E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{18E6F997-E68D-459C-B0CA-9DA583E764F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Common", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Roles\Learn.PrismWpf.Common.csproj", "{689FF011-CB17-40FA-BD15-4BD8C87A4621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,17 @@ Global
 		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689FF011-CB17-40FA-BD15-4BD8C87A4621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689FF011-CB17-40FA-BD15-4BD8C87A4621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689FF011-CB17-40FA-BD15-4BD8C87A4621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689FF011-CB17-40FA-BD15-4BD8C87A4621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F19CC414-145C-4983-B050-74BF4CFEBDF4} = {18E6F997-E68D-459C-B0CA-9DA583E764F1}
+		{109A87C3-804D-4AB7-87D7-4A5678C0916E} = {18E6F997-E68D-459C-B0CA-9DA583E764F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAF39D9F-19E6-4A42-8E28-44AAA05F7EF3}

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Learn.PrismWpf.Client.Views
+namespace Learn.PrismWpf.Views
 {
   /// <summary>
   /// Interaction logic for MainWindow.xaml

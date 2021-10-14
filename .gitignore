@@ -1,6 +1,6 @@
-# Copyright 2017-2021 Xeno Innovations, Inc
+# Copyright 2021 Xeno Innovations, Inc
 
-# Generic files
+# Generic Visual Studio files
 *.bak
 *.csproj.user
 *.suo
@@ -21,7 +21,7 @@
 *.autorecover
 *.coverage
 
-## All test SQLite datbases
+# SQLite datbases
 *.db3
 
 # Xamarin.Android Resource.Designer.cs files
@@ -31,6 +31,7 @@
 **/Droid/**/[Rr]esource.[Dd]esigner.cs
 
 # Build results
+[Oo]utput/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -66,13 +67,14 @@ TestResult.xml
 # Lib folder
 /lib/*
 !/lib/readme.txt
+!/lib/readme.md
 
 # Output
-/output/*
-!/output/readme.txt
+!/[Oo]utput/readme.txt
+!/[Oo]utput/readme.md
 
 ## USER DEFINED
-/docs/*.csv
-/docs/backup
-/tests
-/tools
+/[Dd]ocs/*.csv
+/[Dd]ocs/backup
+/[Tt]ests
+/[Tt]ools
