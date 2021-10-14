@@ -12,6 +12,14 @@ Website: [suesslabs.com](https://suesslabs.com)
 
 Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. Separate releases are available for each platform and those will be developed on independent timelines. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others. Prism's core functionality is a shared code base in a Portable Class Library targeting these platforms.
 
+## Prism.Avalonia
+
+All AvaloniaUI samples are cross-platform ready!  Yes, you can use Linux, Mac, or Windows.
+
+In these lessons repo, we'll explore how to wire-up Avalonia with Prism.Avalonia and some of the key user controls that Avalonia has to offer.
+
+Whether you're coming from WPF, Xamarin.Forms, Uno, or some other XAML based language, you'll find a lot of exact syntactical matches, simulatities and a few that require some finessing. Overall, Avalonia is a solid tool for production applications despite its `0.x` version numbering.
+
 ## Semi-Requirements
 
 The project works best if you include the [Prism Template Pack](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack). This allows the system to quickly type in code for you and _even creates a ViewModel class when you create a new page_!
