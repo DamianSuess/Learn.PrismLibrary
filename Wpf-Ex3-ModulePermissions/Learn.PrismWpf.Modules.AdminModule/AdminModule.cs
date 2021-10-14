@@ -6,7 +6,8 @@ using Prism.Regions;
 
 namespace Modules.Admin
 {
-  [Roles("User,Admin")]
+  //// [Roles("User,Admin")]
+  [Roles(RoleName.User)]
   public class AdminModule : IModule
   {
     private IRegionManager _regionManager;

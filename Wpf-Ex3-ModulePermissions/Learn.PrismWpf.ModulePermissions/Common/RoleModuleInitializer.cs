@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Principal;
 using Prism.Ioc;
@@ -74,7 +75,6 @@ namespace Learn.PrismWpf.Common
       {
         if (ModuleIsInUserRole(moduleInfo))
         {
-
           moduleInstance = this.CreateModule(moduleInfo);
           if (moduleInstance != null)
           {
@@ -90,40 +90,6 @@ namespace Learn.PrismWpf.Common
             moduleInstance?.GetType().Assembly.FullName,
             ex);
       }
-    }
-
-    private bool ModuleIsInUserRole(IModuleInfo moduleInfo)
-    {
-      var inRole = false;
-
-      var roles = GetModuleRoles(moduleInfo);
-
-      foreach(var role in roles)
-      {
-        if (WindowsPrincipal.Current.IsInRole(role))
-        {
-          inRole = true;
-          break;
-        }
-      }
-
-      return inRole;
-    }
-
-    private IEnumerable<string> GetModuleRoles(IModuleInfo moduleInfo)
-    {
-      var type = Type.GetType(moduleInfo.ModuleType);
-      foreach(var attr in GetCustomAttribute<RolesAttribute>(type))
-      {
-        return attr.Roles.AsEnumerable();
-      }
-
-      return null;
-    }
-
-    IEnumerable<T> GetCustomAttribute<T>(Type type)
-    {
-      return type.GetCustomAttributes(typeof(T), true).OfType<T>();
     }
 
     /// <summary>
@@ -153,6 +119,54 @@ namespace Learn.PrismWpf.Common
       //// }
 
       return (IModule)_containerExtension.Resolve(moduleType);
+    }
+
+    private IEnumerable<T> GetCustomAttribute<T>(Type type)
+    {
+      return type.GetCustomAttributes(typeof(T), true).OfType<T>();
+    }
+
+    private IEnumerable<string> GetModuleRoles(IModuleInfo moduleInfo)
+    {
+      var type = Type.GetType(moduleInfo.ModuleType);
+
+      if (type is null)
+      {
+        Debug.WriteLine(
+          $"Invalid Prism Module declaration in App.config. " +
+          $"Verify that the ModuleType attribute is filled out correctly by matching the 'Namespace + class' entry point.{Environment.NewLine}" +
+          $"NULL type returned by ModuleInfo: '{moduleInfo.ModuleName}'");
+
+        return null;
+      }
+
+      foreach (var attr in GetCustomAttribute<RolesAttribute>(type))
+      {
+        return attr.Roles.AsEnumerable();
+      }
+
+      return null;
+    }
+
+    private bool ModuleIsInUserRole(IModuleInfo moduleInfo)
+    {
+      var inRole = false;
+
+      var roles = GetModuleRoles(moduleInfo);
+
+      if (roles is null)
+        return false;
+
+      foreach (var role in roles)
+      {
+        if (WindowsPrincipal.Current.IsInRole(role))
+        {
+          inRole = true;
+          break;
+        }
+      }
+
+      return inRole;
     }
   }
 }

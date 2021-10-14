@@ -4,9 +4,9 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace Modules.GenericModule
+namespace Modules.Generic
 {
-  [Roles("Users")]
+  [Roles(RoleName.User)]
   public class GenericModule : IModule
   {
     private IRegionManager _regionManager;

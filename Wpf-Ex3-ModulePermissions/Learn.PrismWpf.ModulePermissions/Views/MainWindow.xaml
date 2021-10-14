@@ -1,14 +1,21 @@
 ﻿<Window x:Class="Learn.PrismWpf.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:core="clr-namespace:Learn.PrismWpf.Common"
+        xmlns:core="clr-namespace:Learn.PrismWpf.Common;assembly=Learn.PrismWpf.Common"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}"
         Height="350" Width="525">
   <Grid>
-    <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+
+    <ItemsControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+
+    <!--
+    NOTE: For this example, you MUST use the 'ItemsControl' to allow for multiple dynamic items.
+      Whereas, the 'ContentControl' will only provide you with one item at a time.
     
+    <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+    -->
     <!--<ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />-->
   </Grid>
 </Window>

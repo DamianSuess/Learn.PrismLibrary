@@ -1,6 +1,7 @@
 ﻿using System.Security.Principal;
 using System.Threading;
 using System.Windows;
+using Learn.PrismWpf.Common;
 using Learn.PrismWpf.Views;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -23,7 +24,12 @@ namespace Learn.PrismWpf
 
       // Here, you can use your own user role identification (i.e. custom or Active Directory)
       var ident = WindowsIdentity.GetCurrent();
-      var p = new GenericPrincipal(ident, new string[] { "User", "Admin" });
+
+      // User has both "User" and "Admin" permissions
+      var p = new GenericPrincipal(ident, new string[] { RoleName.User, RoleName.Admin });
+
+      ////// Client ONLY has "User" permissions
+      ////var p = new GenericPrincipal(ident, new string[] { RoleName.User });
 
       Thread.CurrentPrincipal = p;
     }
