@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.BasicModules", "Learn.PrismWpf.BasicModules\Learn.PrismWpf.BasicModules.csproj", "{0969EA14-573B-4998-B798-6E3D320FCA9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.BasicModules", "Wpf-Ex3-BasicModules\Learn.PrismWpf.BasicModules.csproj", "{0969EA14-573B-4998-B798-6E3D320FCA9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
