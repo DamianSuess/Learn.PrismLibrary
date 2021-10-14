@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Client", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.ModulePermissions\Learn.PrismWpf.Client.csproj", "{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Modules.AdminModule", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.AdminModule\Learn.PrismWpf.Modules.AdminModule.csproj", "{F19CC414-145C-4983-B050-74BF4CFEBDF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.PrismWpf.Modules.GenericModule", "Wpf-Ex3-ModulePermissions\Learn.PrismWpf.Modules.GenericModule\Learn.PrismWpf.Modules.GenericModule.csproj", "{109A87C3-804D-4AB7-87D7-4A5678C0916E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D162EAC5-948A-4D8F-8F02-0BD68AF7868A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F19CC414-145C-4983-B050-74BF4CFEBDF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F19CC414-145C-4983-B050-74BF4CFEBDF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F19CC414-145C-4983-B050-74BF4CFEBDF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F19CC414-145C-4983-B050-74BF4CFEBDF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{109A87C3-804D-4AB7-87D7-4A5678C0916E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAF39D9F-19E6-4A42-8E28-44AAA05F7EF3}
+	EndGlobalSection
+EndGlobal

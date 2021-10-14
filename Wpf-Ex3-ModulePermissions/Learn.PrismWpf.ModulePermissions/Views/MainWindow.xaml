@@ -1,0 +1,10 @@
+﻿<Window x:Class="Learn.PrismWpf.Client.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="350" Width="525">
+  <Grid>
+    <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+  </Grid>
+</Window>
