@@ -45,7 +45,8 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 | Name                        | Prism Ver. | Details |
 |-|-|-|-|
-| Ex 1 - (Coming Soon)        | 7.2 | _Coming Soon_ - Basic navigation using 3-panel client with a sidebar navigation.
+| Ex 1 - Intro to Navigation  | 7.2 | Basic navigation using 3-panel client with a sidebar navigation.
+| Ex 2 - Intro to Modules     | 7.2 | _Coming Soon!_
 
 ## AvaloniaUI Samples
 
