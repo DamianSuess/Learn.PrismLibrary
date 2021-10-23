@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Sample.PrismMobile.Views.FlyoutMenuView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Sample.PrismMobile.Models"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:views="clr-namespace:Sample.PrismMobile.Views"
+             prism:ViewModelLocator.AutowireViewModel="True">
+  <StackLayout>
+    <ListView x:FieldModifier="public">
+      <!--  XAML sample for inputting ListView items  -->
+      <ListView.ItemsSource>
+        <x:Array Type="{x:Type models:FlyoutMenuItem}">
+          <models:FlyoutMenuItem Title="Dashboard"
+                                 IconSource="xxx.png"
+                                 TargetType="{x:Type views:DashboardView}" />
+          <models:FlyoutMenuItem Title="Dashboard"
+                                 IconSource="xxx.png"
+                                 TargetType="{x:Type views:CustomersView}" />
+          <models:FlyoutMenuItem Title="Dashboard"
+                                 IconSource="xxx.png"
+                                 TargetType="{x:Type views:SettingsView}" />
+        </x:Array>
+      </ListView.ItemsSource>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid Padding="5,10" />
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
