@@ -20,7 +20,7 @@ namespace Sample.PrismMobile
     {
       InitializeComponent();
 
-      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(FlyoutView)}/{nameof(NavigationPage)}/{nameof(DashboardView)}");
       if (!ret.Success)
       {
         Debug.WriteLine("Error loading main view");
@@ -34,7 +34,6 @@ namespace Sample.PrismMobile
 
       // Navigation
       containerRegistry.RegisterForNavigation<NavigationPage>();
-      containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
       containerRegistry.RegisterForNavigation<FlyoutView, FlyoutViewModel>();
       containerRegistry.RegisterForNavigation<FlyoutMenuView, FlyoutMenuViewModel>();
       containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
