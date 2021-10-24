@@ -23,7 +23,7 @@ namespace Sample.PrismMobile
       var ret = await NavigationService.NavigateAsync($"{nameof(FlyoutView)}/{nameof(NavigationPage)}/{nameof(DashboardView)}");
       if (!ret.Success)
       {
-        Debug.WriteLine("Error loading main view");
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
       }
     }
 

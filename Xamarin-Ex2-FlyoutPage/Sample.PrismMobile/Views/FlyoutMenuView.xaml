@@ -7,6 +7,17 @@
              xmlns:views="clr-namespace:Sample.PrismMobile.Views"
              prism:ViewModelLocator.AutowireViewModel="True">
   <StackLayout>
+    <!--
+    <ListView Background="#e8e8e8"
+              ItemsSource="{Binding MenuItems}"
+              RowHeight="50"
+              SelectedItem="{Binding SelectedItem}"
+              SeparatorColor="LightGray"
+              SeparatorVisibility="Default">
+      ...
+    </ListView>
+    -->
+
     <ListView x:FieldModifier="public">
       <!--  XAML sample for inputting ListView items  -->
       <ListView.ItemsSource>
@@ -25,7 +36,10 @@
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <Grid Padding="5,10" />
+            <Grid Padding="5,10" ColumnDefinitions="30,*">
+              <Image Source="{Binding IconSource}" />
+              <Label Grid.Column="1" Text="{Binding Title}" />
+            </Grid>
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
