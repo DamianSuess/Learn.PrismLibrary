@@ -2,9 +2,9 @@
 
 namespace Sample.PrismMobile.Views
 {
-  public partial class Customers : ContentPage
+  public partial class CustomersView : ContentPage
   {
-    public Customers()
+    public CustomersView()
     {
       InitializeComponent();
     }

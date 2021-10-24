@@ -2,9 +2,9 @@
 
 namespace Sample.PrismMobile.Views
 {
-  public partial class Settings : ContentPage
+  public partial class SettingsView : ContentPage
   {
-    public Settings()
+    public SettingsView()
     {
       InitializeComponent();
     }

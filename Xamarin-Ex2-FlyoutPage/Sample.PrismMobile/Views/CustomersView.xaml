@@ -3,6 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Sample.PrismMobile.Views.Customers">
+             x:Class="Sample.PrismMobile.Views.CustomersView">
   
 </ContentPage>

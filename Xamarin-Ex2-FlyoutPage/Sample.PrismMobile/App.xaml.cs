@@ -37,8 +37,8 @@ namespace Sample.PrismMobile
       containerRegistry.RegisterForNavigation<FlyoutView, FlyoutViewModel>();
       containerRegistry.RegisterForNavigation<FlyoutMenuView, FlyoutMenuViewModel>();
       containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
-      containerRegistry.RegisterForNavigation<Settings, SettingsViewModel>();
-      containerRegistry.RegisterForNavigation<Customers, CustomersViewModel>();
+      containerRegistry.RegisterForNavigation<SettingsView, SettingsViewModel>();
+      containerRegistry.RegisterForNavigation<CustomersView, CustomersViewModel>();
     }
   }
 }
