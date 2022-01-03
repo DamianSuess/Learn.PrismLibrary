@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.PrismMobile", "Sample.PrismMobile\Sample.PrismMobile.csproj", "{DECA3389-DC8D-4D3E-B9DB-F67FD1C0432B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{A37E7227-0968-4DA5-9EA8-13EE04FF810F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.PrismMobile.Android", "Sample.PrismMobile.Android\Sample.PrismMobile.Android.csproj", "{47C6CB72-B2CF-4EA3-9D4A-5604FF35BE7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.PrismMobile.UWP", "Sample.PrismMobile.UWP\Sample.PrismMobile.UWP.csproj", "{63D1302B-67F4-4231-BA6C-0BA6D210D94B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Targets", "Targets", "{A37E7227-0968-4DA5-9EA8-13EE04FF810F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.PrismMobile.Gtk", "Sample.PrismMobile.Gtk\Sample.PrismMobile.Gtk.csproj", "{90C48CD2-AABA-40D7-8784-FA58CD1C4A39}"
 EndProject
