@@ -44,7 +44,7 @@ namespace Sample.PrismApp
       // Register Views to Region it will appear in. Don't register them in the ViewModel.
       var regionManager = Container.Resolve<IRegionManager>();
       regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(DashboardView));
-      regionManager.RegisterViewWithRegion(RegionNames.SidebarRegion, typeof(SidebarView));
+      //// regionManager.RegisterViewWithRegion(RegionNames.SidebarRegion, typeof(SidebarView));
     }
 
     /// <summary>
