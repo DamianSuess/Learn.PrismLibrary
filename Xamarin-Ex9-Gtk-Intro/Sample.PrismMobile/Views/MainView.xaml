@@ -7,5 +7,29 @@
   <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
     <Label Text="Welcome to Xamarin Forms and Prism!" />
     <Button Command="{Binding CmdTestButton}" Text="Click me" />
+
+    <ListView>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="Text Cell" Detail="Minor details" DetailColor="Gray" />
+          <!--
+          <ContactViewCell />
+          <TextCell Text="{Binding Name}" Detail="{Binding PrepTime}" DetailColor="Gray" />
+          <EntryCell Label="Entry Cell" Text="Some text"  />
+          <SwitchCell Text="Switch Cell" On="True" />
+          <ImageCell Text="{Binding Country}"
+                     ImageSource="{Binding ImageUrl, Converter={StaticResource irConverter}}"
+                     Detail="{Binding DateAdopted, StringFormat='Adopted on {0;D}'}"
+                     DetailColor="Gray" />
+          <ViewCell>
+            <StackLayout Padding="5">
+              <Label FontSize="20" TextColor="Black" Text="{Binding Name}" />
+              <Label FontSize="14" TextColor="Blue" Text="{Binding Email}" />
+            </StackLayout>
+          </ViewCell>
+          -->
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
 </ContentPage>

@@ -21,5 +21,7 @@ namespace Sample.PrismMobile.ViewModels
     {
       await Task.Yield();
     });
+
+
   }
 }
