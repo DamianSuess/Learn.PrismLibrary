@@ -1,7 +1,7 @@
 ﻿using Prism;
 using Prism.Ioc;
 
-namespace XamarinHelloBle.UWP
+namespace SampleShinyCore.UWP
 {
   /// <summary>Main Page.</summary>
   public sealed partial class MainPage
@@ -10,7 +10,7 @@ namespace XamarinHelloBle.UWP
     {
       this.InitializeComponent();
 
-      LoadApplication(new XamarinHelloBle.Client.App(new UwpInitializer()));
+      LoadApplication(new SampleShinyCore.Client.App(new UwpInitializer()));
     }
   }
 

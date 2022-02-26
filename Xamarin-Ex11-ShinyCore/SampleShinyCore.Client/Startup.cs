@@ -5,7 +5,7 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Shiny;
 
-namespace XamarinHelloBle.Client
+namespace SampleShinyCore.Client
 {
   public class Startup : ShinyStartup
   {

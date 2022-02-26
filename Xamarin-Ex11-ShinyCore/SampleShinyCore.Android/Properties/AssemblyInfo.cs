@@ -5,12 +5,12 @@ using Android.App;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("XamarinHelloBle.Android")]
+[assembly: AssemblyTitle("SampleShinyCore.Android")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("XamarinHelloBle.Android")]
-[assembly: AssemblyCopyright("Copyright © YourCompany 2020")]
+[assembly: AssemblyProduct("SampleShinyCore.Android")]
+[assembly: AssemblyCopyright("Copyright © Xeno Innovations, 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

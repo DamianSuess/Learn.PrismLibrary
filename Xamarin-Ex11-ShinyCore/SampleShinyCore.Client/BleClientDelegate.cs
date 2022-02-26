@@ -1,44 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Threading.Tasks;
 using Shiny;
 using Shiny.BluetoothLE;
+using Shiny.Notifications;
 
-namespace XamarinHelloBle.Client
+namespace SampleShinyCore.Client
 {
   public class BleClientDelegate : BleDelegate
   {
-    readonly SampleSqliteConnection conn;
-    readonly INotificationManager notifications;
+    //// private readonly SampleSqliteConnection _conn;
+    private readonly INotificationManager _notifications;
 
-
-    public BleClientDelegate(SampleSqliteConnection conn, INotificationManager notificationManager)
+    ////    public BleClientDelegate(SampleSqliteConnection conn, INotificationManager notificationManager)
+    public BleClientDelegate(INotificationManager notificationManager)
     {
-      this.conn = conn;
-      this.notifications = notificationManager;
+      _notifications = notificationManager;
     }
-
 
     public override async Task OnAdapterStateChanged(AccessState state)
     {
       if (state == AccessState.Disabled)
-        await this.notifications.Send("BLE State", "Turn on Bluetooth already");
+        await _notifications.Send("BLE State", "Turn on Bluetooth already");
     }
-
 
     public override async Task OnConnected(IPeripheral peripheral)
     {
-      //await this.services.Connection.InsertAsync(new BleEvent
-      //{
-      //    Description = $"Peripheral '{peripheral.Name}' Connected",
-      //    Timestamp = DateTime.Now
-      //});
-      //await this.services.Notifications.Send(
-      //    this.GetType(),
-      //    true,
-      //    "BluetoothLE Device Connected",
-      //    $"{peripheral.Name} has connected"
-      //);
+      ////await this.services.Connection.InsertAsync(new BleEvent
+      ////{
+      ////    Description = $"Peripheral '{peripheral.Name}' Connected",
+      ////    Timestamp = DateTime.Now
+      ////});
+      ////await this.services.Notifications.Send(
+      ////    this.GetType(),
+      ////    true,
+      ////    "BluetoothLE Device Connected",
+      ////    $"{peripheral.Name} has connected"
+      ////);
     }
   }
 }

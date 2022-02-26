@@ -2,12 +2,12 @@
 using Android.App;
 using Android.Runtime;
 
-namespace XamarinHelloBle.Droid
+namespace SampleShinyCore.Droid
 {
   #if DEBUG
-    [Application(Debuggable = true, Theme = "@style/MainTheme")]
+  [Application(Debuggable = true, Theme = "@style/MainTheme")]
   #else
-    [Application(Debuggable = false, Theme = "@style/MainTheme")]
+  [Application(Debuggable = false, Theme = "@style/MainTheme")]
   #endif
   public class MainApplication : Application
   {

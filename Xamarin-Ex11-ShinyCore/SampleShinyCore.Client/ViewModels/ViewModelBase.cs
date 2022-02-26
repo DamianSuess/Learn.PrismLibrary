@@ -1,7 +1,7 @@
 ﻿using Prism.Mvvm;
 using Prism.Navigation;
 
-namespace XamarinHelloBle.Client.ViewModels
+namespace SampleShinyCore.Client.ViewModels
 {
   public class ViewModelBase : BindableBase, IInitialize, INavigationAware, IDestructible
   {

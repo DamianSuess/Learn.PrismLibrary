@@ -2,7 +2,7 @@
 using Android.Content;
 using AndroidX.AppCompat.App;
 
-namespace XamarinHelloBle.Droid
+namespace SampleShinyCore.Droid
 {
   [Activity(Theme = "@style/MainTheme.Splash",
             MainLauncher = true,

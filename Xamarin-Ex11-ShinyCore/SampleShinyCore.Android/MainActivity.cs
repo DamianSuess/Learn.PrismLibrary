@@ -4,7 +4,7 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 
-namespace XamarinHelloBle.Droid
+namespace SampleShinyCore.Droid
 {
   public class AndroidInitializer : IPlatformInitializer
   {

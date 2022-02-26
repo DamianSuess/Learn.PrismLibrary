@@ -1,5 +1,5 @@
 ﻿
-namespace XamarinHelloBle.Client.Views
+namespace SampleShinyCore.Client.Views
 {
   public partial class MainView
   {

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore", "Xamarin-Ex9-ShinyCore\SampleShinyCore.Client\SampleShinyCore.Client.csproj", "{B4695392-249B-49B8-A637-2B6967F4F8EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore", "Xamarin-Ex11-ShinyCore\SampleShinyCore.Client\SampleShinyCore.Client.csproj", "{B4695392-249B-49B8-A637-2B6967F4F8EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.Android", "Xamarin-Ex9-ShinyCore\SampleShinyCore.Android\SampleShinyCore.Android.csproj", "{CA6C7A58-7231-4E10-8DD4-6FA6FABCB064}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.Android", "Xamarin-Ex11-ShinyCore\SampleShinyCore.Android\SampleShinyCore.Android.csproj", "{CA6C7A58-7231-4E10-8DD4-6FA6FABCB064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.iOS", "Xamarin-Ex9-ShinyCore\SampleShinyCore.iOS\SampleShinyCore.iOS.csproj", "{0C6F8018-D25C-4A0A-9E11-BD0B79FA8E0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.iOS", "Xamarin-Ex11-ShinyCore\SampleShinyCore.iOS\SampleShinyCore.iOS.csproj", "{0C6F8018-D25C-4A0A-9E11-BD0B79FA8E0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.UWP", "Xamarin-Ex9-ShinyCore\SampleShinyCore.UWP\SampleShinyCore.UWP.csproj", "{56AB9DBC-BCDB-4271-AA8D-C0BF939B17F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShinyCore.UWP", "Xamarin-Ex11-ShinyCore\SampleShinyCore.UWP\SampleShinyCore.UWP.csproj", "{56AB9DBC-BCDB-4271-AA8D-C0BF939B17F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{DF90767E-DEDB-4C19-B1E9-0BAC4A29C08A}"
 EndProject

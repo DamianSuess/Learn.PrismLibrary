@@ -3,7 +3,7 @@ using Prism;
 using Prism.Ioc;
 using UIKit;
 
-namespace XamarinHelloBle.iOS
+namespace SampleShinyCore.iOS
 {
   // The UIApplicationDelegate for the application. This class is responsible for launching the
   // User Interface of the application, as well as listening (and optionally responding) to
@@ -20,7 +20,7 @@ namespace XamarinHelloBle.iOS
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
       global::Xamarin.Forms.Forms.Init();
-      LoadApplication(new Client.App(new iOSInitializer()));
+      LoadApplication(new SampleShinyCore.Client.App(new iOSInitializer()));
 
       return base.FinishedLaunching(app, options);
     }

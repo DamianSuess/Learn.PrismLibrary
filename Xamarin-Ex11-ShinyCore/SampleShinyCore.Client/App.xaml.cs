@@ -4,10 +4,10 @@ using Prism.Ioc;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
-using XamarinHelloBle.Client.ViewModels;
-using XamarinHelloBle.Client.Views;
+using SampleShinyCore.Client.ViewModels;
+using SampleShinyCore.Client.Views;
 
-namespace XamarinHelloBle.Client
+namespace SampleShinyCore.Client
 {
   public partial class App
   {

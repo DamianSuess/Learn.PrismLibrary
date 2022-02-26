@@ -6,7 +6,7 @@ using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 
-namespace XamarinHelloBle.Client.ViewModels
+namespace SampleShinyCore.Client.ViewModels
 {
   public class DeviceListViewModel : ViewModelBase
   {

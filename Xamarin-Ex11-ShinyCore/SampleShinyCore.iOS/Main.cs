@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace XamarinHelloBle.iOS
+namespace SampleShinyCore.iOS
 {
   public class Application
   {

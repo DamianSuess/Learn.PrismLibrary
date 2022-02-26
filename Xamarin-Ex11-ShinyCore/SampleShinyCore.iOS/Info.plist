@@ -27,9 +27,9 @@
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
     <key>CFBundleDisplayName</key>
-    <string>XamarinHelloBle</string>
+    <string>SampleShinyCore</string>
     <key>CFBundleName</key>
-    <string>XamarinHelloBle</string>
+    <string>SampleShinyCore</string>
     <key>CFBundleIdentifier</key>
     <string>com.companyname.appname</string>
     <key>CFBundleVersion</key>

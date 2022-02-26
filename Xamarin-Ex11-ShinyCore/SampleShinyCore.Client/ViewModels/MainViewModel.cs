@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace XamarinHelloBle.Client.ViewModels
+namespace SampleShinyCore.Client.ViewModels
 {
   public class MainViewModel : ViewModelBase
   {

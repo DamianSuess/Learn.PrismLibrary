@@ -115,9 +115,9 @@
     <AndroidResource Include="Resources\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XamarinHelloBle.Client\XamarinHelloBle.Client.csproj">
+    <ProjectReference Include="..\SampleShinyCore.Client\SampleShinyCore.Client.csproj">
       <Project>{b4695392-249b-49b8-a637-2b6967f4f8ea}</Project>
-      <Name>XamarinHelloBle.Client</Name>
+      <Name>SampleShinyCore.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
