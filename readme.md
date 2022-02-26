@@ -17,7 +17,7 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 ### [Prism.Forms](https://github.com/PrismLibrary/Prism)
 
 | Name                        | Prism Ver. | Details |
-|-|-|-|-|
+|-|-|-|
 | Ex 1 - Intro to Navigation  | 7.0 | Introduction to View/ViewModel registration and navigation.
 | Ex 2 - Master Detail Page   | 7.1 | Navigation using the MasterDetailPage. Xamarin.Forms has since renamed the control to, "FlyoutPage". We're keeping the name for historical purposes.
 | Ex 3 -Tab Page              | 7.1 | Navigation using the TabbedPage user control.
@@ -33,13 +33,13 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 ### [Prism.Uno](https://github.com/PrismLibrary/Prism)
 
 | Name                        | Prism Ver. | Details |
-|-|-|-|-|
+|-|-|-|
 | Ex 1 - Basics               | 8.1 | Prism.Uno sample targets Linux with GTK, and Windows via UWP.
 
 ### [Prism.WPF](https://github.com/PrismLibrary/Prism)
 
 | Name                        | Prism Ver. | Details |
-|-|-|-|-|
+|-|-|-|
 | Ex 1 - Full App Template    | 8.0 | Prism.WPF sample app with Regions, Modules, and navigation (_.NET Framework 4.8_)
 | Ex 2 - Region Navigation    | 8.0 | Navigation using Regions (_.NET Framework 4.8_)
 | Ex 3 - Module Permissions   | 8.1 | Module permissions sample using .NET 5 - Based on [Brian Lagunas' Pluralsight course](https://app.pluralsight.com/library/courses/prism-loading-modules-user-roles)
@@ -47,7 +47,7 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 ### [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 
 | Name                        | Prism Ver. | Details |
-|-|-|-|-|
+|-|-|-|
 | Ex 1 - Intro to Navigation  | 7.2 | Basic navigation using 3-panel client with a sidebar navigation.
 | Ex 2 - Intro to Modules     | 7.2 | _Coming Soon!_
 
