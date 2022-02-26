@@ -4,7 +4,11 @@ using Android.Runtime;
 
 namespace XamarinHelloBle.Droid
 {
-  [Application(Theme = "@style/MainTheme")]
+  #if DEBUG
+    [Application(Debuggable = true, Theme = "@style/MainTheme")]
+  #else
+    [Application(Debuggable = false, Theme = "@style/MainTheme")]
+  #endif
   public class MainApplication : Application
   {
     public MainApplication(IntPtr javaReference, JniHandleOwnership transfer)
