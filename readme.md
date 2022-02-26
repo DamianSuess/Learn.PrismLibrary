@@ -39,7 +39,7 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 ### [Prism.WPF](https://github.com/PrismLibrary/Prism)
 
 | Name                        | Prism Ver. | Details |
-|-|-|-|-|
+|-|-|-|
 | Ex 1 - Full App Template    | 8.0 | Prism.WPF sample app with Regions, Modules, and navigation (_.NET Framework 4.8_)
 | Ex 2 - Region Navigation    | 8.0 | Navigation using Regions (_.NET Framework 4.8_)
 | Ex 3 - Module Permissions   | 8.1 | Module permissions sample using .NET 5 - Based on [Brian Lagunas' Pluralsight course](https://app.pluralsight.com/library/courses/prism-loading-modules-user-roles)
