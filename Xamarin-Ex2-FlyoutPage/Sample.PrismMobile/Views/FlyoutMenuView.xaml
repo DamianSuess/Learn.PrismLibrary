@@ -23,13 +23,13 @@
       <ListView.ItemsSource>
         <x:Array Type="{x:Type models:FlyoutMenuItem}">
           <models:FlyoutMenuItem Title="Dashboard"
-                                 IconSource="xxx.png"
+                                 IconSource="icon.png"
                                  TargetType="{x:Type views:DashboardView}" />
           <models:FlyoutMenuItem Title="Dashboard"
-                                 IconSource="xxx.png"
+                                 IconSource="icon.png"
                                  TargetType="{x:Type views:CustomersView}" />
           <models:FlyoutMenuItem Title="Dashboard"
-                                 IconSource="xxx.png"
+                                 IconSource="icon.png"
                                  TargetType="{x:Type views:SettingsView}" />
         </x:Array>
       </ListView.ItemsSource>

@@ -15,14 +15,38 @@
     * SplitOnPortrait – A split screen is used when the device is in portrait orientation.
   -->
   <FlyoutPage.Flyout>
-    <views:FlyoutMenuView />
+    <!--<views:FlyoutMenuView />-->
+    <ContentPage Title="Menu"
+                 Padding="{OnPlatform Default='20',
+                                      iOS='20,40'}"
+                 IconImageSource="{OnPlatform iOS='hamburger.png'}">
+      <StackLayout>
+        <Label Margin="0,20"
+               FontAttributes="Bold"
+               FontSize="Large"
+               Text="Master Detail Demo" />
+        <Button Command="{Binding NavigateCommand}"
+                CommandParameter="ViewA"
+                Text="View A" />
+        <Button Command="{Binding NavigateCommand}"
+                CommandParameter="ViewB"
+                Text="View B" />
+        <Button Command="{Binding NavigateCommand}"
+                CommandParameter="TabbedPage?createTab=ViewA&amp;createTab=ViewB"
+                Text="TabbedPage" />
+        <StackLayout Orientation="Horizontal">
+          <Switch IsToggled="{Binding IsPresentedAfterNavigation, Source={x:Reference page}}" />
+          <Label Text="Is Presented After Navigation" />
+        </StackLayout>
+      </StackLayout>
+    </ContentPage>
   </FlyoutPage.Flyout>
 
-  <FlyoutPage.Detail>
+  <!--<FlyoutPage.Detail>
     <NavigationPage>
       <x:Arguments>
         <views:DashboardView />
       </x:Arguments>
     </NavigationPage>
-  </FlyoutPage.Detail>
+  </FlyoutPage.Detail>-->
 </FlyoutPage>

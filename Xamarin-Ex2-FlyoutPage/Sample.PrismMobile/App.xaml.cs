@@ -20,10 +20,11 @@ namespace Sample.PrismMobile
     {
       InitializeComponent();
 
-      var ret = await NavigationService.NavigateAsync($"{nameof(FlyoutView)}/{nameof(NavigationPage)}/{nameof(DashboardView)}");
-      if (!ret.Success)
+      var result = await NavigationService.NavigateAsync($"{nameof(FlyoutView)}/{nameof(NavigationPage)}/{nameof(DashboardView)}");
+      if (!result.Success)
       {
-        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+        Debug.WriteLine($"Error loading - {result.Exception.Message}");
+        System.Diagnostics.Debugger.Break();
       }
     }
 

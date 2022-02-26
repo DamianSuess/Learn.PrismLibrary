@@ -26,6 +26,7 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 | Ex 6 - v7.2 Features        | 7.2 | Prism v7.2 features (_legacy_)
 | Ex 7 - v7.2 Template        | 7.2 | Prism.Forms v7.2 Template Project (_legacy_)
 | Ex 8 - v8.1 Template        | 8.1 | Prism.Forms v8.1 Template Project
+| Ex 9 - Shiny.NET Core       | 8.1 | Core Shiny.NET components needed before beginning any Shiny project with Prism.Forms.
 
 ### [Prism.Uno](https://github.com/PrismLibrary/Prism)
 
