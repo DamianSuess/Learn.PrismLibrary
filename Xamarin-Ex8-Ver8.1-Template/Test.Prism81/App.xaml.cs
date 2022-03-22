@@ -19,7 +19,11 @@ namespace Test.Prism81
     {
       InitializeComponent();
 
-      await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+      if (!ret.Success)
+      {
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+      }
     }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)

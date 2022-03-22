@@ -27,7 +27,11 @@ namespace Test.PrismForms
 
       // Navigation to our main page
       // We're using NavigationPage to give us the Push/Pop layering of pages
-      await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+      var ret = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainView)}");
+      if (!ret.Success)
+      {
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+      }
    }
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)

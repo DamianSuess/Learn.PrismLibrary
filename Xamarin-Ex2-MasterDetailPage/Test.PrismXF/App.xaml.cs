@@ -25,7 +25,11 @@ namespace Test.PrismXF
       InitializeComponent();
 
       // Master Detail Nav --------------
-      await NavigationService.NavigateAsync("RootMasterDetailPage/NavigationPage/MainPage");
+      var ret = await NavigationService.NavigateAsync("RootMasterDetailPage/NavigationPage/MainPage");
+      if (!ret.Success)
+      {
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+      }
 
       // DON'T skip the NavigatinPage or else things won't push/pop correctly
       // await NavigationService.NavigateAsync("RootMasterDetailPage/MainPage");

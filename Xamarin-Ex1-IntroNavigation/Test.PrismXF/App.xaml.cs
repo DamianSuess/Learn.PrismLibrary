@@ -34,11 +34,19 @@ namespace Test.PrismXF
       // NOTICE: "NavigationPage" matches our RegisteredTypes(..) below
       //
       // EX 1: Simple
-      await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+      var ret1 = await NavigationService.NavigateAsync($"{nameof(NavigationPage)}/{nameof(MainPage)}");
+      if (!ret1.Success)
+      {
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+      }
 
       // EX 1B: Write out your navigation.
       // Just be careful not to misspell your View's name.
-      await NavigationService.NavigateAsync("NavigationPage/MainPage");
+      var ret2 = await NavigationService.NavigateAsync("NavigationPage/MainPage");
+      if (!ret2.Success)
+      {
+        Debug.WriteLine($"Error loading - {ret.Exception.Message}");
+      }
 
       // EX 2: Deep linking - starts at 2nd page and click back button for Main Page
       // await NavigationService.NavigateAsync("NavigationPage/MainPage/SecondPage");
