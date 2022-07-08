@@ -2,14 +2,14 @@
 
 namespace Test.PrismMaui.ViewModels
 {
-  public class MainPageViewModel : BindableBase
+  public class MainViewModel : BindableBase
   {
     private readonly INavigationService _nav;
     private ISemanticScreenReader _screenReader { get; }
     private int _counter;
     private string _text;
 
-    public MainPageViewModel(ISemanticScreenReader screenReader, INavigationService nav)
+    public MainViewModel(ISemanticScreenReader screenReader, INavigationService nav)
     {
       _screenReader = screenReader;
       _nav = nav;
@@ -22,7 +22,7 @@ namespace Test.PrismMaui.ViewModels
 
     public DelegateCommand CmdNavigate => new DelegateCommand(() =>
     {
-      string navTo = $"{nameof(NavigationPage)}/{nameof(MainPage)}/{nameof(Page2View)}";
+      string navTo = $"{nameof(NavigationPage)}/{nameof(MainView)}/{nameof(SubPageView)}";
       _nav.NavigateAsync(navTo);
     });
 

@@ -7,11 +7,11 @@ using Test.PrismMaui.Views;
 
 namespace Test.PrismMaui.ViewModels
 {
-  public class Page2ViewModel : BindableBase
+  public class SubPageViewModel : BindableBase
   {
     private readonly INavigationService _nav;
 
-    public Page2ViewModel(INavigationService nav)
+    public SubPageViewModel(INavigationService nav)
     {
       _nav = nav;
     }

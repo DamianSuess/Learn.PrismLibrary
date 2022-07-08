@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Test.PrismMaui</ApplicationTitle>
+		<ApplicationTitle>PrismMaui Basic Nav</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.suesslabs.test.prismmaui</ApplicationId>

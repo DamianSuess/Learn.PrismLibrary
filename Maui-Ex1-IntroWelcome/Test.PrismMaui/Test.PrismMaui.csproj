@@ -12,7 +12,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>Test.PrismMaui</ApplicationTitle>
+		<ApplicationTitle>PrismMaui Intro</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.companyname.test.prismmaui</ApplicationId>
