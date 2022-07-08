@@ -96,6 +96,12 @@ COMING SOON: MahApps.Metro + MaterialDesign
 
 The project works best if you include the [Prism Template Pack](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack). This allows the system to quickly type in code for you and _even creates a ViewModel class when you create a new page_!
 
+## Future Samples
+
+* [ ] Prism.Maui
+* [ ] [Metro Themes](https://github.com/MahApps/MahApps.Metro)
+  * [WPF sample app](https://github.com/sakurabayusuke/Book-Manager)
+
 ## Resources
 
 * [Prism Library](https://prismlibrary.github.io/)
