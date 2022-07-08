@@ -12,22 +12,24 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 
 		<!-- Display name -->
-		<ApplicationTitle>PrismMaui Basic Nav</ApplicationTitle>
+		<ApplicationTitle>PrismMaui Splash</ApplicationTitle>
 
 		<!-- App Identifier -->
 		<ApplicationId>com.suesslabs.test.prismmaui</ApplicationId>
-		<ApplicationIdGuid>BA8EFEEE-B391-4D25-8B08-4F87EE061DE4</ApplicationIdGuid>
+		<ApplicationIdGuid>DDD67C0A-30EC-4173-A61D-8A1E2FE4F6A7</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<!--
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    -->
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<BaseOutputPath>..\output</BaseOutputPath>
 	</PropertyGroup>
 
@@ -54,7 +56,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\Page2View.xaml">
+	  <Compile Update="Views\MainView.xaml.cs">
+	    <DependentUpon>MainView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SubPageView.xaml.cs">
+	    <DependentUpon>SubPageView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\SplashView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SubPageView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
