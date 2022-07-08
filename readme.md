@@ -86,9 +86,21 @@ Demonstrates how to interact with multiple modules from your main form and share
 
 Here we'll use basic login system to gain access to our inventory manager
 
+### WPF - Ex4 - Material Design
+
+Make it pretty
+
+COMING SOON: MahApps.Metro + MaterialDesign
+
 ## Semi-Requirements
 
 The project works best if you include the [Prism Template Pack](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack). This allows the system to quickly type in code for you and _even creates a ViewModel class when you create a new page_!
+
+## Future Samples
+
+* [ ] Prism.Maui
+* [ ] [Metro Themes](https://github.com/MahApps/MahApps.Metro)
+  * [WPF sample app](https://github.com/sakurabayusuke/Book-Manager)
 
 ## Resources
 

@@ -1,0 +1,11 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             x:Class="Learn.PrismWpf.BasicRegions.Views.OptionsView"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+  <StackPanel>
+    <Label Content="OPTIONS:" />
+
+    <!--<Button Command="{Binding GoBackCommand}" Content="Go Back" />-->
+  </StackPanel>
+</UserControl>
