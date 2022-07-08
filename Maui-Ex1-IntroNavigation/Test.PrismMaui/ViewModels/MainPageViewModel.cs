@@ -31,7 +31,7 @@
       else
         Text = $"Clicked {_counter} times";
 
-      // this is new...
+      // Update accessability screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
       _screenReader.Announce(Text);
     }
   }
