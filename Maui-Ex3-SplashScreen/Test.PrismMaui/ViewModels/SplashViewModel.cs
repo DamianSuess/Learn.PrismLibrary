@@ -17,7 +17,7 @@ namespace Test.PrismMaui.ViewModels
 
       _navService
         .CreateBuilder()
-        .AddNavigationSegment<MainView>()
+        .AddSegment<MainView>() // Previously: .AddNavigationSegment<MainView>()
         .Navigate();
     }
 

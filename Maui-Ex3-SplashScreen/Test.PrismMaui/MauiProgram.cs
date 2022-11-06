@@ -1,5 +1,7 @@
 ﻿using Test.PrismMaui.ViewModels;
 using Test.PrismMaui.Views;
+using Prism;
+using Prism.Navigation;
 
 namespace Test.PrismMaui;
 
@@ -8,7 +10,8 @@ public static class MauiProgram
   public static MauiApp CreateMauiApp()
   {
     var builder = MauiApp.CreateBuilder()
-      .UsePrismApp<App>(Configure)
+      .UseMauiApp<App>()
+      .UsePrism(Configure)
       .ConfigureFonts(fonts =>
       {
         fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -24,10 +27,18 @@ public static class MauiProgram
     builder
       .ConfigureModuleCatalog(OnConfigureModuleCatalog)
       .RegisterTypes(OnRegisterTypes)
+      ////.RegisterTypes(containerRegistry =>
+      ////{
+      ////  containerRegistry.RegisterGlobalNavigationObserver();
+      ////  containerRegistry.RegisterForNavigation<MainView>();
+      ////  containerRegistry.RegisterForNavigation<RootView>();
+      ////  containerRegistry.RegisterForNavigation<SubPageView>();
+      ////  containerRegistry.RegisterForNavigation<SplashView>();
+      ////})
       //.OnAppStart($"{nameof(NavigationPage)}/{nameof(MainView)}");
       .OnAppStart(navSvc =>
         navSvc.CreateBuilder()
-              .AddNavigationSegment<SplashViewModel>()
+              .AddSegment<SplashViewModel>()  // Previously:  .AddNavigationSegment<SplashViewModel>()
               .Navigate(OnNavigationError));
   }
 
