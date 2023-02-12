@@ -13,11 +13,16 @@ namespace Test.PrismMaui.ViewModels
 
     public void OnAppearing()
     {
+      // BAD: The screen stays black until 5sec is over
+      // Task.Delay(5000).Wait();
+
+      // BAD: This falls through too.
       Task.Delay(5000).ConfigureAwait(false);
 
       _navService
         .CreateBuilder()
-        .AddSegment<MainView>() // Previously: .AddNavigationSegment<MainView>()
+        .AddNavigationPage()    // Add Navigation page so we can have Back buttons
+        .AddSegment<MainView>()
         .Navigate();
     }
 

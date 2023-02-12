@@ -22,7 +22,13 @@ namespace Test.PrismMaui.ViewModels
 
     public DelegateCommand CmdNavigate => new DelegateCommand(() =>
     {
-      string navTo = $"{nameof(NavigationPage)}/{nameof(MainPage)}/{nameof(Page2View)}";
+      // PRO-TIP: DONT DO THIS!
+      //  - We already established that we're inside of a Navigation Page.
+      //  - Doing so will create a Navigation back button that wont go away
+      // string navTo = $"{nameof(NavigationPage)}/{nameof(MainPage)}/{nameof(Page2View)}";
+
+      // DO THIS:
+      string navTo = $"{nameof(Page2View)}";
       _nav.NavigateAsync(navTo);
     });
 
