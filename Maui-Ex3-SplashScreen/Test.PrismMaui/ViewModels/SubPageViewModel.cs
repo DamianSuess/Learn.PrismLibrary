@@ -1,26 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Test.PrismMaui.Views;
+﻿using System.Collections.ObjectModel;
+using Test.PrismMaui.Models;
 
 namespace Test.PrismMaui.ViewModels
 {
-  public class SubPageViewModel : BindableBase
+  public class SubPageViewModel : ViewModelBase, INavigationAware
   {
-    private readonly INavigationService _nav;
+    private ObservableCollection<CoffeeBean> _coffeeBeans = new();
+    private string _statusMessage = string.Empty;
 
     public SubPageViewModel(INavigationService nav)
+      : base(nav)
     {
-      _nav = nav;
+      Title = "Prism Maui - Subpage View";
+      StatusMessage = "Select an item";
     }
-
-    public string Title => "Prism Maui - Subpage View";
 
     public DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
     {
-      _nav.GoBackAsync();
+      NavigationService.GoBackAsync();
     });
+
+    public ObservableCollection<CoffeeBean> CoffeeBeans
+    {
+      get => _coffeeBeans;
+      set => SetProperty(ref _coffeeBeans, value);
+    }
+
+    public string SelectedBean
+    {
+      // Don't highlight the row
+      get => null;
+      set
+      {
+        StatusMessage = $"Selected {value}";
+      }
+    }
+
+    public string StatusMessage
+    {
+      get => _statusMessage;
+      set => SetProperty(ref _statusMessage, value);
+    }
+
+    public void OnNavigatedFrom(INavigationParameters parameters)
+    {
+    }
+
+    public void OnNavigatedTo(INavigationParameters parameters)
+    {
+      CoffeeBeans.Add(new("None"));
+      CoffeeBeans.Add(new("Arabica"));
+      CoffeeBeans.Add(new("Robusta"));
+    }
   }
 }
