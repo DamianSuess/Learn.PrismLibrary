@@ -22,7 +22,7 @@ namespace Test.PrismMaui.ViewModels
 
     public DelegateCommand CmdNavigate => new DelegateCommand(() =>
     {
-      _nav.NavigateAsync($"{nameof(SubPageView)}");
+      _nav.NavigateAsync($"{nameof(ListCoffeeView)}");
     });
 
     public DelegateCommand<string> CmdNavigate2 => new((pageName) =>
@@ -45,7 +45,7 @@ namespace Test.PrismMaui.ViewModels
       else
         Text = $"Clicked {_counter} times";
 
-      // Update accessability screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
+      // Update accessibility screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
       _screenReader.Announce(Text);
     }
   }

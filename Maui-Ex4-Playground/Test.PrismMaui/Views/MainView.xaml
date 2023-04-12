@@ -29,15 +29,12 @@
               HorizontalOptions="Center"
               SemanticProperties.Hint="Counts the number of times you click" />
 
-      <Button Text="ListView Sample"
-              Command="{Binding CmdNavigate}"
-              HorizontalOptions="Center" />
-
-      <Button Text="Page 2"
-              Command="{Binding CmdNavigate2}"
-              CommandParameter="Page2View"
-              HorizontalOptions="Center" />
-
+      <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+        <Button Text="ListView Sample" Command="{Binding CmdNavigate}" />
+        <Button Text="Page 2"
+                Command="{Binding CmdNavigate2}"
+                CommandParameter="Page2View" />
+      </StackLayout>
     </VerticalStackLayout>
   </ScrollView>
 </ContentPage>

@@ -64,8 +64,8 @@
 	  <Compile Update="Views\Page2View.xaml.cs">
 	    <DependentUpon>Page2View.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\SubPageView.xaml.cs">
-	    <DependentUpon>SubPageView.xaml</DependentUpon>
+	  <Compile Update="Views\ListCoffeeView.xaml.cs">
+	    <DependentUpon>ListCoffeeView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -76,7 +76,7 @@
 	  <MauiXaml Update="Views\Page2View.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\SubPageView.xaml">
+	  <MauiXaml Update="Views\ListCoffeeView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
