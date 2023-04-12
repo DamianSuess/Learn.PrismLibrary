@@ -26,13 +26,13 @@ namespace Test.PrismMaui.ViewModels
       set => SetProperty(ref _coffeeBeans, value);
     }
 
-    public string SelectedBean
+    public CoffeeBean SelectedBean
     {
       // Don't highlight the row
       get => null;
       set
       {
-        StatusMessage = $"Selected {value}";
+        StatusMessage = $"Selected {value.Name}";
       }
     }
 
