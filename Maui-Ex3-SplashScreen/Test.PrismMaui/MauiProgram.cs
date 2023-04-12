@@ -1,7 +1,5 @@
 ﻿using Test.PrismMaui.ViewModels;
 using Test.PrismMaui.Views;
-using Prism;
-using Prism.Navigation;
 
 namespace Test.PrismMaui;
 
@@ -26,7 +24,14 @@ public static class MauiProgram
     // You may also do this in-line via lambdas without the need of static methods.
     builder
       .ConfigureModuleCatalog(OnConfigureModuleCatalog)
-      .RegisterTypes(OnRegisterTypes)
+      .RegisterTypes(container =>
+      {
+        // Sample auto-assign MainViewModel and the rest manually
+        container.RegisterForNavigation<MainView>();
+        container.RegisterForNavigation<SubPageView, SubPageViewModel>();
+        container.RegisterForNavigation<SplashView, SplashViewModel>();
+        container.RegisterInstance(SemanticScreenReader.Default);
+      })
       ////.RegisterTypes(containerRegistry =>
       ////{
       ////  containerRegistry.RegisterGlobalNavigationObserver();
@@ -38,7 +43,7 @@ public static class MauiProgram
       //.OnAppStart($"{nameof(NavigationPage)}/{nameof(MainView)}");
       .OnAppStart(navSvc =>
         navSvc.CreateBuilder()
-              .AddSegment<SplashViewModel>()  // Previously:  .AddNavigationSegment<SplashViewModel>()
+              .AddSegment<SplashViewModel>()
               .Navigate(OnNavigationError));
   }
 
@@ -53,14 +58,5 @@ public static class MauiProgram
     // Add custom Module to catalog
     //  moduleCatalog.AddModule<MauiAppModule>();
     //  moduleCatalog.AddModule<MauiTestRegionsModule>();
-  }
-
-  private static void OnRegisterTypes(IContainerRegistry containerRegistry)
-  {
-    containerRegistry
-      .RegisterForNavigation<MainView>()                      // Auto-assign ViewModel
-      .RegisterForNavigation<SubPageView, SubPageViewModel>() // Manually assign ViewModel
-      .RegisterForNavigation<SplashView, SplashViewModel>()
-      .RegisterInstance(SemanticScreenReader.Default);
   }
 }
