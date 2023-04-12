@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Test.PrismMaui.Models"
+             x:Class="Test.PrismMaui.Views.SubPageView"
+             Title="{Binding Title}">
+  <!--<ContentPage.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="ListItemTemplate">
+        <ViewCell x:DataType="models:CoffeeBean">
+          <StackLayout>
+            <Label Text="{Binding Name}" />
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ResourceDictionary>
+  </ContentPage.Resources>-->
+  <ContentPage.Content>
+    <VerticalStackLayout>
+
+      <Label Text="Welcome to the Sub Page!"
+             HorizontalOptions="Center"
+             VerticalOptions="Center" />
+
+      <Label Text="{Binding StatusMessage}" />
+      <!--<ListView IsPullToRefreshEnabled="True"
+              ItemTemplate="{StaticResource ListItemTemplate}"
+              ItemsSource="{Binding CoffeeBeans}"
+              SelectedItem="{Binding SelectedBean, Mode=TwoWay}" />-->
+
+      <ListView IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding CoffeeBeans}"
+                SelectedItem="{Binding SelectedBean, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+          <DataTemplate x:DataType="models:CoffeeBean">
+            <ViewCell>
+              <StackLayout>
+                <Label Text="{Binding Name}" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <Button Text="Go Back" Command="{Binding CmdNavigateBack}" />
+    </VerticalStackLayout>
+  </ContentPage.Content>
+</ContentPage>
