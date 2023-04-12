@@ -53,6 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="MetroLog.Maui" Version="2.1.0" />
 	  <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 	</ItemGroup>
 

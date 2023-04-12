@@ -3,7 +3,7 @@ using Test.PrismMaui.Models;
 
 namespace Test.PrismMaui.ViewModels
 {
-  public class SubPageViewModel : ViewModelBase, INavigationAware
+  public class SubPageViewModel : ViewModelBase ////, INavigationAware
   {
     private ObservableCollection<CoffeeBean> _coffeeBeans = new();
     private string _statusMessage = string.Empty;
@@ -42,15 +42,24 @@ namespace Test.PrismMaui.ViewModels
       set => SetProperty(ref _statusMessage, value);
     }
 
-    public void OnNavigatedFrom(INavigationParameters parameters)
+    public override void OnAppearing()
     {
-    }
-
-    public void OnNavigatedTo(INavigationParameters parameters)
-    {
+      base.OnAppearing();
       CoffeeBeans.Add(new("None"));
       CoffeeBeans.Add(new("Arabica"));
       CoffeeBeans.Add(new("Robusta"));
     }
+
+    // Alternate test with the same results
+    ////public void OnNavigatedFrom(INavigationParameters parameters)
+    ////{
+    ////}
+    ////
+    ////public void OnNavigatedTo(INavigationParameters parameters)
+    ////{
+    ////  CoffeeBeans.Add(new("None"));
+    ////  CoffeeBeans.Add(new("Arabica"));
+    ////  CoffeeBeans.Add(new("Robusta"));
+    ////}
   }
 }

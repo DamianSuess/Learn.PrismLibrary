@@ -1,5 +1,8 @@
-﻿using Test.PrismMaui.ViewModels;
+﻿using MetroLog.MicrosoftExtensions;
+using MetroLog.Operators;
+using Test.PrismMaui.ViewModels;
 using Test.PrismMaui.Views;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace Test.PrismMaui;
 
@@ -15,6 +18,31 @@ public static class MauiProgram
         fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
         fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
       });
+
+    builder.Logging
+    .AddTraceLogger(o =>
+    {
+      //// Write to the Debug Output
+      o.MinLevel = LogLevel.Trace;
+      o.MaxLevel = LogLevel.Critical;
+    })
+    .AddInMemoryLogger(o =>
+    {
+      o.MaxLines = 1024;
+      o.MinLevel = LogLevel.Trace;
+      o.MaxLevel = LogLevel.Critical;
+    })
+    .AddStreamingFileLogger(o =>
+    {
+      o.RetainDays = 2;
+      o.FolderPath = Path.Combine(FileSystem.CacheDirectory, "PrismTests");
+    })
+    .AddConsoleLogger(o =>
+    {
+      //// Write to the Console Output (logcat for android)
+      o.MinLevel = LogLevel.Information;
+      o.MaxLevel = LogLevel.Critical;
+    });
 
     return builder.Build();
   }
