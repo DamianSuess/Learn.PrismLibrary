@@ -56,7 +56,8 @@ public static class MauiProgram
       {
         // Sample auto-assign MainViewModel and the rest manually
         container.RegisterForNavigation<MainView>();
-        container.RegisterForNavigation<SubPageView, SubPageViewModel>();
+        container.RegisterForNavigation<ListCoffeeView, ListCoffeeViewModel>();
+        container.RegisterForNavigation<Page2View, Page2ViewModel>();
         container.RegisterForNavigation<SplashView, SplashViewModel>();
         container.RegisterInstance(SemanticScreenReader.Default);
       })
@@ -65,7 +66,7 @@ public static class MauiProgram
       ////  containerRegistry.RegisterGlobalNavigationObserver();
       ////  containerRegistry.RegisterForNavigation<MainView>();
       ////  containerRegistry.RegisterForNavigation<RootView>();
-      ////  containerRegistry.RegisterForNavigation<SubPageView>();
+      ////  containerRegistry.RegisterForNavigation<ListCoffeeView>();
       ////  containerRegistry.RegisterForNavigation<SplashView>();
       ////})
       //.OnAppStart($"{nameof(NavigationPage)}/{nameof(MainView)}");

@@ -6,8 +6,8 @@ namespace Test.PrismMaui.ViewModels
   {
     private readonly INavigationService _nav;
     private ISemanticScreenReader _screenReader { get; }
-    private int _counter;
-    private string _text;
+    private int _counter = 0;
+    private string _text = string.Empty;
 
     public MainViewModel(ISemanticScreenReader screenReader, INavigationService nav)
     {
@@ -22,14 +22,12 @@ namespace Test.PrismMaui.ViewModels
 
     public DelegateCommand CmdNavigate => new DelegateCommand(() =>
     {
-      // PRO-TIP: DONT DO THIS!
-      //  - We already established that we're inside of a Navigation Page.
-      //  - Doing so will create a Navigation back button that wont go away
-      // string navTo = $"{nameof(NavigationPage)}/{nameof(MainView)}/{nameof(SubPageView)}";
+      _nav.NavigateAsync($"{nameof(ListCoffeeView)}");
+    });
 
-      // DO THIS:
-      string navTo = $"{nameof(SubPageView)}";
-      _nav.NavigateAsync(navTo);
+    public DelegateCommand<string> CmdNavigate2 => new((pageName) =>
+    {
+      _nav.NavigateAsync($"{pageName}");
     });
 
     public string Text
@@ -47,7 +45,7 @@ namespace Test.PrismMaui.ViewModels
       else
         Text = $"Clicked {_counter} times";
 
-      // Update accessability screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
+      // Update accessibility screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
       _screenReader.Announce(Text);
     }
   }

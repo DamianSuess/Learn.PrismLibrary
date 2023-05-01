@@ -3,12 +3,12 @@ using Test.PrismMaui.Models;
 
 namespace Test.PrismMaui.ViewModels
 {
-  public class SubPageViewModel : ViewModelBase ////, INavigationAware
+  public class ListCoffeeViewModel : ViewModelBase ////, INavigationAware
   {
     private ObservableCollection<CoffeeBean> _coffeeBeans = new();
     private string _statusMessage = string.Empty;
 
-    public SubPageViewModel(INavigationService nav)
+    public ListCoffeeViewModel(INavigationService nav)
       : base(nav)
     {
       Title = "Prism Maui - Subpage View";

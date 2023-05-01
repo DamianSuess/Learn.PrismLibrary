@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.PrismMaui.Views.MainView"
+             Title="{Binding Title}">
+
+  <ScrollView>
+    <VerticalStackLayout Padding="30,0"
+                         Spacing="25"
+                         VerticalOptions="Center">
+      <Image Source="dotnet_bot.png"
+             HeightRequest="200"
+             HorizontalOptions="Center"
+             SemanticProperties.Description="Cute dot net bot waving hi to you!" />
+
+      <Label Text="Hello, Prism World!"
+             FontSize="32"
+             HorizontalOptions="Center"
+             SemanticProperties.HeadingLevel="Level1" />
+
+      <Label Text="Welcome to .NET Multi-platform App UI powered by Prism.MAUI"
+             FontSize="18"
+             HorizontalOptions="Center"
+             SemanticProperties.Description="Welcome to Prism for dot net Multi platform App UI"
+             SemanticProperties.HeadingLevel="Level2" />
+
+      <Button Text="{Binding Text}"
+              Command="{Binding CmdCounter}"
+              HorizontalOptions="Center"
+              SemanticProperties.Hint="Counts the number of times you click" />
+
+      <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+        <Button Text="ListView Sample" Command="{Binding CmdNavigate}" />
+        <Button Text="Page 2"
+                Command="{Binding CmdNavigate2}"
+                CommandParameter="Page2View" />
+      </StackLayout>
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

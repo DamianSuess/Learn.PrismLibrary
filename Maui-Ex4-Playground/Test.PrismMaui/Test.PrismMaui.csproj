@@ -12,23 +12,25 @@
 		<ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>10.0</LangVersion>
 
-		<!-- Display name -->
-		<ApplicationTitle>PrismMaui Intro</ApplicationTitle>
+    <!-- Display name -->
+		<ApplicationTitle>PrismMaui Splash</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.test.prismmaui</ApplicationId>
-		<ApplicationIdGuid>10D643A1-226D-491F-B986-038FA65849C5</ApplicationIdGuid>
+		<ApplicationId>com.suesslabs.test.prismmaui</ApplicationId>
+		<ApplicationIdGuid>DDD67C0A-30EC-4173-A61D-8A1E2FE4F6A7</ApplicationIdGuid>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<!--
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    -->
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<BaseOutputPath>..\output</BaseOutputPath>
 	</PropertyGroup>
 
@@ -51,7 +53,32 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="MetroLog.Maui" Version="2.1.0" />
 	  <PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\MainView.xaml.cs">
+	    <DependentUpon>MainView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Page2View.xaml.cs">
+	    <DependentUpon>Page2View.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ListCoffeeView.xaml.cs">
+	    <DependentUpon>ListCoffeeView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\SplashView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Page2View.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ListCoffeeView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

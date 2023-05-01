@@ -14,6 +14,17 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 ## Samples Table
 
+### Prism.Maui
+
+The Prism.Maui examples currently require the NuGet package, Prism.DryIoc.Maui. If you plan on using just, Prism.Maui, then the startup fluent arguments are slightly different. An example for such a case is scoped on the backlog.
+
+| Name                        | Prism Ver. | Details |
+|-|-|-|
+| Ex 1 - Intro Welcome        | 8.1 (_preview_) | Introduction to View/ViewModel registration and navigation.
+| Ex 2 - Basic Navigation     | 8.1 (_preview_) | Sample navigation.
+| Ex 3 - Splash Screen        | 8.1 (_preview_) | _(Work-in-Progress)_ Demonstrate loading screen.
+| Ex 4 - Microsoft DI _(TBD)_ | 8.1 (_preview_) | _Coming Soon_
+
 ### [Prism.Forms](https://github.com/PrismLibrary/Prism)
 
 | Name                        | Prism Ver. | Details |
@@ -48,8 +59,8 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 | Name                        | Prism Ver. | Details |
 |-|-|-|
-| Ex 1 - Intro to Navigation  | 7.2 | Basic navigation using 3-panel client with a sidebar navigation.
-| Ex 2 - Intro to Modules     | 7.2 | _Coming Soon!_
+| Ex 1 - Intro to Navigation  | 8.1 | Basic navigation using 3-panel client with a sidebar navigation.
+| Ex 2 - Intro to Modules     | 8.1 | _Coming Soon!_
 
 ## AvaloniaUI Samples
 
@@ -98,7 +109,6 @@ The project works best if you include the [Prism Template Pack](https://marketpl
 
 ## Future Samples
 
-* [ ] Prism.Maui
 * [ ] [Metro Themes](https://github.com/MahApps/MahApps.Metro)
   * [WPF sample app](https://github.com/sakurabayusuke/Book-Manager)
 
