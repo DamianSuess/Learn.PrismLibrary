@@ -4,9 +4,9 @@
              xmlns:prism="http://prismlibrary.com"
              x:Class="Test.PrismMaui.Views.Page2View"
              Title="{Binding Title}">
-  <VerticalStackLayout>
-    
-    <Label Text="Welcome to the Sub Page!"
+  <VerticalStackLayout Margin="20">
+
+    <Label Text="{Binding Message, StringFormat='Navigated {0}'}"
            VerticalOptions="Center"
            HorizontalOptions="Center" />
 

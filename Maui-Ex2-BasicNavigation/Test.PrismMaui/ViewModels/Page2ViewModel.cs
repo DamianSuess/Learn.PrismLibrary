@@ -1,26 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Test.PrismMaui.Views;
+﻿namespace Test.PrismMaui.ViewModels;
 
-namespace Test.PrismMaui.ViewModels
+public class Page2ViewModel : ViewModelBase, INavigationAware
 {
-  public class Page2ViewModel : BindableBase
+  private readonly INavigationService _nav;
+  private string _message;
+
+  public Page2ViewModel(INavigationService nav)
+    : base(nav)
   {
-    private readonly INavigationService _nav;
+    _nav = nav;
+  }
 
-    public Page2ViewModel(INavigationService nav)
-    {
-      _nav = nav;
-    }
+  public string Message { get => _message; set => SetProperty(ref _message, value); }
 
-    public string Title => "Prism Maui - Subpage View";
+  public DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
+  {
+    _nav.GoBackAsync();
+  });
 
-    public DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
-    {
-      _nav.GoBackAsync();
-    });
+  public void OnNavigatedFrom(INavigationParameters parameters)
+  {
+  }
+
+  public void OnNavigatedTo(INavigationParameters parameters)
+  {
+    Message = parameters.ContainsKey("Key") ? "with parameter passed" : "without parameter passed";
   }
 }

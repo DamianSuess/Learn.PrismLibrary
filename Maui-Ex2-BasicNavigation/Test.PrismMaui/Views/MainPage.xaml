@@ -28,9 +28,13 @@
               HorizontalOptions="Center" />
 
       <Button Text="Navigate Away"
-              Command="{Binding CmdNavigate}"
+              Command="{Binding CmdNavigateBasic}"
               HorizontalOptions="Center" />
-      
+
+      <Button Text="Navigate With Parameters"
+              Command="{Binding CmdNavigateParams}"
+              HorizontalOptions="Center" />
+
     </VerticalStackLayout>
   </ScrollView>
 </ContentPage>
