@@ -69,11 +69,13 @@ public static class MauiProgram
       ////  containerRegistry.RegisterForNavigation<ListCoffeeView>();
       ////  containerRegistry.RegisterForNavigation<SplashView>();
       ////})
-      //.OnAppStart($"{nameof(NavigationPage)}/{nameof(MainView)}");
-      .OnAppStart(navSvc =>
-        navSvc.CreateBuilder()
-              .AddSegment<SplashViewModel>()
-              .Navigate(OnNavigationError));
+
+      .OnAppStart($"{nameof(SplashView)}");
+    ////  .OnAppStart($"{nameof(NavigationPage)}/{nameof(MainView)}");
+    ////  .OnAppStart(navSvc =>
+    ////    navSvc.CreateBuilder()
+    ////          .AddSegment<SplashViewModel>()
+    ////          .Navigate(OnNavigationError));
   }
 
   private static void OnNavigationError(Exception ex)
