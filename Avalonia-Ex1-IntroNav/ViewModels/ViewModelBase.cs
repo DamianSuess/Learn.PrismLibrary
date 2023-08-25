@@ -9,7 +9,7 @@ namespace SampleMvvmApp.ViewModels
 
     public class ViewModelBase : BindableBase, INavigationAware
     {
-        private string _title;
+        private string _title = string.Empty;
 
         // Provide wire-ups to NavigationService (aka: RegionManager).
         //
@@ -38,11 +38,7 @@ namespace SampleMvvmApp.ViewModels
         ////});
 
         /// <summary>Gets or sets the title of the View.</summary>
-        public string Title
-        {
-            get => _title;
-            set => SetProperty(ref _title, value);
-        }
+        public string Title { get => _title; set => SetProperty(ref _title, value); }
 
         /// <summary>
         ///   Called to determine if this instance can handle the navigation request.

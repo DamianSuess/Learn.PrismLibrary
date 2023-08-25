@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <Authors>Damian Suess</Authors>
+    <Title>Sample MVVM App</Title>
+    <Nullable>enable</Nullable>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableAvaloniaXamlCompilation>true</EnableAvaloniaXamlCompilation>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11000" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11000" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ShellWindow.axaml.cs">
+      <DependentUpon>ShellWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SubSettingsView.axaml.cs">
+      <DependentUpon>SubSettingsView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
