@@ -1,19 +1,24 @@
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using Prism.Ioc;
+using SampleMvvmApp.Services;
 
-namespace Learn.PrismAvalonia.Views
+namespace SampleMvvmApp.Views;
+
+/// <summary>DashboardView.</summary>
+public partial class DashboardView : UserControl
 {
-  public partial class DashboardView : UserControl
-  {
     public DashboardView()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
 
-    private void InitializeComponent()
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
-      AvaloniaXamlLoader.Load(this);
+        base.OnAttachedToVisualTree(e);
+
+        // Initialize the WindowNotificationManager with the "TopLevel". Previously (v0.10), MainWindow
+        var notifyService = ContainerLocator.Current.Resolve<INotificationService>();
+        notifyService.SetHostWindow(TopLevel.GetTopLevel(this));
     }
-  }
 }

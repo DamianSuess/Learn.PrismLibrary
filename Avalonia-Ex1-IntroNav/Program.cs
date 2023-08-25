@@ -1,33 +1,35 @@
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Avalonia;
-using Avalonia.ReactiveUI;
+using Avalonia.Logging;
 
-namespace Learn.PrismAvalonia
+namespace SampleMvvmApp;
+
+public class Program
 {
-  internal class Program
-  {
-    // Avalonia configuration, don't remove; also used by visual designer.
-    public static AppBuilder BuildAvaloniaApp() => AppBuilder
-      .Configure<App>()
-      .UsePlatformDetect()
-      .With(new X11PlatformOptions
-      {
-        EnableMultiTouch = true,
-        UseDBusMenu = true,
-      })
-      .With(new Win32PlatformOptions
-      {
-        EnableMultitouch = true,
-        AllowEglInitialization = true,
-      })
-      .UseSkia()
-      .UseReactiveUI()
-      .LogToTrace();
+    public static AppBuilder BuildAvaloniaApp()
+    {
+        var builder = AppBuilder
+            .Configure<App>()
+            .UsePlatformDetect()
+            .With(new X11PlatformOptions { EnableMultiTouch = true, UseDBusMenu = true, })
+            .With(new Win32PlatformOptions
+            {
+                // EnableMultitouch = true,       // In Avalonia v11 this is always enabled
+                // AllowEglInitialization = true, // Removed in Avalonia v11.0.0
+            })
+            .UseSkia();
+            // .UseReactiveUI();
+
+#if DEBUG
+        builder.LogToTrace(LogEventLevel.Debug, LogArea.Property, LogArea.Layout, LogArea.Binding);
+#endif
+        return builder;
+    }
 
     // Initialization code. Don't use any Avalonia, third-party APIs or any
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
     // yet and stuff might break.
     [ExcludeFromCodeCoverage]
-    public static void Main(string[] args) => BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
-  }
+    static void Main(string[] args) =>
+        BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
 }

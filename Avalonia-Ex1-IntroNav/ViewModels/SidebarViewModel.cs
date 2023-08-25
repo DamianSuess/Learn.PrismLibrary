@@ -1,37 +1,43 @@
-﻿using Learn.PrismAvalonia.Views;
+﻿using SampleMvvmApp.Views;
 using Prism.Commands;
-using Prism.Events;
 using Prism.Regions;
 
-namespace Learn.PrismAvalonia.ViewModels
+namespace SampleMvvmApp.ViewModels
 {
-  public class SidebarViewModel : ViewModelBase
-  {
-    private IEventAggregator _eventAggregator;
-    private IRegionManager _regionManager;
-
-    public SidebarViewModel(IRegionManager regionManager, IEventAggregator ea)
+    public class SidebarViewModel : ViewModelBase
     {
-      _regionManager = regionManager;
-      _eventAggregator = ea;
+        private const int Collapsed = 40;
+        private const int Expanded = 200;
 
-      Title = "Navigation";
+        private readonly IRegionNavigationJournal _journal;
+        private readonly IRegionManager _regionManager;
+        private int _flyoutWidth;
+
+        public SidebarViewModel(IRegionManager regionManager)
+        {
+            _regionManager = regionManager;
+            Title = "Navigation";
+            FlyoutWidth = Expanded;
+        }
+
+        public DelegateCommand CmdDashboard => new(() =>
+        {
+            //// _journal.Clear();
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
+        });
+
+        public DelegateCommand CmdFlyoutMenu => new(() =>
+        {
+            var isExpanded = FlyoutWidth == Expanded;
+            FlyoutWidth = isExpanded ? Collapsed : Expanded;
+        });
+
+        public DelegateCommand CmdSettings => new(() => _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(SettingsView)));
+
+        public int FlyoutWidth
+        {
+            get => _flyoutWidth;
+            set => SetProperty(ref _flyoutWidth, value);
+        }
     }
-
-    public DelegateCommand CommandDispense => new DelegateCommand(() =>
-    {
-      //_eventAggregator.GetEvent<PubSubEvent<LogEvent>>().Publish(new LogEvent("Should not navigate to Dispense directly."));
-      //_regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DispenseView));
-    });
-
-    public DelegateCommand CommandLogin => new DelegateCommand(() =>
-    {
-      ////_eventAggregator.GetEvent<PubSubEvent<LogEvent>>().Publish(new LogEvent("Login screen not implemented"));
-    });
-
-    public DelegateCommand CommandSettings => new DelegateCommand(() =>
-    {
-      _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(SettingsView));
-    });
-  }
 }

@@ -4,25 +4,58 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Learn.PrismAvalonia.Views.SidebarView">
+             mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="150"
+             Width="{Binding FlyoutWidth}"
+             x:Class="SampleMvvmApp.Views.SidebarView">
+  <UserControl.Styles>
+    <Style Selector="Button">
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+
+    <Style Selector="PathIcon">
+      <Setter Property="Margin" Value="0,0,10,0" />
+    </Style>
+  </UserControl.Styles>
+
   <DockPanel>
 
-    <TextBlock DockPanel.Dock="Top"
-               Text="{Binding Title}"
-               HorizontalAlignment="Stretch"
-               FontWeight="Bold" />
+    <!-- Dock the hamburger menu button to the top with no text -->
+    <Button DockPanel.Dock="Top"
+            Command="{Binding CmdFlyoutMenu}"
+            ToolTip.Tip="Expand/Collapse"
+            Height="25">
+      <StackPanel Orientation="Horizontal">
+        <PathIcon Data="{StaticResource line_horizontal_3_regular}" />
+        <TextBlock Text="" />
+      </StackPanel>
+    </Button>
 
-    <Button DockPanel.Dock="Bottom"
-            Content="Settings"
-            Command="{Binding CommandSettings}"
-            HorizontalAlignment="Stretch" />
+    <!-- Dock the Settings button to the bottom -->
+    <Button DockPanel.Dock="Bottom" Command="{Binding CmdSettings}" ToolTip.Tip="Settings">
+      <StackPanel Orientation="Horizontal">
+        <PathIcon Data="{StaticResource settings_regular}" />
+        <TextBlock Text="Navigation Sample" />
+      </StackPanel>
+    </Button>
+
     <ScrollViewer>
       <StackPanel>
-        <Button Content="Dashboard" Command="{Binding CommandLogin}" HorizontalAlignment="Stretch" />
-        <Button Content="News" Command="{Binding CommandPatientList}" HorizontalAlignment="Stretch" />
-        <Button Content="Events" Command="{Binding CommandDispense}"  HorizontalAlignment="Stretch" />
+        <Button Command="{Binding CmdDashboard}" ToolTip.Tip="Dashboard">
+          <StackPanel Orientation="Horizontal">
+            <PathIcon Data="{StaticResource home_regular}" />
+            <TextBlock Text="Dashboard" />
+          </StackPanel>
+        </Button>
+
+        <!-- Place additionals buttons here... -->
+        <Button Command="{Binding .}" ToolTip.Tip="Dashboard">
+          <StackPanel Orientation="Horizontal">
+            <PathIcon Data="{StaticResource lock_regular}" />
+            <TextBlock Text="Something Else" />
+          </StackPanel>
+        </Button>
+
       </StackPanel>
-    </ScrollViewer>
+    </ScrollViewer>    
   </DockPanel>
 </UserControl>

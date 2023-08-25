@@ -1,24 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <Authors>Damian Suess</Authors>
+    <Title>Sample MVVM App</Title>
   </PropertyGroup>
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.21" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.21" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.21" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.21" />
-    <PackageReference Include="Prism.Avalonia" Version="8.1.97.1021" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.1021" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Views\ShellWindow.axaml.cs">
-      <DependentUpon>ShellWindow.axaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
+
+  <Import Project="../../build/SampleApp.props" />
+
 </Project>

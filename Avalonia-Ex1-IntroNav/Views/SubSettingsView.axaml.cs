@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace SampleMvvmApp.Views;
 
-public partial class SidebarView : UserControl
+public partial class SubSettingsView : UserControl
 {
-    public SidebarView()
+    public SubSettingsView()
     {
         InitializeComponent();
     }

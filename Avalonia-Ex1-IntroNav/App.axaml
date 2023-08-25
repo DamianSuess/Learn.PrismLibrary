@@ -1,13 +1,12 @@
-<prism:PrismApplication xmlns="https://github.com/avaloniaui"
-                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                        xmlns:prism="http://prismlibrary.com/"
-                        xmlns:local="using:Learn.PrismAvalonia"
-                        x:Class="Learn.PrismAvalonia.App">
-  <prism:PrismApplication.DataTemplates>
-  </prism:PrismApplication.DataTemplates>
+﻿<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="SampleMvvmApp.App"
+             RequestedThemeVariant="Light">
+  <Application.Styles>
+    <FluentTheme />
+    <!-- Avalonia v0.10: <FluentTheme Mode="Light" /> -->
 
-  <prism:PrismApplication.Styles>
-    <FluentTheme Mode="Light" />
-    <!--<StyleInclude Source="avares://Learn.PrismAvalonia/Styles/Icons.axaml" />-->
-  </prism:PrismApplication.Styles>
-</prism:PrismApplication>
+    <!-- Custom SVG glyphs -->
+    <StyleInclude Source="avares://SampleMvvmApp/Styles/Icons.axaml" />
+  </Application.Styles>
+</Application>

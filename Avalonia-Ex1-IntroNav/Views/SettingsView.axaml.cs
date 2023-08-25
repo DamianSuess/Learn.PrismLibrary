@@ -1,19 +1,12 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+﻿using Avalonia.Controls;
 
-namespace Learn.PrismAvalonia.Views
+namespace SampleMvvmApp.Views;
+
+/// <summary>Sample Settings View.</summary>
+public partial class SettingsView : UserControl
 {
-  public partial class SettingsView : UserControl
-  {
     public SettingsView()
     {
-      InitializeComponent();
+        InitializeComponent();
     }
-
-    private void InitializeComponent()
-    {
-      AvaloniaXamlLoader.Load(this);
-    }
-  }
 }
