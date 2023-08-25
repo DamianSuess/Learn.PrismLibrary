@@ -48,7 +48,6 @@ public class App : PrismApplication
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 
         // Views - Generic
-        //// containerRegistry.Register<SidebarView>();  // Not required
         //// containerRegistry.Register<MainWindow>();
 
         // Views - Region Navigation
@@ -78,13 +77,9 @@ public class App : PrismApplication
         // Register Views to the Region it will appear in. Don't register them in the ViewModel.
         var regionManager = Container.Resolve<IRegionManager>();
 
-        // WARNING: Prism v11.0.0-prev4
+        // WARNING: Prism v11.0.0
         // - DataTemplates MUST define a DataType or else an XAML error will be thrown
         // - Error: DataTemplate inside of DataTemplates must have a DataType set
         regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(DashboardView));
-        regionManager.RegisterViewWithRegion(RegionNames.SidebarRegion, typeof(SidebarView));
-
-        ////var logService = Container.Resolve<ILogService>();
-        ////logService.Configure("swlog.config");
     }
 }

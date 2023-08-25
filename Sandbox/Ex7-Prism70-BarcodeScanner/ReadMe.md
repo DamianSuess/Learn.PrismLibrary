@@ -2,16 +2,17 @@
 
 This is an example using Prism Barcode scanner with Prism.Forms and a but of other goodies.
 
-### What In The Box?!
+## What In The Box?!
+
 This project was created using the Prism QuickStart Templates.
 
 It contains:
-* Prism Barcode Scanner
+
+* [Prism Barcode Scanner](https://github.com/dansiegel/BarcodeScanner)
 * Prism.Forms
 * Xamarin.Forms
 * i18n - internationalization
 * Splash screen with delayed loading spinner
-
 
 ## Developer Notes
 
