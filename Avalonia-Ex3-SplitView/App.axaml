@@ -1,12 +1,12 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="SampleMvvmApp.App"
+             x:Class="SampleSplitView.App"
              RequestedThemeVariant="Light">
   <Application.Styles>
     <FluentTheme />
     <!-- Avalonia v0.10: <FluentTheme Mode="Light" /> -->
 
     <!-- Custom SVG glyphs -->
-    <StyleInclude Source="avares://SampleMvvmApp/Styles/Icons.axaml" />
+    <StyleInclude Source="avares://SampleSplitView/Styles/Icons.axaml" />
   </Application.Styles>
 </Application>

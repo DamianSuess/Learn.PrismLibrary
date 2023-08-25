@@ -1,0 +1,39 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:core="clr-namespace:SampleSplitView;assembly=SampleSplitView"
+        xmlns:views="using:SampleSplitView.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        x:Class="SampleSplitView.Views.MainWindow"
+        Title="{Binding Title}"
+        Height="400" Width="700"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent">
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="true">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                     TintColor="LightGray"
+                                     TintOpacity="1"
+                                     MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    
+    <SplitView IsPaneOpen="True" DisplayMode="CompactInline" OpenPaneLength="200">
+      <SplitView.Pane>
+        <!--
+          You may directly reference the user control when there is only one View, like so.
+          Or, you can implement Prism RegionManager if the sidebar pane requires dynamic content.
+          EX: `<ContentControl prism:RegionManager.RegionName={x:Static core:RegionNames.ContentSidebar}" />`
+        -->
+        <views:SidebarView />
+      </SplitView.Pane>
+
+      <!-- Prism Region for page navigation and back/forward journaling -->
+      <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+
+    </SplitView>
+  </Panel>
+</Window>

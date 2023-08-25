@@ -1,8 +1,8 @@
 ﻿using Prism.Commands;
 using Prism.Regions;
-using SampleMvvmApp.Views;
+using SampleSplitView.Views;
 
-namespace SampleMvvmApp.ViewModels;
+namespace SampleSplitView.ViewModels;
 
 public class SidebarViewModel : ViewModelBase
 {

@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace SampleMvvmApp.Views;
+namespace SampleSplitView.Views;
 
 public partial class SidebarView : UserControl
 {

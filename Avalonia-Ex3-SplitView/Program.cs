@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Logging;
 
-namespace SampleMvvmApp;
+namespace SampleSplitView;
 
 public class Program
 {

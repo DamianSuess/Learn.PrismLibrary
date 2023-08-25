@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace SampleMvvmApp.Views;
+namespace SampleSplitView.Views;
 
 /// <summary>Sample Settings View.</summary>
 public partial class SettingsView : UserControl

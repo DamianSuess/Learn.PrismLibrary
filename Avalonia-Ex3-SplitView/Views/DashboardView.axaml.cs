@@ -1,9 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Prism.Ioc;
-using SampleMvvmApp.Services;
+using SampleSplitView.Services;
 
-namespace SampleMvvmApp.Views;
+namespace SampleSplitView.Views;
 
 /// <summary>DashboardView.</summary>
 public partial class DashboardView : UserControl

@@ -59,8 +59,9 @@ The Prism.Maui examples currently require the NuGet package, Prism.DryIoc.Maui. 
 
 | Name                        | Prism Ver. | Details |
 |-|-|-|
-| Ex 1 - Intro to Navigation  | 8.1 | Basic navigation using 3-panel client with a sidebar navigation.
-| Ex 2 - Intro to Modules     | 8.1 | _Coming Soon!_
+| Ex 1 - Intro to Navigation  | 8.1 | Prism Regions with navigation, journaling navigation, Notification Pop-ups, and basic MVVM.
+| Ex 2 - Intro to Dialogs     | 8.1 | Popup-Dialog samples
+| Ex 3 - SplitView Navigation | 8.1 | Similar to Ex1 but with Avalonia's SplitView (_work-in-progress_)
 
 ## AvaloniaUI Samples
 

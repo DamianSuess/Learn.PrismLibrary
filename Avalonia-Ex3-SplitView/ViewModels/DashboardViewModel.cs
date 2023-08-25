@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Styling;
 using Prism.Commands;
-using SampleMvvmApp.Services;
+using SampleSplitView.Services;
 
-namespace SampleMvvmApp.ViewModels;
+namespace SampleSplitView.ViewModels;
 
 public class DashboardViewModel : ViewModelBase
 {

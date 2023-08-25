@@ -1,4 +1,4 @@
-﻿namespace SampleMvvmApp;
+﻿namespace SampleSplitView;
 
 public static class RegionNames
 {

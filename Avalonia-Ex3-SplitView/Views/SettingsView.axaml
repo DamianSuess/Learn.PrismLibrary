@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             x:Class="SampleMvvmApp.Views.SettingsView"
+             x:Class="SampleSplitView.Views.SettingsView"
              d:DesignHeight="350"
              d:DesignWidth="500"
              prism:ViewModelLocator.AutoWireViewModel="True"

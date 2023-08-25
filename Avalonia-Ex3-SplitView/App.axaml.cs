@@ -5,11 +5,11 @@ using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
-using SampleMvvmApp.Services;
-using SampleMvvmApp.ViewModels;
-using SampleMvvmApp.Views;
+using SampleSplitView.Services;
+using SampleSplitView.ViewModels;
+using SampleSplitView.Views;
 
-namespace SampleMvvmApp;
+namespace SampleSplitView;
 
 /// <summary>
 ///   Application entry point.

@@ -3,32 +3,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
-             x:Class="SampleMvvmApp.Views.SettingsView"
-             d:DesignHeight="350"
-             d:DesignWidth="500"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             mc:Ignorable="d">
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
+             x:Class="SampleMvvmApp.Views.SubSettingsView">
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">
       <Grid Background="LightGray" ColumnDefinitions="Auto, *">
-        <!--
-        <Button Content="Back" Command="{Binding CmdNavigateBack}" CornerRadius="10">
+        <Button Command="{Binding CmdNavigateBack}" CornerRadius="10">
           <PathIcon Data="{StaticResource arrow_reply_regular}" />
         </Button>
-        -->
-        <TextBlock Text="{Binding Title}"
-                   Grid.Column="1"
-                   Margin="5"
-                   VerticalAlignment="Center"
-                   FontWeight="Bold" />
+        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" Margin="5"  VerticalAlignment="Center" />
       </Grid>
     </StackPanel>
 
     <ScrollViewer Margin="5">
       <StackPanel>
+        <Label Content="Our passed-in parameters" FontWeight="Bold" />
+        <StackPanel Orientation="Horizontal">
+          <Label Content="Key 1 - Text:" />
+          <Label Content="{Binding MessageText}" />
+        </StackPanel>
 
-        <Label Content="Some content here for SettingsView" FontSize="18" />
-        <Button Content="Navigate using Journaling" Command="{Binding CmdNavigateToChild}" />
+        <StackPanel Orientation="Horizontal">
+          <Label Content="Key 2 - Number:" />
+          <Label Content="{Binding MessageNumber}" />
+        </StackPanel>
       </StackPanel>
     </ScrollViewer>
   </DockPanel>
