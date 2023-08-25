@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -23,12 +23,25 @@
     <Button DockPanel.Dock="Top"
             Command="{Binding CmdFlyoutMenu}"
             ToolTip.Tip="Expand/Collapse"
+            HorizontalContentAlignment="Right"
             Height="25">
+      <Button.Content>
+        <StackPanel Orientation="Horizontal">
+          <PathIcon Data="{StaticResource MenuClose}" />
+          <TextBlock Text="" />
+        </StackPanel>
+      </Button.Content>
+    </Button>
+
+    <!--<Button DockPanel.Dock="Top"
+        Command="{Binding CmdFlyoutMenu}"
+        ToolTip.Tip="Expand/Collapse"
+        Height="25">
       <StackPanel Orientation="Horizontal">
-        <PathIcon Data="{StaticResource line_horizontal_3_regular}" />
+        <PathIcon Data="{StaticResource MenuClose}" />
         <TextBlock Text="" />
       </StackPanel>
-    </Button>
+    </Button>-->
 
     <!-- Dock the Settings button to the bottom -->
     <Button DockPanel.Dock="Bottom" Command="{Binding CmdSettings}" ToolTip.Tip="Settings">
