@@ -27,7 +27,7 @@
             Height="25">
       <Button.Content>
         <StackPanel Orientation="Horizontal">
-          <PathIcon Data="{StaticResource MenuClose}" />
+          <PathIcon Data="{StaticResource Menu}" />
           <TextBlock Text="" />
         </StackPanel>
       </Button.Content>
