@@ -12,7 +12,7 @@ namespace Test.PrismMaui
 
     private static void RegisterTypes(IContainerRegistry containerRegistry)
     {
-      containerRegistry.RegisterForNavigation<MainPage>()
+      containerRegistry.RegisterForNavigation<MainView>()
                        .RegisterInstance(SemanticScreenReader.Default);
     }
   }
