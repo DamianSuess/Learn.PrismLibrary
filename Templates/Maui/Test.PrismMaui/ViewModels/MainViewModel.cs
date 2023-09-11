@@ -1,12 +1,12 @@
 ﻿namespace Test.PrismMaui.ViewModels
 {
-  public class MainPageViewModel : BindableBase
+  public class MainViewModel : BindableBase
   {
     private ISemanticScreenReader _screenReader { get; }
     private int _counter;
     private string _text;
 
-    public MainPageViewModel(ISemanticScreenReader screenReader)
+    public MainViewModel(ISemanticScreenReader screenReader)
     {
       _screenReader = screenReader;
       Text = "Click Me!";
