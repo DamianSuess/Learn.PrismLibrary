@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="PrismWpf.NavigationTest.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:values="clr-namespace:PrismWpf.NavigationTest.Values"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+  <Grid>
+    <!--<ContentControl prism:RegionManager.RegionName="ContentRegion"/>-->
+    <ContentControl prism:RegionManager.RegionName="{x:Static values:RegionNames.Content}"/>
+  </Grid>
+</UserControl>
