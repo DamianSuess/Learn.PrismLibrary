@@ -7,10 +7,14 @@
              x:Class="SampleFrameBuffer.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
-    <!-- This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
+  <StackPanel HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Margin="20"
+              Spacing="20">
 
-  <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    <Slider />
+  </StackPanel>
 </UserControl>

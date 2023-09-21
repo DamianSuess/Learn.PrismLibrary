@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "SampleFrameBuffer.Desktop": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      // "commandLineArgs": "SampleFrameBuffer.Desktop.dll --fbdev",
+      "commandLineArgs": "SampleFrameBuffer.Desktop.dll --drm",
+      "distributionName": ""
+    }
+  }
+}

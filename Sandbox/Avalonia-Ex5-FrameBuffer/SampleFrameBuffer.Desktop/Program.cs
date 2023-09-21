@@ -9,6 +9,10 @@ using Avalonia.ReactiveUI;
 
 namespace SampleFrameBuffer.Desktop;
 
+/// <summary>Entry Point</summary>
+/// <remarks>
+///   https://docs.avaloniaui.net/docs/guides/deep-dives/running-on-raspbian-lite-via-drm
+/// </remarks>
 internal class Program
 {
   // Initialization code. Don't use any Avalonia, third-party APIs or any
@@ -30,22 +34,33 @@ internal class Program
 
     var builder = BuildAvaloniaApp();
 
-    if (args.Contains("--fbdev"))
+    try
     {
-      Console.WriteLine("-- Starting: Framebuffer");
-      return builder.StartLinuxFbDev(args, scaling: GetScaling(args));
 
+      if (args.Contains("--fbdev"))
+      {
+        Console.WriteLine("-- Starting: Framebuffer");
+        return builder.StartLinuxFbDev(args);
+        // return builder.StartLinuxFbDev(args, scaling: GetScaling(args));
+
+      }
+      else if (args.Contains("--drm"))
+      {
+        Console.WriteLine("-- Starting: Linux DRM");
+        SilenceConsole();
+        return builder.StartLinuxDrm(args, scaling: 1);
+        //// return builder.StartLinuxDrm(args, scaling: GetScaling(args));
+      }
+      else
+      {
+        Console.WriteLine("-- Starting: Classic Desktop");
+        return builder.StartWithClassicDesktopLifetime(args);
+      }
     }
-    else if (args.Contains("--drm"))
+    catch(Exception ex)
     {
-      Console.WriteLine("-- Starting: Linux DRM");
-      SilenceConsole();
-      return builder.StartLinuxDrm(args, scaling: GetScaling(args));
-    }
-    else
-    {
-      Console.WriteLine("-- Starting: Classic Desktop");
-      return builder.StartWithClassicDesktopLifetime(args);
+      Console.WriteLine($"ERROR:{Environment.NewLine}{ex}");
+      return 0;
     }
   }
 
@@ -83,7 +98,8 @@ internal class Program
       Console.CursorVisible = false;
 
       while (true)
-        Console.ReadKey(true);
+        Console.Read();
+        // Console.ReadKey(true);
     })
     {
       IsBackground = true,
