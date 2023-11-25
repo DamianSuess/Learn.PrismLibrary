@@ -126,3 +126,5 @@ The project works best if you include the [Prism Template Pack](https://marketpl
 * [Prism for Xamarin.Forms - Create your first application](https://www.youtube.com/watch?v=81Q2fxFWIqA) - Created 2018-12-04
 * [The Xamarin Show | Episode 10: Prism for Xamarin.Forms with Brian Lagunas](https://www.youtube.com/watch?v=mb3_vhYw1mA) - Created 2018-01-04 _Prism v6_
 * [Xamarin Forms with Prism — Getting Started — Part 1](https://medium.com/tutorialsxl/xamarin-forms-with-prism-getting-started-part-1-14832d7cf5fa) - Created 2018-03-23
+
+[SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)

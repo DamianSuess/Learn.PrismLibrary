@@ -63,3 +63,5 @@ To add this to your own project, you start with the MasterDetailPage from the Pr
 * [Prism Library](https://github.com/PrismLibrary/Prism)
 * [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms)
 * [FlyoutPage](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/navigation/flyoutpage)
+
+[SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)

@@ -1,4 +1,4 @@
-# Simple MVVM App
+# Prism.Avalonia Simple MVVM App
 
 This demonstrates the following Prism.Avalonia features:
 
@@ -17,3 +17,5 @@ Get more styles and read the tutorial on the Avalonia docs.
 
 * [https://avaloniaui.github.io/icons.html]
 * [https://docs.avaloniaui.net/tutorials/music-store-app/add-and-layout-controls]
+
+[SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)

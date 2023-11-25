@@ -8,6 +8,7 @@ This allows you to reuse code and provide live-loading screens to the users.
 
 ## References
 
-* [Prism.Maui](https://github.com/dansiegel/Prism.Maui)
 * [Prism Library](https://github.com/PrismLibrary/Prism)
-* [Xamarin.Forms](https://github.com/xamarin/Xamarin.Forms)
+* [.NET MAUI](https://dotnet.microsoft.com/en-us/apps/maui)
+
+[SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)

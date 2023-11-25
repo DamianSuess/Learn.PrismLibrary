@@ -1,4 +1,5 @@
 # Prism Forms 7.2 Sample
+
 This sample project demonstrates the features of Prism.Forms v7.2
 
 Only some of the features are captured by this sample. Please see the project's [releases page](https://github.com/PrismLibrary/Prism/releases) for more information.
@@ -15,3 +16,5 @@ Only some of the features are captured by this sample. Please see the project's 
 ### Not yet implemented
 
 * View/ViewModel Initialization - 7.2.0.1367 - 2019-07-24
+
+[SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)
