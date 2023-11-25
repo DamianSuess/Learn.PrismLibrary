@@ -7,15 +7,24 @@
              x:Class="Test.PrismMaui.Views.RegionPage"
              x:DataType="vm:RegionPageViewModel"
              Title="{Binding Title}">
-  <Grid Padding="10" RowDefinitions="auto,*" RowSpacing="5">
+  <Grid Padding="10"
+        RowDefinitions="auto,auto,*"
+        RowSpacing="5">
     <StackLayout Orientation="Horizontal" Spacing="5">
       <Button Text="Start" Command="{Binding CmdStart}" />
       <Button Text="Stop" Command="{Binding CmdStop}" />
       <Button Text="Reset" Command="{Binding CmdReset}" />
     </StackLayout>
 
+    <StackLayout Grid.Row="1"
+                 Orientation="Horizontal"
+                 Spacing="5">
+      <Label Text="Counter:" />
+      <Label Text="{Binding Counter}" />
+    </StackLayout>
+
     <ContentView prism:RegionManager.DefaultView="{x:Type controls:SomeRegionView}"
                  prism:RegionManager.RegionName="ContenRegion"
-                 Grid.Row="1" />
+                 Grid.Row="2" />
   </Grid>
 </ContentPage>

@@ -5,44 +5,58 @@ namespace Test.PrismMaui.ViewModels;
 
 public class ChartPageViewModel : ViewModelActiveBase
 {
-  private readonly CounterService _counter;
+  private readonly CounterService _counterSvc;
+  private readonly IEventAggregator _event;
+  private int _counter;
 
-  public ChartPageViewModel(INavigationService nav, CounterService counter)
+  public ChartPageViewModel(INavigationService nav, CounterService counter, IEventAggregator ea)
     : base(nav)
   {
-    _counter = counter;
+    _counterSvc = counter;
+    _event = ea;
 
     Debug.WriteLine("ChartPageViewModel - Constructed");
   }
 
   public DelegateCommand CmdReset => new(() =>
   {
-    _counter.Reset();
+    _counterSvc.Reset();
   });
 
   public DelegateCommand CmdStart => new(() =>
   {
-    _counter.Start();
+    _counterSvc.Start();
   });
 
   public DelegateCommand CmdStop => new(() =>
   {
-    _counter.Stop();
+    _counterSvc.Stop();
   });
+
+  public int Counter { get => _counter; set => SetProperty(ref _counter, value); }
 
   public override void OnAppearing()
   {
     Debug.WriteLine("ChartPageViewModel - OnAppearing");
+
+    _event.GetEvent<CounterEvent>().Subscribe(OnCounter);
   }
 
   public override void OnDisappearing()
   {
-    _counter.Stop();
     Debug.WriteLine("ChartPageViewModel - OnDisappearing");
+
+    _counterSvc.Stop();
+    _event.GetEvent<CounterEvent>().Unsubscribe(OnCounter);
   }
 
   public override void OnIsActiveChanged()
   {
     Debug.WriteLine("ChartPageViewModel - OnIsActiveChanged");
+  }
+
+  private void OnCounter(int counter)
+  {
+    Counter = counter;
   }
 }

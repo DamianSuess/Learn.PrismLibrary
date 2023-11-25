@@ -14,7 +14,7 @@ public class RegionPageViewModel : ViewModelActiveBase
     Title = "Region Page";
     _counter = counter;
 
-    Debug.WriteLine("ChartPageViewModel - Constructed");
+    Debug.WriteLine("RegionPageViewModel - Constructed");
   }
 
   public DelegateCommand CmdReset => new(() =>
@@ -34,16 +34,16 @@ public class RegionPageViewModel : ViewModelActiveBase
 
   public override void OnAppearing()
   {
-    Debug.WriteLine("ChartPageViewModel - OnAppearing");
+    Debug.WriteLine("RegionPageViewModel - OnAppearing");
   }
 
   public override void OnDisappearing()
   {
-    Debug.WriteLine("ChartPageViewModel - OnDisappearing");
+    Debug.WriteLine("RegionPageViewModel - OnDisappearing");
   }
 
   public override void OnIsActiveChanged()
   {
-    Debug.WriteLine("ChartPageViewModel - OnIsActiveChanged");
+    Debug.WriteLine("RegionPageViewModel - OnIsActiveChanged");
   }
 }

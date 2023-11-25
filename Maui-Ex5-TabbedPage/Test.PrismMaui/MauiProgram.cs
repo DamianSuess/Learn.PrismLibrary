@@ -49,7 +49,7 @@ public static class MauiProgram
         container.RegisterForNavigation<RegionPage, RegionPageViewModel>();
 
         // Region Views
-        container.RegisterForRegionNavigation<SomeRegionView, ChartRegionViewModel>();
+        container.RegisterForRegionNavigation<SomeRegionView, SomeRegionViewModel>();
 
         container.RegisterInstance(SemanticScreenReader.Default);
       })

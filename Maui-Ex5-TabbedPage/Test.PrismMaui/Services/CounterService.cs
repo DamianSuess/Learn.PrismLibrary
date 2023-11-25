@@ -26,6 +26,10 @@ public class CounterService
   public void Reset()
   {
     Counter = 0;
+
+    _eventAggregator
+      .GetEvent<CounterEvent>()
+      .Publish(Counter);
   }
 
   public void Start()
