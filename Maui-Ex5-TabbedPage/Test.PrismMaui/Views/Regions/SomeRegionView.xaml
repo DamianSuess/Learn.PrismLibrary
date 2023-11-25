@@ -6,6 +6,8 @@
              x:Class="Test.PrismMaui.Views.Regions.SomeRegionView"
              x:DataType="vm:SomeRegionViewModel">
   <VerticalStackLayout>
+    <Label Text="Coming Soon!" />
+    <!--
     <lvc:CartesianChart x:Name="CounterChart"
                         BackgroundColor="Wheat"
                         LegendBackgroundPaint="{Binding LegendTextPaint}"
@@ -13,7 +15,8 @@
                         LegendTextPaint="{Binding LegendTextPaint}"
                         LegendTextSize="16"
                         Series="{Binding CounterSeries}"
-                        XAxes="{Binding AxesX}"
+                        XAxes="{Binding AxisX}"
                         YAxes="{Binding AxisY}" />
+    -->
   </VerticalStackLayout>
 </ContentView>

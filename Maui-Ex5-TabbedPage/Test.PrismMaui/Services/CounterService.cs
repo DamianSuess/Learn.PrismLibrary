@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Timers;
 using Timer = System.Timers.Timer;
 
@@ -8,6 +7,8 @@ namespace Test.PrismMaui.Services;
 public class CounterService
 {
   private readonly IEventAggregator _eventAggregator;
+  private readonly Random _random = new();
+
   private Timer _timer;
 
   public CounterService(IEventAggregator ea)
@@ -39,15 +40,17 @@ public class CounterService
 
   public void Stop()
   {
-    _timer.Enabled = true;
+    _timer.Enabled = false;
   }
 
   private void OnTimerElapsed(object? sender, ElapsedEventArgs e)
   {
     Counter++;
 
+    var rnd = _random.Next(0, 10);
+
     _eventAggregator
       .GetEvent<CounterEvent>()
-      .Publish(Counter);
+      .Publish(rnd);
   }
 }

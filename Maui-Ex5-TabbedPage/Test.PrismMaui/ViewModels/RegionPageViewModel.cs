@@ -1,36 +1,38 @@
 ﻿using System.Diagnostics;
-using System.Diagnostics.Metrics;
 using Test.PrismMaui.Services;
 
 namespace Test.PrismMaui.ViewModels;
 
 public class RegionPageViewModel : ViewModelActiveBase
 {
-  private readonly CounterService _counter;
+  private readonly CounterService _counterSvc;
+  private int _counter;
 
   public RegionPageViewModel(INavigationService nav, CounterService counter)
     : base(nav)
   {
     Title = "Region Page";
-    _counter = counter;
+    _counterSvc = counter;
 
     Debug.WriteLine("RegionPageViewModel - Constructed");
   }
 
   public DelegateCommand CmdReset => new(() =>
   {
-    _counter.Reset();
+    _counterSvc.Reset();
   });
 
   public DelegateCommand CmdStart => new(() =>
   {
-    _counter.Start();
+    _counterSvc.Start();
   });
 
   public DelegateCommand CmdStop => new(() =>
   {
-    _counter.Stop();
+    _counterSvc.Stop();
   });
+
+  public int Counter { get => _counter; set => SetProperty(ref _counter, value); }
 
   public override void OnAppearing()
   {
@@ -44,6 +46,6 @@ public class RegionPageViewModel : ViewModelActiveBase
 
   public override void OnIsActiveChanged()
   {
-    Debug.WriteLine("RegionPageViewModel - OnIsActiveChanged");
+    Debug.WriteLine("RegionPageViewModel - OnIsActiveChanged - Tab: " + (IsActive ? "Entered" : "Exited"));
   }
 }

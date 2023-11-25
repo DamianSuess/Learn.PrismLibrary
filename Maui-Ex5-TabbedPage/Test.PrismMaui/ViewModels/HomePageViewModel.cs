@@ -47,6 +47,6 @@ public class HomePageViewModel : ViewModelActiveBase
 
   public override void OnIsActiveChanged()
   {
-    Debug.WriteLine("HomePageViewModel - OnIsActiveChanged");
+    Debug.WriteLine("HomePageViewModel - OnIsActiveChanged - Tab: " + (IsActive ? "Entered" : "Exited"));
   }
 }
