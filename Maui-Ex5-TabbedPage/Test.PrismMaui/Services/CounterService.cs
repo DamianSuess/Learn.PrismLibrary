@@ -26,6 +26,7 @@ public class CounterService
 
   public void Reset()
   {
+    Debug.WriteLine("CounterService - Reset");
     Counter = 0;
 
     _eventAggregator
@@ -35,11 +36,13 @@ public class CounterService
 
   public void Start()
   {
+    Debug.WriteLine("CounterService - Started");
     _timer.Enabled = true;
   }
 
   public void Stop()
   {
+    Debug.WriteLine("CounterService - Stopped");
     _timer.Enabled = false;
   }
 

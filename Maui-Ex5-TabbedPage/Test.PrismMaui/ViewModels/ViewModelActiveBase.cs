@@ -4,6 +4,8 @@
  * File:    ViewModelActiveBase.cs
  */
 
+using System.Diagnostics;
+
 namespace Test.PrismMaui.ViewModels;
 
 /// <summary>
@@ -27,5 +29,6 @@ public class ViewModelActiveBase : ViewModelBase, IActiveAware
   /// <summary>Called when a tab is changed.</summary>
   public virtual void OnIsActiveChanged()
   {
+    Debug.WriteLine($"{Title} - OnIsActiveChanged - Tab: {(IsActive ? "Entered" : "Exited")}");
   }
 }

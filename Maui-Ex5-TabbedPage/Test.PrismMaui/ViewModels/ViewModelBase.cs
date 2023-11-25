@@ -6,6 +6,7 @@
  *  Base Prism ViewModel
  */
 
+using System.Diagnostics;
 using Prism.AppModel;
 using Prism.Mvvm;
 using Prism.Navigation;
@@ -31,10 +32,12 @@ public class ViewModelBase : BindableBase, IPageLifecycleAware
   /// <summary>Page appearing detected via <see cref="IPageLifecycleAware"/>.</summary>
   public virtual void OnAppearing()
   {
+    Debug.WriteLine($"{Title} - OnAppearing");
   }
 
   /// <summary>Page disappearing detected via <see cref="IPageLifecycleAware"/>.</summary>
   public virtual void OnDisappearing()
   {
+    Debug.WriteLine($"{Title} - OnDisappearing");
   }
 }

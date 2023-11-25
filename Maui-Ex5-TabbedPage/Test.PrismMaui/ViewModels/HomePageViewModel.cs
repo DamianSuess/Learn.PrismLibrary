@@ -15,10 +15,10 @@ public class HomePageViewModel : ViewModelActiveBase
   {
     _screenReader = screenReader;
 
+    Title = "Home Page";
     Text = "Click Me!";
 
     Debug.WriteLine("HomePageViewModel - Constructed");
-
   }
 
   public DelegateCommand CmdCounter => new DelegateCommand(OnCounter);
@@ -33,20 +33,5 @@ public class HomePageViewModel : ViewModelActiveBase
 
     // Update accessibility screen reader. Ref: https://docs.microsoft.com/en-us/dotnet/maui/fundamentals/accessibility
     _screenReader.Announce(Text);
-  }
-
-  public override void OnAppearing()
-  {
-    Debug.WriteLine("HomePageViewModel - OnAppearing");
-  }
-
-  public override void OnDisappearing()
-  {
-    Debug.WriteLine("HomePageViewModel - OnDisappearing");
-  }
-
-  public override void OnIsActiveChanged()
-  {
-    Debug.WriteLine("HomePageViewModel - OnIsActiveChanged - Tab: " + (IsActive ? "Entered" : "Exited"));
   }
 }

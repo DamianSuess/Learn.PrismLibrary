@@ -1,4 +1,5 @@
 ﻿//// using SkiaSharp.Views.Maui.Controls.Hosting;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using Test.PrismMaui.Services;
 using Test.PrismMaui.ViewModels;
 using Test.PrismMaui.ViewModels.Regions;
@@ -13,7 +14,7 @@ public static class MauiProgram
   {
     var builder = MauiApp.CreateBuilder();
     builder
-      ////.UseSkiaSharp(true)
+      .UseSkiaSharp(true)
       .UseMauiApp<App>()
       ////.UseMauiCommunityToolkit()
       .UsePrism(ConfigureContainer)

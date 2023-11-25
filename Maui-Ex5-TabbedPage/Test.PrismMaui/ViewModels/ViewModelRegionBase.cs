@@ -6,6 +6,7 @@
  *  Base Prism Region ViewModel
  */
 
+using System.Diagnostics;
 using Prism.AppModel;
 using Prism.Common;
 using Prism.Mvvm;
@@ -42,12 +43,14 @@ public class ViewModelRegionBase : ViewModelBase, IRegionAware
   /// <remarks>Region Aware is navigated away from.</remarks>
   public virtual void OnNavigatedFrom(INavigationContext navigationContext)
   {
+    Debug.WriteLine($"{Title} - OnNavigatedFrom");
   }
 
   /// <inheritdoc />
   /// <remarks>Region Aware is navigated into.</remarks>
   public virtual void OnNavigatedTo(INavigationContext navigationContext)
   {
+    Debug.WriteLine($"{Title} - OnNavigatedTo");
     RegionNavigation = navigationContext.NavigationService;
   }
 }

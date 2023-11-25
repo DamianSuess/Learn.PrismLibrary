@@ -13,8 +13,6 @@ namespace Test.PrismMaui.ViewModels;
 public class ChartPageViewModel : ViewModelActiveBase
 {
   private static readonly SKColor Blue = new(25, 118, 210);
-  private static readonly SKColor Red = new(229, 57, 53);
-  private static readonly SKColor Yellow = new(198, 167, 0);
 
   private readonly CounterService _counterSvc;
   private readonly IEventAggregator _event;
@@ -27,6 +25,8 @@ public class ChartPageViewModel : ViewModelActiveBase
   {
     _counterSvc = counter;
     _event = ea;
+
+    Title = "Counter Page";
 
     Debug.WriteLine("ChartPageViewModel - Constructed");
 
@@ -96,22 +96,16 @@ public class ChartPageViewModel : ViewModelActiveBase
 
   public override void OnAppearing()
   {
-    Debug.WriteLine("ChartPageViewModel - OnAppearing");
-
+    base.OnAppearing();
     _event.GetEvent<CounterEvent>().Subscribe(OnCounter);
   }
 
   public override void OnDisappearing()
   {
-    Debug.WriteLine("ChartPageViewModel - OnDisappearing");
+    base.OnDisappearing();
 
     _counterSvc.Stop();
     _event.GetEvent<CounterEvent>().Unsubscribe(OnCounter);
-  }
-
-  public override void OnIsActiveChanged()
-  {
-    Debug.WriteLine("ChartPageViewModel - OnIsActiveChanged - Tab: " + (IsActive ? "Entered" : "Exited"));
   }
 
   private void OnCounter(int counter)
@@ -125,6 +119,5 @@ public class ChartPageViewModel : ViewModelActiveBase
       if (_itemA.Count > 100)
         _itemA.RemoveAt(0);
     }
-
   }
 }

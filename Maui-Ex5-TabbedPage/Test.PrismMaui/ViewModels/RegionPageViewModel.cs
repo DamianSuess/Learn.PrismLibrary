@@ -33,19 +33,4 @@ public class RegionPageViewModel : ViewModelActiveBase
   });
 
   public int Counter { get => _counter; set => SetProperty(ref _counter, value); }
-
-  public override void OnAppearing()
-  {
-    Debug.WriteLine("RegionPageViewModel - OnAppearing");
-  }
-
-  public override void OnDisappearing()
-  {
-    Debug.WriteLine("RegionPageViewModel - OnDisappearing");
-  }
-
-  public override void OnIsActiveChanged()
-  {
-    Debug.WriteLine("RegionPageViewModel - OnIsActiveChanged - Tab: " + (IsActive ? "Entered" : "Exited"));
-  }
 }

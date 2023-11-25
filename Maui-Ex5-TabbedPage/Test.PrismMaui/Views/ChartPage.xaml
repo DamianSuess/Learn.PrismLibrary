@@ -7,7 +7,7 @@
              x:DataType="vm:ChartPageViewModel"
              Title="{Binding Title}">
   <Grid Padding="10"
-        RowDefinitions="auto,auto,*"
+        RowDefinitions="50,30,*"
         RowSpacing="5">
     <StackLayout Orientation="Horizontal" Spacing="5">
       <Button Text="Start" Command="{Binding CmdStart}" />
@@ -22,21 +22,20 @@
       <Label Text="{Binding Counter}" />
     </StackLayout>
 
-    <lvc:CartesianChart
-      Grid.Row="2"
-            SyncContext="{Binding ChartSync}"
-            Series="{Binding ChartSeries}"
-            XAxes="{Binding AxisX}" />
+    <!--<lvc:CartesianChart Grid.Row="2"
+                        Series="{Binding ChartSeries}"
+                        SyncContext="{Binding ChartSync}"
+                        XAxes="{Binding AxisX}" />-->
 
-    <!--<lvc:CartesianChart x:Name="CounterChart"
+    <lvc:CartesianChart x:Name="MyChart"
                         Grid.Row="2"
                         BackgroundColor="Wheat"
                         LegendBackgroundPaint="{Binding LegendTextPaint}"
                         LegendPosition="Bottom"
                         LegendTextPaint="{Binding LegendTextPaint}"
                         LegendTextSize="16"
-                        Series="{Binding CounterSeries}"
+                        Series="{Binding ChartSeries}"
                         XAxes="{Binding AxisX}"
-                        YAxes="{Binding AxisY}" />-->
+                        YAxes="{Binding AxisY}" />
   </Grid>
 </ContentPage>

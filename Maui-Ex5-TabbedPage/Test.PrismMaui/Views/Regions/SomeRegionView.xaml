@@ -5,18 +5,22 @@
              xmlns:vm="clr-namespace:Test.PrismMaui.ViewModels.Regions"
              x:Class="Test.PrismMaui.Views.Regions.SomeRegionView"
              x:DataType="vm:SomeRegionViewModel">
-  <VerticalStackLayout>
-    <Label Text="Coming Soon!" />
-    <!--
-    <lvc:CartesianChart x:Name="CounterChart"
+  <Grid RowDefinitions="20,*">
+    <Label Text="Live Chart!" />
+    <!--<lvc:CartesianChart Grid.Row="2"
+                        Series="{Binding ChartSeries}"
+                        SyncContext="{Binding ChartSync}"
+                        XAxes="{Binding AxisX}" />-->
+
+    <lvc:CartesianChart x:Name="MyChart"
+                        Grid.Row="1"
                         BackgroundColor="Wheat"
-                        LegendBackgroundPaint="{Binding LegendTextPaint}"
+                        LegendBackgroundPaint="{Binding ChartLegendPaint}"
                         LegendPosition="Bottom"
-                        LegendTextPaint="{Binding LegendTextPaint}"
+                        LegendTextPaint="{Binding ChartLegendPaint}"
                         LegendTextSize="16"
-                        Series="{Binding CounterSeries}"
-                        XAxes="{Binding AxisX}"
-                        YAxes="{Binding AxisY}" />
-    -->
-  </VerticalStackLayout>
+                        Series="{Binding ChartSeries}"
+                        XAxes="{Binding AxisX}" />
+      <!-- YAxes="{Binding AxisY}" /> -->
+  </Grid>
 </ContentView>
