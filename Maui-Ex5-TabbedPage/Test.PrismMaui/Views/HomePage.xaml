@@ -7,5 +7,7 @@
     <Label Text="Home Page!"
            HorizontalOptions="Center"
            VerticalOptions="Center" />
+
+    <Label Text="Check out the other tabs" />
   </VerticalStackLayout>
 </ContentPage>

@@ -1,31 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Diagnostics.Metrics;
+using Test.PrismMaui.Services;
 
 namespace Test.PrismMaui.ViewModels;
 
 public class RegionPageViewModel : ViewModelActiveBase
 {
-  public RegionPageViewModel(INavigationService nav)
+  private readonly CounterService _counter;
+
+  public RegionPageViewModel(INavigationService nav, CounterService counter)
     : base(nav)
   {
+    Title = "Region Page";
+    _counter = counter;
+
+    Debug.WriteLine("ChartPageViewModel - Constructed");
   }
 
-  public override void OnIsActiveChanged()
+  public DelegateCommand CmdReset => new(() =>
   {
-    System.Diagnostics.Debug.WriteLine("OnIsActiveChanged");
-  }
+    _counter.Reset();
+  });
+
+  public DelegateCommand CmdStart => new(() =>
+  {
+    _counter.Start();
+  });
+
+  public DelegateCommand CmdStop => new(() =>
+  {
+    _counter.Stop();
+  });
 
   public override void OnAppearing()
   {
-    System.Diagnostics.Debug.WriteLine("OnAppearing");
+    Debug.WriteLine("ChartPageViewModel - OnAppearing");
   }
 
   public override void OnDisappearing()
   {
-    System.Diagnostics.Debug.WriteLine("OnDisappearing");
+    Debug.WriteLine("ChartPageViewModel - OnDisappearing");
   }
 
+  public override void OnIsActiveChanged()
+  {
+    Debug.WriteLine("ChartPageViewModel - OnIsActiveChanged");
+  }
 }

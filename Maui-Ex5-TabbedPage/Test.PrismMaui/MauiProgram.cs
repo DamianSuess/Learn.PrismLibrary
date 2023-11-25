@@ -1,4 +1,5 @@
 ﻿//// using SkiaSharp.Views.Maui.Controls.Hosting;
+using Test.PrismMaui.Services;
 using Test.PrismMaui.ViewModels;
 using Test.PrismMaui.ViewModels.Regions;
 using Test.PrismMaui.Views;
@@ -27,9 +28,17 @@ public static class MauiProgram
 
   private static void ConfigureContainer(PrismAppBuilder builder)
   {
-    // You may also do this in-line via lambdas without the need of static methods.
     builder
-      .ConfigureModuleCatalog(OnConfigureModuleCatalog)
+      .ConfigureServices(services =>
+      {
+        services.AddSingleton<CounterService>();
+      })
+      .ConfigureModuleCatalog(moduleCatalog =>
+      {
+        // Add custom Module to catalog
+        // moduleCatalog.AddModule<MauiAppModule>();
+        // moduleCatalog.AddModule<MauiTestRegionsModule>();
+      })
       .RegisterTypes(container =>
       {
         // Sample auto-assign MainViewModel and the rest manually
@@ -44,6 +53,11 @@ public static class MauiProgram
 
         container.RegisterInstance(SemanticScreenReader.Default);
       })
+      .OnInitialized(containerProvider =>
+      {
+        var regionManager = containerProvider.Resolve<IRegionManager>();
+        regionManager.RegisterViewWithRegion("ContentRegion", nameof(SomeRegionView));
+      })
       .OnAppStart($"{nameof(MainTabPage)}");
 
     // Alternative OnAppStart builders
@@ -52,13 +66,6 @@ public static class MauiProgram
     ////    navSvc.CreateBuilder()
     ////          .AddSegment<SplashViewModel>()
     ////          .Navigate(OnNavigationError));
-  }
-
-  private static void OnConfigureModuleCatalog(IModuleCatalog moduleCatalog)
-  {
-    // Add custom Module to catalog
-    //  moduleCatalog.AddModule<MauiAppModule>();
-    //  moduleCatalog.AddModule<MauiTestRegionsModule>();
   }
 
   private static void OnNavigationError(Exception ex)

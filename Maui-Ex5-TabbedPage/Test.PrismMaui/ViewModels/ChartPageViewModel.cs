@@ -1,24 +1,48 @@
-﻿namespace Test.PrismMaui.ViewModels;
+﻿using System.Diagnostics;
+using Test.PrismMaui.Services;
+
+namespace Test.PrismMaui.ViewModels;
 
 public class ChartPageViewModel : ViewModelActiveBase
 {
-  public ChartPageViewModel(INavigationService nav)
+  private readonly CounterService _counter;
+
+  public ChartPageViewModel(INavigationService nav, CounterService counter)
     : base(nav)
   {
+    _counter = counter;
+
+    Debug.WriteLine("ChartPageViewModel - Constructed");
   }
 
-  public override void OnIsActiveChanged()
+  public DelegateCommand CmdReset => new(() =>
   {
-    System.Diagnostics.Debug.WriteLine("OnIsActiveChanged");
-  }
+    _counter.Reset();
+  });
+
+  public DelegateCommand CmdStart => new(() =>
+  {
+    _counter.Start();
+  });
+
+  public DelegateCommand CmdStop => new(() =>
+  {
+    _counter.Stop();
+  });
 
   public override void OnAppearing()
   {
-    System.Diagnostics.Debug.WriteLine("OnAppearing");
+    Debug.WriteLine("ChartPageViewModel - OnAppearing");
   }
 
   public override void OnDisappearing()
   {
-    System.Diagnostics.Debug.WriteLine("OnDisappearing");
+    _counter.Stop();
+    Debug.WriteLine("ChartPageViewModel - OnDisappearing");
+  }
+
+  public override void OnIsActiveChanged()
+  {
+    Debug.WriteLine("ChartPageViewModel - OnIsActiveChanged");
   }
 }
