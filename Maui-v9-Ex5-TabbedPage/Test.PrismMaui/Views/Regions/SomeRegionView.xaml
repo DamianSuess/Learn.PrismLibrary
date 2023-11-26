@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:vm="clr-namespace:Test.PrismMaui.ViewModels.Regions"
+             x:Class="Test.PrismMaui.Views.Regions.SomeRegionView"
+             x:DataType="vm:SomeRegionViewModel">
+  <Grid RowDefinitions="20,*">
+    <Label Text="Live Chart!" />
+    <!--<lvc:CartesianChart Grid.Row="2"
+                        Series="{Binding ChartSeries}"
+                        SyncContext="{Binding ChartSync}"
+                        XAxes="{Binding AxisX}" />-->
+
+    <lvc:CartesianChart x:Name="MyChart"
+                        Grid.Row="1"
+                        BackgroundColor="Wheat"
+                        LegendBackgroundPaint="{Binding ChartLegendPaint}"
+                        LegendPosition="Bottom"
+                        LegendTextPaint="{Binding ChartLegendPaint}"
+                        LegendTextSize="16"
+                        Series="{Binding ChartSeries}"
+                        XAxes="{Binding AxisX}"
+                        YAxes="{Binding AxisY}" />
+  </Grid>
+</ContentView>

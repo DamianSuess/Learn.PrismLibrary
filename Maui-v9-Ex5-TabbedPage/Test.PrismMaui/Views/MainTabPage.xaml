@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+            xmlns:views="clr-namespace:Test.PrismMaui.Views"
+            xmlns:vm="clr-namespace:Test.PrismMaui.ViewModels"
+            x:Class="Test.PrismMaui.Views.MainTabPage"
+            x:DataType="vm:MainTabViewModel"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            android:TabbedPage.OffscreenPageLimit="2"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            Title="{Binding Title}">
+
+  <TabbedPage.Children>
+    <views:HomePage Title="Home" IconImageSource="dotnet_bot" />
+    <views:ChartPage Title="Chart Sample" IconImageSource="dotnet_bot" />
+    <views:RegionPage Title="Region Sample" IconImageSource="dotnet_bot" />
+  </TabbedPage.Children>
+</TabbedPage>
