@@ -5,15 +5,24 @@
              xmlns:vm="clr-namespace:Test.PrismMaui.ViewModels.Regions"
              x:Class="Test.PrismMaui.Views.Regions.SomeRegionView"
              x:DataType="vm:SomeRegionViewModel">
-  <Grid RowDefinitions="20,*">
+  <Grid RowDefinitions="20,200,200">
     <Label Text="Live Chart!" />
     <!--<lvc:CartesianChart Grid.Row="2"
                         Series="{Binding ChartSeries}"
                         SyncContext="{Binding ChartSync}"
                         XAxes="{Binding AxisX}" />-->
 
-    <lvc:CartesianChart x:Name="MyChart"
-                        Grid.Row="1"
+    <lvc:CartesianChart Grid.Row="1"
+                        BackgroundColor="Wheat"
+                        LegendBackgroundPaint="{Binding ChartLegendPaint}"
+                        LegendPosition="Bottom"
+                        LegendTextPaint="{Binding ChartLegendPaint}"
+                        LegendTextSize="16"
+                        Series="{Binding ChartSeries}"
+                        XAxes="{Binding AxisX}"
+                        YAxes="{Binding AxisY}" />
+
+    <lvc:CartesianChart Grid.Row="2"
                         BackgroundColor="Wheat"
                         LegendBackgroundPaint="{Binding ChartLegendPaint}"
                         LegendPosition="Bottom"

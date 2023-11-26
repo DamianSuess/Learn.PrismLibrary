@@ -12,6 +12,7 @@ namespace Test.PrismMaui.ViewModels;
 
 public class ChartPageViewModel : ViewModelActiveBase
 {
+  private const int MaxValues = 20;
   private static readonly SKColor Blue = new(25, 118, 210);
 
   private readonly CounterService _counterSvc;
@@ -121,7 +122,7 @@ public class ChartPageViewModel : ViewModelActiveBase
     {
       _itemA.Add(new(counter));
 
-      if (_itemA.Count > 100)
+      if (_itemA.Count > MaxValues)
         _itemA.RemoveAt(0);
     }
   }

@@ -14,6 +14,7 @@ namespace Test.PrismMaui.ViewModels.Regions;
 
 public class SomeRegionViewModel : ViewModelRegionBase
 {
+  private const int MaxValues = 20;
   private static readonly SKColor Blue = new(25, 118, 210);
 
   private readonly CounterService _counterSvc;
@@ -101,7 +102,7 @@ public class SomeRegionViewModel : ViewModelRegionBase
     {
       _itemA.Add(new(counter));
 
-      if (_itemA.Count > 100)
+      if (_itemA.Count > MaxValues)
         _itemA.RemoveAt(0);
     }
   }
