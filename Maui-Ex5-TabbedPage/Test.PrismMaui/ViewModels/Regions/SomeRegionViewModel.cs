@@ -52,6 +52,25 @@ public class SomeRegionViewModel : ViewModelRegionBase
     },
   };
 
+  public ICartesianAxis[] AxisY { get; set; } =
+  {
+    new Axis
+    {
+      Name = "ItemA",
+      //// MaxLimit = MaxValue,   // Don't set the max hight for now.
+      //// MinLimit = MinValue,
+      NameTextSize = 10,
+      NamePaint = new SolidColorPaint(Blue),
+      NamePadding = new LiveChartsCore.Drawing.Padding(0, 20),
+      Padding = new LiveChartsCore.Drawing.Padding(0, 0, 20, 0),
+      TextSize = 10,
+      LabelsPaint = new SolidColorPaint(Blue),
+      TicksPaint = new SolidColorPaint(Blue),
+      SubticksPaint = new SolidColorPaint(Blue),
+      DrawTicksPath = true,
+    },
+  };
+
   public SolidColorPaint ChartLegendPaint { get; set; } = new SolidColorPaint
   {
     Color = new SKColor(50, 50, 50),

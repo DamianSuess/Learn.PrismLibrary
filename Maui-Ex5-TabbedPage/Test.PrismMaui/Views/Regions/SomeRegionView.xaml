@@ -20,7 +20,7 @@
                         LegendTextPaint="{Binding ChartLegendPaint}"
                         LegendTextSize="16"
                         Series="{Binding ChartSeries}"
-                        XAxes="{Binding AxisX}" />
-      <!-- YAxes="{Binding AxisY}" /> -->
+                        XAxes="{Binding AxisX}"
+                        YAxes="{Binding AxisY}" />
   </Grid>
 </ContentView>

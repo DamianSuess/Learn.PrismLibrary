@@ -32,7 +32,12 @@ public class ChartPageViewModel : ViewModelActiveBase
 
     ChartSeries = new()
     {
-      new LineSeries<ObservableValue>() { Values = _itemA, Fill = null, Name = "A" },
+      new LineSeries<ObservableValue>()
+      {
+        Values = _itemA,
+        Fill = null,
+        Name = "A"
+      },
     };
   }
 
