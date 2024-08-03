@@ -1,6 +1,6 @@
 # Introduction
 
-The **Learn PrismLibrary** repository provides a variety of samples across different framework implementaitons such as, Xamarin.Forms, Uno, WPF, and Avalonia, all using Prism!
+The **Learn PrismLibrary** repository provides a variety of samples across different framework implementations such as, Xamarin.Forms, Uno, WPF, and Avalonia, all using Prism!
 
 Each of the samples uses DryIoc for Dependency Injection and is based off of their respective Visual Studio template.
 
@@ -14,16 +14,31 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 ## Samples Table
 
+### [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
+
+| Name                        | Prism Ver. | Details |
+|-|-|-|
+| Ex 1 - Intro to Navigation  | 8.1.97 | Prism Regions with navigation, journaling navigation, Notification Pop-ups, and basic MVVM.
+| Ex 2 - Intro to Dialogs     | 8.1.97 | Popup-Dialog samples
+| Ex 3 - SplitView Navigation | 8.1.97 | Similar to Ex1 but with Avalonia's SplitView (_work-in-progress_)
+
+_Coming Soon:_
+
+* Prism.Avalonia v9.0-pre
+* Events
+* Modules
+* Navigation tips and tricks
+
 ### Prism.Maui
 
 The Prism.Maui examples currently require the NuGet package, Prism.DryIoc.Maui. If you plan on using just, Prism.Maui, then the startup fluent arguments are slightly different. An example for such a case is scoped on the backlog.
 
 | Name                        | Prism Ver. | Details |
 |-|-|-|
-| Ex 1 - Intro Welcome        | 8.1 (_preview_) | Introduction to View/ViewModel registration and navigation.
-| Ex 2 - Basic Navigation     | 8.1 (_preview_) | Sample navigation.
-| Ex 3 - Splash Screen        | 8.1 (_preview_) | _(Work-in-Progress)_ Demonstrate loading screen.
-| Ex 4 - Microsoft DI _(TBD)_ | 8.1 (_preview_) | _Coming Soon_
+| Ex 1 - Intro Welcome        | 8.1 | Introduction to View/ViewModel registration and navigation.
+| Ex 2 - Basic Navigation     | 8.1 | Sample navigation.
+| Ex 3 - Splash Screen        | 8.1 | _(Work-in-Progress)_ Demonstrate loading screen.
+| Ex 4 - Microsoft DI _(TBD)_ | 8.1 | _Coming Soon_
 
 ### [Prism.Forms](https://github.com/PrismLibrary/Prism)
 
@@ -55,21 +70,13 @@ The Prism.Maui examples currently require the NuGet package, Prism.DryIoc.Maui. 
 | Ex 2 - Region Navigation    | 8.0 | Navigation using Regions (_.NET Framework 4.8_)
 | Ex 3 - Module Permissions   | 8.1 | Module permissions sample using .NET 5 - Based on [Brian Lagunas' Pluralsight course](https://app.pluralsight.com/library/courses/prism-loading-modules-user-roles)
 
-### [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
-
-| Name                        | Prism Ver. | Details |
-|-|-|-|
-| Ex 1 - Intro to Navigation  | 8.1 | Prism Regions with navigation, journaling navigation, Notification Pop-ups, and basic MVVM.
-| Ex 2 - Intro to Dialogs     | 8.1 | Popup-Dialog samples
-| Ex 3 - SplitView Navigation | 8.1 | Similar to Ex1 but with Avalonia's SplitView (_work-in-progress_)
-
 ## AvaloniaUI Samples
 
 All AvaloniaUI samples are cross-platform ready!  That's right, you can use Linux, Mac, Windows, or Windows with WSL.
 
 In these lessons repo, we'll explore how to wire-up Avalonia with Prism.Avalonia and some of the key user controls that Avalonia has to offer.
 
-Whether you're coming from WPF, Xamarin.Forms, Uno, or some other XAML based language, you'll find a lot of exact syntactical matches, simulatities and a few that require some finessing. Overall, Avalonia is a solid tool for production applications despite its `0.x` version numbering.
+Whether you're coming from WPF, Xamarin.Forms, Uno, or some other XAML based language, you'll find a lot of exact syntactical matches and similarities. Overall, **Prism.Avalonia** is a solid tool for production cross-platform applications.
 
 ## WPF Samples
 
