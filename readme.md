@@ -19,8 +19,8 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 | Name                        | Prism Ver. | Details |
 |-|-|-|
 | Ex 1 - Intro to Navigation  | 8.1.97 | Prism Regions with navigation, journaling navigation, Notification Pop-ups, and basic MVVM.
-| Ex 2 - Intro to Dialogs     | 8.1.97 | Popup-Dialog samples
-| Ex 3 - SplitView Navigation | 8.1.97 | Similar to Ex1 but with Avalonia's SplitView (_work-in-progress_)
+| Ex 2 - Intro to Dialogs     | 8.1.97 | Pop-up Dialog samples.
+| Ex 3 - SplitView Navigation | 8.1.97 | Similar to Ex1 but with Avalonia's `SplitView` control.
 
 _Coming Soon:_
 
