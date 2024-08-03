@@ -1,9 +1,34 @@
 # Prism.Avalonia SplitView App
 
+This is a demo of the `SplitView` user control for navigation and has a property of `IsPaneOpen` to assist with collapsing.
+
+
+## So what's different than Ex-1 "SampleMvvmApp"?
+
+Though they look the exact same (_on purpose_) they are different.
+
+In Ex-1, we used the `<Grid ColumnDefinitions="Auto,*" ...>` control, placing `SidebarView` as the navigation bar.  Here, we're using the `<SplitView>` control.
+
+```xml
+  <SplitView DisplayMode="CompactInline"
+              IsPaneOpen="{Binding IsPaneOpened}"
+              OpenPaneLength="200">
+    <SplitView.Pane>
+      <!-- Sidebar contents -->
+    </SplitView>
+
+    <!-- Main content area -->
+
+  </SplitView>
+```
+
+
+## Features
+
 This demonstrates the following Prism.Avalonia features:
 
 * SplitView for navigation sidebar panel
-* .NET 6 - Cross-platform
+* .NET 6, 7, 8 - Cross-platform
 * MVVM Pattern - _Model View ViewModel_
 * Prism Navigation with and without passing parameters.
 * Prism Journling backwards

@@ -5,9 +5,12 @@
     <Authors>Damian Suess</Authors>
     <Title>Sample MVVM App</Title>
     <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Append Target Framework: Set to TRUE when using multiple TargetFrameworks -->
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <EnableAvaloniaXamlCompilation>true</EnableAvaloniaXamlCompilation>
-    <LangVersion>10.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />

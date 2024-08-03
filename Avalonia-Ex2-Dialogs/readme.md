@@ -2,8 +2,11 @@
 
 This demonstrates the following Prism.Avalonia features:
 
-* .NET 6 - Cross-platform
+* .NET 6, 7, 8 - Cross-platform
 * Prism.Avalonia Dialogs and Pop-ups
+  * Modal to parent's parent
+  * Modal to sub-parent only (not the root parent)
+  * Non-modal dialog
 * MVVM Pattern - _Model View ViewModel_
 * Avalonia Glyphs
 * Avalonia Styles (_Fluent Theme Light_)
