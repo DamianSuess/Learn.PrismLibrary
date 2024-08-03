@@ -1,4 +1,4 @@
-﻿namespace Avalonia_Ex4_Test1101.ViewModels;
+﻿namespace SampleBaseApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
