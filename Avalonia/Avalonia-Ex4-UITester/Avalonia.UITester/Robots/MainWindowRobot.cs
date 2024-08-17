@@ -10,7 +10,10 @@ public sealed class MainWindowRobot : BaseRobot
   public MainWindowRobot(UITest test, Control rootView) : base(test, rootView) { }
 
   internal TextBlock GreetingMsg => GetChildView<TextBlock>("tbGreeting")!;
+
   internal TextBlock CounterMsg => GetChildView<TextBlock>("tbCounter")!;
+
   internal Button BtClick => GetChildView<Button>("btClick")!;
+
   internal Button BtReset => GetChildView<Button>("btReset")!;
 }

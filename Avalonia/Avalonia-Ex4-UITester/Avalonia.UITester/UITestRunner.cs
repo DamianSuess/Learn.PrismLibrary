@@ -1,13 +1,15 @@
-﻿namespace Avalonia.UITester;
-
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
-using Avalonia.UITester.Tests;
+using System.Threading.Tasks;
+
+namespace Avalonia.UITester;
 
 public static class UITestsRunner
 {
   public static Task<string> RunAllTestsAsync() => RunTestsAsync(new UITest[]
   {
-        new MainWindowUITest()
+      //// new MainWindowUITest()
   });
 
   private static async Task<string> RunTestsAsync(params UITest[] tests)

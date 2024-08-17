@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia-Ex4-UITester", "Avalonia-Ex4-UITester\Avalonia-Ex4-UITester.csproj", "{53709528-F402-441F-9D28-2159165AAB2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleUITester", "Avalonia-Ex4-UITester\SampleUITester\SampleUITester.csproj", "{53709528-F402-441F-9D28-2159165AAB2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.UITester", "Avalonia-Ex4-UITester\Avalonia.UITester\Avalonia.UITester.csproj", "{D5A81E17-96E7-42E8-82D0-4FDD822F36FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{53709528-F402-441F-9D28-2159165AAB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53709528-F402-441F-9D28-2159165AAB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53709528-F402-441F-9D28-2159165AAB2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A81E17-96E7-42E8-82D0-4FDD822F36FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A81E17-96E7-42E8-82D0-4FDD822F36FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A81E17-96E7-42E8-82D0-4FDD822F36FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A81E17-96E7-42E8-82D0-4FDD822F36FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

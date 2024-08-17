@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Avalonia.UITester\Avalonia.UITester.csproj" />
     <ProjectReference Include="..\SampleUITester\SampleUITester.csproj" />
   </ItemGroup>
 </Project>
