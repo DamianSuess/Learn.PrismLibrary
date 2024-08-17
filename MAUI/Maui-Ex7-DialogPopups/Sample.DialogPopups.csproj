@@ -58,9 +58,30 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.80" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.80" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Prism.DryIoc.Maui" Version="9.0.401-pre" />
+		<PackageReference Include="Prism.Maui" Version="9.0.401-pre" />
+		<PackageReference Include="Prism.Maui.Rx" Version="9.0.401-pre" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\Dialogs\OptionsDialog.xaml.cs">
+	    <DependentUpon>OptionsDialog.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\DialogTesterPage.xaml.cs">
+	    <DependentUpon>DialogTesterPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Dialogs\OptionsDialog.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DialogTesterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

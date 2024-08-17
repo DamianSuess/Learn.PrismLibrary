@@ -1,12 +1,9 @@
-﻿namespace Sample.DialogPopups
-{
-  public partial class App : Application
-  {
-    public App()
-    {
-      InitializeComponent();
+﻿namespace Sample.DialogPopups;
 
-      MainPage = new AppShell();
-    }
+public partial class App : Application
+{
+  public App()
+  {
+    InitializeComponent();
   }
 }

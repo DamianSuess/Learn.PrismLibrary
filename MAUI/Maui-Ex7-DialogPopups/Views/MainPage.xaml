@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Sample.DialogPopups.MainPage">
+             x:Class="Sample.DialogPopups.Views.MainPage">
 
   <ScrollView>
     <VerticalStackLayout Padding="30,0" Spacing="25">
@@ -10,7 +10,7 @@
              HeightRequest="185"
              SemanticProperties.Description="dot net bot in a race car number eight" />
 
-      <Label Text="Hello, World!"
+      <Label Text="Hello, Prism.Maui Dialogs!"
              SemanticProperties.HeadingLevel="Level1"
              Style="{StaticResource Headline}" />
 
@@ -19,9 +19,8 @@
              SemanticProperties.HeadingLevel="Level2"
              Style="{StaticResource SubHeadline}" />
 
-      <Button Text="Click me"
-              x:Name="CounterBtn"
-              Clicked="OnCounterClicked"
+      <Button Text="Show Dialog"
+              Command="{Binding CmdShowDialog}"
               HorizontalOptions="Fill"
               SemanticProperties.Hint="Counts the number of times you click" />
     </VerticalStackLayout>
