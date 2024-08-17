@@ -10,7 +10,7 @@ Website: [suesslabs.com](https://suesslabs.com)
 
 ## About Prism Library
 
-Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. Separate releases are available for each platform and those will be developed on independent timelines. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others. Prism's core functionality is a shared code base in a Portable Class Library targeting these platforms.
+Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in .NET MAUI, Avalonia, WPF, and Windows 10 UWP. Separate releases are available for each platform and those will be developed on independent timelines. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others. Prism's core functionality is a shared code base in a Portable Class Library targeting these platforms.
 
 ## Samples Table
 
@@ -135,3 +135,8 @@ The project works best if you include the [Prism Template Pack](https://marketpl
 * [Xamarin Forms with Prism — Getting Started — Part 1](https://medium.com/tutorialsxl/xamarin-forms-with-prism-getting-started-part-1-14832d7cf5fa) - Created 2018-03-23
 
 [SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)
+
+## License
+
+Copyright (c) 2024 Xeno Innovations, Inc.. All rights reserved.
+

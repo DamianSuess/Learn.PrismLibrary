@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Sample.DialogPopups.ViewModels"
+             x:Class="Sample.DialogPopups.Views.DialogTesterPage"
+             x:DataType="vm:DialogTesterPageViewModel"
+             Title="{Binding Title}">
+  <VerticalStackLayout Spacing="10">
+
+    <Label Text="Result:" />
+    <Label Text="{Binding StatusText}" />
+
+    <Button Text="Show Dialog" Command="{Binding CmdShowDialog}" />
+
+    <Button Text="&lt; Navigate Back" Command="{Binding CmdGoBack}" />
+  </VerticalStackLayout>
+</ContentPage>
