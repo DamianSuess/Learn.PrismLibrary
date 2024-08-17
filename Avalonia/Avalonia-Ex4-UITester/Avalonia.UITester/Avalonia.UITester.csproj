@@ -1,17 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>true</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.1.1" />
@@ -20,8 +15,10 @@
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.1" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.1" />
-    <PackageReference Include="Prism.Avalonia" Version="9.0.401.11110-pre" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.401.11110-pre" />
-    <PackageReference Include="Verify.Avalonia" Version="1.1.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avalonia-Ex4-UITester.csproj" />
   </ItemGroup>
 </Project>

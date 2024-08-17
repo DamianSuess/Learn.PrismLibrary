@@ -1,12 +1,15 @@
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 
-namespace SampleUITester.Views
+namespace SampleUITester.Views;
+
+public partial class MainWindow : Window
 {
-  public partial class MainWindow : Window
+  public static MainWindow? Instance;
+
+  public MainWindow()
   {
-    public MainWindow()
-    {
-      InitializeComponent();
-    }
+    InitializeComponent();
+
+    Instance = this;
   }
 }
