@@ -135,3 +135,8 @@ The project works best if you include the [Prism Template Pack](https://marketpl
 * [Xamarin Forms with Prism — Getting Started — Part 1](https://medium.com/tutorialsxl/xamarin-forms-with-prism-getting-started-part-1-14832d7cf5fa) - Created 2018-03-23
 
 [SuessLabs.com](https://suesslabs.com/) - [Suess Labs (GitHub)](https://github.com/SuessLabs) - [Damian Suess (GitHub)](https://github.com/DamianSuess)
+
+## License
+
+Copyright (c) 2024 Xeno Innovations, Inc.. All rights reserved.
+

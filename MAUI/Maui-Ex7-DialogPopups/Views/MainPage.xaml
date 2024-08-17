@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Sample.DialogPopups.ViewModels"
+             x:Class="Sample.DialogPopups.Views.MainPage"
+             WidthRequest="600"
+             x:DataType="vm:MainPageViewModel">
+
+  <ScrollView>
+    <VerticalStackLayout Padding="30,0" Spacing="25">
+      <Image Source="dotnet_bot.png"
+             Aspect="AspectFit"
+             HeightRequest="185"
+             SemanticProperties.Description="dot net bot in a race car number eight" />
+
+      <Label Text="Prism.Maui Dialogs!"
+             SemanticProperties.HeadingLevel="Level1"
+             Style="{StaticResource Headline}" />
+
+      <Label Text="Navigate to the next page to&#10;get started with the sample"
+             SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+             SemanticProperties.HeadingLevel="Level2"
+             Style="{StaticResource SubHeadline}" />
+
+      <Button Text="Show Dialog"
+              Command="{Binding CmdShowDialog}"
+              HorizontalOptions="Fill"
+              SemanticProperties.Hint="Counts the number of times you click" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
