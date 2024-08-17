@@ -1,11 +1,14 @@
-# Copyright 2022 Xeno Innovations, Inc.
+# Copyright 2024 Xeno Innovations, Inc.
+# https://github.com/xenoinc/CodeDevOps
+# Revision: 6.3
 #
-# EditorConfig (http://EditorConfig.org)
-# This file provides formatting rules for the project so you can
-# keep your own personal defaults for others
+# This EditorConfig file provides consistent coding styles and formatting
+# structures for your team's projects while preserving your personal defaults.
 #
 # Revision Log
-# 6.1 2022-01-21 - Updated rules to include StyleCopAnalyzers. Added Static Readonly PascalCase from _camelCase.
+# 6.3 2023-12-16 - Reduced warnings, ignore generated XAML bullshit, added SVG
+# 6.2 2023-xx-xx - Upgraded vsspell_code_analyzer into EditorConfig
+# 6.1 2022-01-21 - Updated rules to include StyleCopAnalyzers. Added Static ReadOnly PascalCase from _camelCase.
 # 6.0 2022-01-10 - Included defaults from Microsoft to override custom settings
 # 5.2 2021-10-11 - Uniform C# spacing rules and labeled code formatting rules
 # 5.1 2021-09-14 - Added PowerShell and Markdown rules
@@ -17,14 +20,13 @@
 # 3   2017-07-31 - Basic
 #
 # References:
-#   - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
-#   - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/
+# - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options
+# - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/
 #   - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules
 #   - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/language-rules
 #   - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules
-#   - https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-naming-conventions?view=vs-2019
-#   - https://github.com/dotnet/roslyn/blob/main/.editorconfig
-#   - https://github.com/microsoft/microsoft-ui-xaml/blob/master/.editorconfig
+# - https://github.com/dotnet/roslyn/blob/main/.editorconfig
+# - https://github.com/microsoft/microsoft-ui-xaml/blob/master/.editorconfig
 #
 
 # Top-most EditorConfig file
@@ -35,10 +37,38 @@ root = true
 end_of_line = crlf
 indent_style = space
 
+# VSSPELL: Spell checker settings for all files
+vsspell_section_id = 844a496250374d009d0aa76e9df49c5a
+#vsspell_ignored_words_844a496250374d009d0aa76e9df49c5a = \transform|csharp|flexify|Guid|ble|html|htmlx|hunspells|jquery|json|mimetype|nav|plaintext|resheader|Suess|Soll|uuid|xaml|xml
+vsspell_ignored_words_844a496250374d009d0aa76e9df49c5a = File:IgnoredWords.dic
+vsspell_exclusion_expressions_844a496250374d009d0aa76e9df49c5a = [a-z]{2}-([A-Z]{2}|Cyrl|Latn)(?@@PND@@/Options/None)\\\\\w+(?@@PND@@/Options/None)
+vsspell_dictionary_languages_844a496250374d009d0aa76e9df49c5a = en-US
+
+vsspell_code_analyzer_ignore_identifier_if_private = true
+vsspell_code_analyzer_ignore_identifier_if_internal = true
+vsspell_code_analyzer_ignore_identifier_if_all_uppercase = true
+vsspell_code_analyzer_ignore_identifiers_within_member_bodies = true
+vsspell_code_analyzer_ignore_if_compiler_generated = true
+vsspell_code_analyzer_ignore_delimited_comments = true
+vsspell_code_analyzer_ignore_quadruple_slash_comments = true
+vsspell_code_analyzer_apply_to_all_c_style_languages = true
+
+[*.{cs,csx}]
+indent_style = space
+indent_size = 2
+tab_width = 2
+charset = utf-8-bom
+trim_trailing_whitespace = true
+insert_final_newline = true
+
 [*.{c,cpp,h}]
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true
+
+cpp_indent_case_contents = true
+cpp_indent_case_contents_when_block = true
+cpp_indent_case_labels = true
 
 [*.sql]
 indent_style = space
@@ -67,6 +97,11 @@ trim_trailing_whitespace = true
 
 # Xml config files
 [*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.svg]
 indent_style = space
 indent_size = 2
 trim_trailing_whitespace = true
@@ -101,16 +136,8 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-
-# C# Files
+# C# Ruleset
 [*.{cs,csx}]
-indent_style = space
-indent_size = 2
-tab_width = 2
-charset = utf-8-bom
-trim_trailing_whitespace = true
-insert_final_newline = true
-
 # Indentation preferences
 csharp_indent_block_contents = true
 csharp_indent_braces = false
@@ -290,6 +317,8 @@ dotnet_diagnostic.IDE1006.severity = error
 dotnet_diagnostic.IDE0008.severity = none
 # IDE0010: Add missing cases
 dotnet_diagnostic.IDE0010.severity = none
+# IDE0011: Add braces
+csharp_prefer_braces = when_multiline
 # IDE0025: Use expression body for properties
 csharp_style_expression_bodied_properties = true
 # IDE0026: Use expression body for indexers
@@ -312,16 +341,18 @@ dotnet_diagnostic.CA1507.severity = error
 
 ## Compiler
 # CS0618: Type or member is obsolete
-dotnet_diagnostic.CS0618.severity = error
-##dotnet_diagnostic.CS0618.severity = warning
+##dotnet_diagnostic.CS0618.severity = error
+dotnet_diagnostic.CS0618.severity = warning
 # CS1591: Missing XML comment for publicly visible type or member
-dotnet_diagnostic.CS1591.severity = silent
+dotnet_diagnostic.CS1591.severity = none
 
 ## StyleCop.Analyzers
 # SA1000: Keywords should be spaced correctly
 dotnet_diagnostic.SA1000.severity = error
 # SA1005: Single line comments should begin with single space
 dotnet_diagnostic.SA1005.severity = error
+# SA1008
+# SA1025: Spacing??
 # SA1101: PrefixLocalCallsWithThis
 dotnet_diagnostic.SA1101.severity = none
 # SA1116: Split parameters should start on line after declaration
@@ -333,7 +364,7 @@ dotnet_diagnostic.SA1137.severity = error
 # SA1124: Do not use regions
 dotnet_diagnostic.SA1124.severity = error
 # SA1200: UsingDirectivesMustBePlacedWithinNamespace
-dotnet_diagnostic.SA1200.severity = silent
+dotnet_diagnostic.SA1200.severity = none
 # SA1201: Elements should appear in the correct order
 dotnet_diagnostic.SA1201.severity = error
 # SA1202: Elements should be ordered by access
@@ -342,6 +373,8 @@ dotnet_diagnostic.SA1202.severity = error
 dotnet_diagnostic.SA1203.severity = error
 # SA1204: Static elements should appear before instance elements
 dotnet_diagnostic.SA1204.severity = error
+# SA1214: Readonly fields should appear before non-readonly fields
+dotnet_diagnostic.SA1214.severity = error
 # SA1306: Field names should begin with lower-case letter
 dotnet_diagnostic.SA1306.severity = error
 # SA1309: FieldNamesMustNotBeginWithUnderscore
@@ -363,7 +396,7 @@ dotnet_diagnostic.SA1513.severity = error
 # SA1514: Element documentation header should be preceded by blank line
 dotnet_diagnostic.SA1514.severity = error
 # SA1515: Single-line comment should be preceded by blank line
-dotnet_diagnostic.SA1515.severity = error
+dotnet_diagnostic.SA1515.severity = warning
 # SA1516: Elements should be separated by blank line
 dotnet_diagnostic.SA1516.severity = error
 # SA1600: Elements should be documented
@@ -379,3 +412,19 @@ dotnet_diagnostic.SA1636.severity = none
 
 # Default severity for analyzer diagnostics with category 'StyleCop.CSharp.SpacingRules' SA1028: Code should not contain trailing whitespace
 dotnet_analyzer_diagnostic.category-StyleCop.CSharp.SpacingRules.severity = error
+
+dotnet_diagnostic.VSSpell001.severity = suggestion
+dotnet_diagnostic.VSSpell002.severity = none
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
+
+# Generated XAML bullshit
+[*.sg.cs]
+# CS1591: Missing XML comment for publicly visible type or member
+dotnet_diagnostic.CS1591.severity = none
+dotnet_analyzer_diagnostic.CS1591.severity = none
+# generated_code = true
+
+[WindowsAppSDK-VersionInfo.cs]
+dotnet_diagnostic.CS1591.severity = none
