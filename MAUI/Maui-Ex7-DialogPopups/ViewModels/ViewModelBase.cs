@@ -1,4 +1,6 @@
-﻿namespace Sample.DialogPopups.ViewModels;
+﻿using Prism.Mvvm;
+
+namespace Sample.DialogPopups.ViewModels;
 
 public class ViewModelBase : BindableBase
 {

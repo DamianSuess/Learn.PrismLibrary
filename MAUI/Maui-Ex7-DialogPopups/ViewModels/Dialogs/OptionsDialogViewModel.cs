@@ -1,8 +1,11 @@
-﻿using Prism.Dialogs;
+﻿using System;
+using Prism.Commands;
+using Prism.Dialogs;
+using Prism.Mvvm;
 
 namespace Sample.DialogPopups.ViewModels.Dialogs;
 
-public class OptionsDialogViewMode : BindableBase, IDialogAware
+public class OptionsDialogViewModel : BindableBase, IDialogAware
 {
   private bool _canClose;
 

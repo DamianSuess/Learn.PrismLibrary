@@ -1,6 +1,11 @@
 # Prism.Maui
 
-## NuGet Gackages
+These projects help provide samples for basic Prism.Maui features. As must as I try to keep them up-to-date with the latest, some of the versions provided are for earlier versions as well.
+
+Implicit Using:<br/>
+Some of the projects disable [Implicit Using](https://devblogs.microsoft.com/dotnet/welcome-to-csharp-10/) so that you know which classes to include. _You're welcome!_
+
+## NuGet Packages
 
 The base NuGet packages required are:
 
@@ -49,3 +54,22 @@ The base NuGet packages required are:
         .NavigateAsync(OnNavigationError)
       ))
 ```
+
+## Recommendations
+
+### Use Compiled Bindings
+
+Use [compiled bindings](https://learn.microsoft.com/en-us/dotnet/maui/fundamentals/data-binding/compiled-bindings?view=net-maui-8.0) to catch errors early!
+
+1. Add `xmlns:vm="..."
+2. Add `x:DataType="vm:MyViewModel"
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage ...
+             xmlns:vm="clr-namespace:Sample.DialogPopups.ViewModels"
+             x:Class="Sample.DialogPopups.Views.MainPage"
+             x:DataType="vm:MainPageViewModel">
+
+```
+

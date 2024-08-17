@@ -1,4 +1,6 @@
-﻿namespace Sample.DialogPopups.Views;
+﻿using Microsoft.Maui.Controls;
+
+namespace Sample.DialogPopups.Views;
 
 public partial class MainPage : ContentPage
 {

@@ -1,4 +1,11 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System;
+using Microsoft.Extensions.Logging;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
+using Prism;
+using Prism.Ioc;
+using Prism.Navigation;
 using Sample.DialogPopups.Dialogs;
 using Sample.DialogPopups.ViewModels;
 using Sample.DialogPopups.ViewModels.Dialogs;
@@ -25,7 +32,7 @@ public static class MauiProgram
           container.RegisterForNavigation<DialogTesterPage, DialogTesterPageViewModel>();
 
           // Dialogs
-          container.RegisterDialog<OptionsDialog, OptionsDialogViewMode>();
+          container.RegisterDialog<OptionsDialog, OptionsDialogViewModel>();
         })
         // Prism.Maui.Rx:
         .AddGlobalNavigationObserver(context => context.Subscribe(x =>

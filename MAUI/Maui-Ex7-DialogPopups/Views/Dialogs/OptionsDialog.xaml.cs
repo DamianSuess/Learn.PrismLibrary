@@ -1,9 +1,11 @@
-﻿namespace Sample.DialogPopups.Dialogs;
+﻿using Microsoft.Maui.Controls;
 
-public partial class OptionsDialog : ContentView
+namespace Sample.DialogPopups.Dialogs;
+
+public partial class OptionsDialog : Grid
 {
-	public OptionsDialog()
-	{
-		InitializeComponent();
-	}
+  public OptionsDialog()
+  {
+    InitializeComponent();
+  }
 }

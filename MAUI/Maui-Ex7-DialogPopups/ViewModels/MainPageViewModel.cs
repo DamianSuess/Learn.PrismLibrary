@@ -1,4 +1,7 @@
-﻿using Sample.DialogPopups.Views;
+﻿using System;
+using Prism.Commands;
+using Prism.Navigation;
+using Sample.DialogPopups.Views;
 
 namespace Sample.DialogPopups.ViewModels;
 
@@ -13,7 +16,7 @@ public class MainPageViewModel : ViewModelBase
     Title = "Dialog Samples App";
   }
 
-  public DelegateCommand CmdDialogTester => new(() =>
+  public DelegateCommand CmdShowDialog => new(() =>
   {
     _navigation.NavigateAsync(nameof(DialogTesterPage))
     .OnNavigationError(ex => Console.WriteLine(ex));
