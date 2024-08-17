@@ -73,3 +73,6 @@ Use [compiled bindings](https://learn.microsoft.com/en-us/dotnet/maui/fundamenta
 
 ```
 
+### MAUI Popups
+
+* https://github.com/thomasgalliker/MauiPopups
