@@ -33,6 +33,7 @@
   <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
     <TextBlock x:Name="tbGreeting" Text="{Binding Greeting}" HorizontalAlignment="Center"/>
     <TextBlock x:Name="tbCounter" Text="{Binding ClickedCounterMessage}" HorizontalAlignment="Center" Margin="0,12,0,0"/>
+
     <Button x:Name="btClick" Content="Click me" Command="{Binding ClickCmd}" HorizontalAlignment="Center" Margin="0,24,0,0"/>
     <Button x:Name="btReset" Content="Reset" Command="{Binding ResetCmd}" HorizontalAlignment="Center" Margin="0,12,0,0"/>
   </StackPanel>
