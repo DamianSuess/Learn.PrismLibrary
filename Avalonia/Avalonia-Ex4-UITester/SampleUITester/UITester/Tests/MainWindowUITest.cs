@@ -1,9 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Avalonia.Controls;
-using Avalonia.UITester.Robots;
+using SampleUITester.UITester;
+using SampleUITester.UITester.Robots;
+using SampleUITester.UITester.Robots;
 using SampleUITester.Views;
 
-namespace Avalonia.UITester.Tests;
+namespace SampleUITester.UITester.Tests;
 
 public sealed class MainWindowUITest : UITest
 {
@@ -17,6 +19,7 @@ public sealed class MainWindowUITest : UITest
 
   public override async Task RunAsync()
   {
+    // Ensure elements are visible
     AssertIsVisible(Robot.GreetingMsg);
     AssertIsVisible(Robot.CounterMsg);
     AssertIsVisible(Robot.BtClick);
@@ -37,5 +40,8 @@ public sealed class MainWindowUITest : UITest
     await Robot.BtReset.ClickOn();
     await Wait(1);
     AssertHasText(Robot.CounterMsg, "Clicked 0 times");
+
+    await Robot.BtClick.ClickOn();
+    AssertHasText(Robot.CounterMsg, "Clicked 1 times");
   }
 }

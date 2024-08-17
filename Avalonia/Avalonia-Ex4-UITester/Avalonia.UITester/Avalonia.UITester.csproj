@@ -16,7 +16,7 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.1" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <ProjectReference Include="..\SampleUITester\SampleUITester.csproj" />
-  </ItemGroup>
+  </ItemGroup>-->
 </Project>

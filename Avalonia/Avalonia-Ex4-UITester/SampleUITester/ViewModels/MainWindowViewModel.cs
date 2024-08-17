@@ -25,7 +25,7 @@ public class MainWindowViewModel : ViewModelBase
 
   public DelegateCommand ClickCmd => new(() =>
   {
-    _clickCounter = 0;
+    _clickCounter++;
     ClickedCounterMessage = $"Clicked {_clickCounter} times";
   });
 
@@ -39,8 +39,12 @@ public class MainWindowViewModel : ViewModelBase
     ClickedCounterMessage = $"Clicked {_clickCounter}";
   });
 
-  public DelegateCommand RunUITestsCmd => new(() =>
+  public DelegateCommand RunUITestsCmd => new(async () =>
   {
+    string result = await SampleUITester.UITester.UITestRunner.RunAllTestsAsync();
+
+    Greeting = result;
+
     ////string resultsLog = await Avalonia.UITester.UITestRunner.RunAllTestsAsync();
     ////
     ////var msgbox = MessageBoxManager.GetMessageBoxStandard(

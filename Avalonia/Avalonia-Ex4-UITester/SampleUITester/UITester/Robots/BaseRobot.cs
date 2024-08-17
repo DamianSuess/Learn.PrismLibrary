@@ -1,4 +1,4 @@
-﻿namespace Avalonia.UITester.Robots;
+﻿namespace SampleUITester.UITester.Robots;
 
 using Avalonia.Controls;
 
@@ -14,6 +14,6 @@ public abstract class BaseRobot
   }
 
   protected A? GetChildView<A>(string name) where A : Control =>
-      this.rootView.FindControl<A>(name);
+      rootView.FindControl<A>(name);
 
 }
