@@ -1,4 +1,4 @@
-# Prism.Maui
+# Prism.Maui v9.0
 
 These projects help provide samples for basic Prism.Maui features. As must as I try to keep them up-to-date with the latest, some of the versions provided are for earlier versions as well.
 
