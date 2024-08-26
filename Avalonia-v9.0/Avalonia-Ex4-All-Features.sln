@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "Avalonia-Ex4-All-Features\SampleApp.csproj", "{FEB0314B-088E-4EF6-845A-6DFBDDF2B42E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEB0314B-088E-4EF6-845A-6DFBDDF2B42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB0314B-088E-4EF6-845A-6DFBDDF2B42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB0314B-088E-4EF6-845A-6DFBDDF2B42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB0314B-088E-4EF6-845A-6DFBDDF2B42E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95D65FC2-50E6-43A2-B31D-F0D8F9D9BDDF}
+	EndGlobalSection
+EndGlobal
