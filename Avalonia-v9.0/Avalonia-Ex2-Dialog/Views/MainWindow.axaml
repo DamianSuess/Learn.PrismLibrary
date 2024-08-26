@@ -1,0 +1,26 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:SampleApp.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
+        x:Class="SampleApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/logo.ico"
+        Height="350" Width="500"
+        Title="{Binding Title}">
+  <Panel>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
+      <Label Content="Click to show a dialog window" />
+
+      <Button Command="{Binding CmdShowMessageBox}" Content="Modal MessageBox" />
+      <Button Command="{Binding CmdShowNonModalDialog}" Content="Non-Modal Dialog" />
+
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Result:" FontWeight="Bold" />
+        <Label Content="{Binding ReturnedResult}" />
+      </StackPanel>
+
+    </StackPanel>
+  </Panel>
+</Window>
