@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <LangVersion>10.0</LangVersion>
+    <Authors>Damian Suess</Authors>
+    <Title>Sample SplitView App</Title>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Append Target Framework: Set to TRUE when using multiple TargetFrameworks -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableAvaloniaXamlCompilation>true</EnableAvaloniaXamlCompilation>
+  </PropertyGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.7" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.7" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.7" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.7" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.7" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11073" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11073" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\ShellWindow.axaml.cs">
+      <DependentUpon>ShellWindow.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SubSettingsView.axaml.cs">
+      <DependentUpon>SubSettingsView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
