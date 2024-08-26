@@ -1,0 +1,75 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:core="clr-namespace:SampleApp;assembly=SampleApp"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:views="clr-namespace:SampleApp.Views;assembly=SampleApp"
+        xmlns:vm="clr-namespace:SampleApp.ViewModels;assembly=SampleApp"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
+        x:Class="SampleApp.Views.MainWindow"
+        x:CompileBindings="True"
+        x:DataType="vm:MainWindowViewModel"
+        Height="500" Width="700"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        Icon="/Assets/logo.ico"
+        Title="{Binding Title}">
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="true">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
+                                     TintColor="LightGray"
+                                     TintOpacity="1"
+                                     MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,150,Auto">
+      <!-- Sidebar -->
+      <Panel Grid.Row="0" Grid.Column="0" Background="LightGray">
+
+        <!--
+          The SidebarView is not using a region on purpose, so it shows in designer mode
+          <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.SidebarRegion}" />
+        -->
+        <views:SidebarView />
+      </Panel>
+
+      <!-- Main Content -->
+      <ContentControl Grid.Row="0"
+                      Grid.Column="1"
+                      prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+
+      <!-- Footer -->
+      <Panel Grid.Column="0"
+             Grid.ColumnSpan="2"
+             Grid.Row="1"
+             Background="LightGray">
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.FooterRegion}" />
+      </Panel>
+
+      <GridSplitter Grid.Row="1" Grid.ColumnSpan="2"
+                    VerticalAlignment="Top" Height="3"
+                    HorizontalAlignment="Stretch"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Background="LightGray" />
+
+
+      <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="LightSteelBlue">
+        <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
+          <TextBlock Text="User Name: " FontWeight="Bold" />
+          <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
+
+          <TextBlock Text="Status:" FontWeight="Bold" />
+          <TextBlock Text="Disconnected" />
+
+          <TextBlock Text="Connection Id: " FontWeight="Bold" />
+          <TextBlock Text="0x07CC" FontStyle="Italic" />
+        </StackPanel>
+      </Panel>
+
+    </Grid>
+  </Panel>
+</Window>

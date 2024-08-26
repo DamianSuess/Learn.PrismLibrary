@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:SampleApp.ViewModels;assembly=SampleApp"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.Views.SettingsView"
+             x:CompileBindings="True"
+             x:DataType="vm:SettingsViewModel">
+  <DockPanel>
+    <StackPanel DockPanel.Dock="Top" Spacing="5">
+      <Grid Background="LightGray" ColumnDefinitions="Auto, *">
+        <TextBlock Text="{Binding Title}"
+                   Grid.Column="1"
+                   Margin="5"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold" />
+      </Grid>
+    </StackPanel>
+
+    <!-- Main Content -->
+    <ScrollViewer Margin="5">
+      <StackPanel Spacing="10">
+        <Label Content="Click the button below to navigate to the sub page" />
+        <Button Content="Navigate using Journaling" Command="{Binding CmdNavigateToChild}" />
+
+        <!--
+        TODO: Button to send Event for inserting text into LogView module
+        -->
+      </StackPanel>
+    </ScrollViewer>
+  </DockPanel>
+</UserControl>
