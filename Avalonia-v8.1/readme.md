@@ -1,4 +1,4 @@
-# Prism.Avalonia Samples
+# Prism.Avalonia v8.1.97 Samples
 
 ## Base NuGet Requirements
 
