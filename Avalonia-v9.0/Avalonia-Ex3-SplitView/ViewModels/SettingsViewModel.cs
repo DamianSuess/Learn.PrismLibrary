@@ -1,6 +1,7 @@
 ﻿using SampleSplitView.Views;
 using Prism.Commands;
-using Prism.Regions;
+using Prism.Navigation;
+using Prism.Navigation.Regions;
 
 namespace SampleSplitView.ViewModels
 {

@@ -1,5 +1,5 @@
 ﻿using Prism.Commands;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using SampleSplitView.Views;
 
 namespace SampleSplitView.ViewModels;

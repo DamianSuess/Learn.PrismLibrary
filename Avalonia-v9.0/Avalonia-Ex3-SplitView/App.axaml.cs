@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using SampleSplitView.Services;
 using SampleSplitView.ViewModels;
 using SampleSplitView.Views;

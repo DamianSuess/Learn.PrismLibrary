@@ -3,16 +3,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:vm="using:SampleSplitView.ViewModels"
+             x:Class="SampleSplitView.Views.SubSettingsView"
+             x:DataType="vm:SubSettingsViewModel"
+             d:DesignHeight="350"
+             d:DesignWidth="500"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
-             x:Class="SampleSplitView.Views.SubSettingsView">
+             mc:Ignorable="d">
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">
       <Grid Background="LightGray" ColumnDefinitions="Auto, *">
         <Button Command="{Binding CmdNavigateBack}" CornerRadius="10">
           <PathIcon Data="{StaticResource arrow_reply_regular}" />
         </Button>
-        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" Margin="5"  VerticalAlignment="Center" />
+        <TextBlock Text="{Binding Title}"
+                   Grid.Column="1"
+                   Margin="5"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold" />
       </Grid>
     </StackPanel>
 
