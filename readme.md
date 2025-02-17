@@ -16,6 +16,18 @@ Prism is a framework for building loosely coupled, maintainable, and testable XA
 
 ### [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia)
 
+#### v9.0
+
+| Name                        | Prism Ver. | Level | Details |
+|-|-|-|-|
+| Ex 1 - Basic MVVM App       | 9.0.x | Intro | Basic single page app with MVVM bindings.
+| Ex 2 - Intro to Dialogs     | 9.0.x | Intro | Pop-up Dialog samples.
+| Ex 3 - SplitView Navigation | 9.0.x | Intro | Similar to Ex1 but with Avalonia's `SplitView` control.
+| Ex 4 - All Features         | 9.0.x | Intro | Navigation and Regions, journaling navigation, Notification Pop-ups, and basic MVVM.
+| Ex 5 - Navigation Animation | 9.0.x | Pro | Custom navigation animations (Level: Pro)
+
+#### v8.1
+
 | Name                        | Prism Ver. | Details |
 |-|-|-|
 | Ex 1 - Intro to Navigation  | 8.1.97 | Prism Regions with navigation, journaling navigation, Notification Pop-ups, and basic MVVM.
