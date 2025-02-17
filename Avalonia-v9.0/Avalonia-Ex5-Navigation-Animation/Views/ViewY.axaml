@@ -1,0 +1,22 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sample.NavAnimation.ViewY"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+  <Grid RowDefinitions="*,Auto">
+    <Border Padding="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="CadetBlue">
+      
+      <TextBlock Text="View-Y"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 FontSize="40" />
+    </Border>
+  </Grid>
+</UserControl>
