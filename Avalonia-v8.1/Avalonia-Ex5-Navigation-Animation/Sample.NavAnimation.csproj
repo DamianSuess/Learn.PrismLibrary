@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>latest</LangVersion>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="InOutContentControl.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Controls\InOutContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.2" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.2" />
+    <PackageReference Include="Prism.Avalonia" Version="8.1.97.11073" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11073" />
+  </ItemGroup>
+</Project>

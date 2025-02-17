@@ -1,0 +1,41 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="Sample.NavAnimation.ViewX"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             mc:Ignorable="d">
+
+  <Grid RowDefinitions="*,Auto">
+
+    <Border x:Name="Border1"
+            Padding="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="DarkSalmon">
+      <TextBlock Text="View-X"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 FontSize="40" />
+    </Border>
+
+    <StackPanel x:Name="StackPanel1"
+                Grid.Row="1"
+                Margin="0,0,0,230"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Orientation="Horizontal"
+                Spacing="10">
+      <StackPanel.RenderTransform>
+        <TransformGroup>
+          <TranslateTransform />
+        </TransformGroup>
+      </StackPanel.RenderTransform>
+
+      <Button x:Name="Button1">Button1</Button>
+      <Button x:Name="Button2">Button2</Button>
+      <Button x:Name="Button3">Button3</Button>
+    </StackPanel>
+  </Grid>
+</UserControl>
