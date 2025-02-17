@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 namespace Sample.NavAnimation;
 
