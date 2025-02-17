@@ -7,6 +7,7 @@
     <!-- Avalonia v0.10: <FluentTheme Mode="Light" /> -->
 
     <!-- Custom SVG glyphs -->
+    <!-- NOTE: It is, "avares://ASSEMBLYNAME/..." not "avares://NAMESPACE/" -->
     <StyleInclude Source="avares://SampleSplitView/Styles/Icons.axaml" />
   </Application.Styles>
 </Application>

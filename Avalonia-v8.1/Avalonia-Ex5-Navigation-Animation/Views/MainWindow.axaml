@@ -1,0 +1,23 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonia="clr-namespace:Sample.NavAnimation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:regions="http://prismlibrary.com/"
+        x:Class="Sample.NavAnimation.MainWindow"
+        d:DesignHeight="350"
+        d:DesignWidth="600"
+        Title="Sample.NavAnimation"
+        Width="600"
+        Height="350"
+        mc:Ignorable="d">
+  <Grid RowDefinitions="*,Auto">
+    <avalonia:InOutContentControl x:Name="InOutContentControl" regions:RegionManager.RegionName="{x:Static avalonia:RegionNames.ContentRegion}" />
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="5">
+      <Label VerticalAlignment="Center" Content="Navigate to:" />
+      <Button Click="ButtonA_OnClick" Content="View-X" />
+      <Button Click="ButtonB_OnClick" Content="View-Y" />
+    </StackPanel>
+  </Grid>
+</Window>
