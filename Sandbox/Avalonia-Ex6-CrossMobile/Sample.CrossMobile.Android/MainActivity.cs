@@ -6,11 +6,11 @@ using Avalonia.Android;
 namespace Sample.CrossMobile.Android;
 
 [Activity(
-    Label = "Sample.CrossMobile.Android",
-    Theme = "@style/MyTheme.NoActionBar",
-    Icon = "@drawable/icon",
-    MainLauncher = true,
-    ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
+  Label = "Sample.CrossMobile.Android",
+  Theme = "@style/MyTheme.NoActionBar",
+  Icon = "@drawable/icon",
+  MainLauncher = true,
+  ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
 public class MainActivity : AvaloniaMainActivity<App>
 {
   protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
