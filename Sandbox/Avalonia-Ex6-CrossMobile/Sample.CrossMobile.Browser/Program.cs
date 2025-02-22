@@ -6,7 +6,7 @@ using Sample.CrossMobile;
 internal sealed partial class Program
 {
   public static AppBuilder BuildAvaloniaApp()
-      => AppBuilder.Configure<App>();
+    => AppBuilder.Configure<App>();
 
   private static Task Main(string[] args) => BuildAvaloniaApp()
     .WithInterFont()

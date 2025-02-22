@@ -1,21 +1,52 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
-using Avalonia.Data.Core.Plugins;
-using System.Linq;
 using Avalonia.Markup.Xaml;
+using Prism.DryIoc;
+using Prism.Ioc;
 using Sample.CrossMobile.ViewModels;
 using Sample.CrossMobile.Views;
 
 namespace Sample.CrossMobile;
 
-public partial class App : Application
+/// <summary>Prism Avalonia application entry point.</summary>
+/// <remarks>
+///   v8.1 - Desktop, Mobile, Web
+///   v9.1 - Desktop, Mobile      - Web stops at splash screen.
+/// </remarks>
+public partial class App : PrismApplication
 {
   public override void Initialize()
   {
     AvaloniaXamlLoader.Load(this);
+
+    // Required Prism.Avalonia initialization
+    base.Initialize();
   }
 
+  protected override AvaloniaObject CreateShell()
+  {
+    if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+    {
+      // Desktop applications
+      return Container.Resolve<MainWindow>();
+    }
+    else
+    {
+      // Mobile and WebBrowser
+      return Container.Resolve<MainView>();
+    }
+  }
+
+  protected override void RegisterTypes(IContainerRegistry containerRegistry)
+  {
+    // Services
+
+    // Navigation
+    containerRegistry.Register<MainWindow>();
+    containerRegistry.RegisterForNavigation<MainView, MainViewModel>();
+  }
+
+  /*
   public override void OnFrameworkInitializationCompleted()
   {
     if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -50,4 +81,5 @@ public partial class App : Application
       BindingPlugins.DataValidators.Remove(plugin);
     }
   }
+  */
 }
