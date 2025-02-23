@@ -2,6 +2,10 @@
 
 Demonstration of _**desktop, mobile, and web application**_ using Prism.Avalonia!
 
+> **Note:**
+>
+> _The Prism.Avalonia v9.x is still in the testing phases. The v8.1 example is feature-functional._
+
 ## Overview
 
 One thing to note between each of these 3 flavors is the _Application Lifetime_ usage:

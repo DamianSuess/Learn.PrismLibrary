@@ -2,6 +2,8 @@
 
 Demonstration of _**desktop, mobile, and web application**_ using Prism.Avalonia!
 
+![](PrismAvalonia-Preview.png)
+
 ## Overview
 
 One thing to note between each of these 3 flavors is the _Application Lifetime_ usage:
