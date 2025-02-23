@@ -13,14 +13,18 @@
              mc:Ignorable="d">
   <!--
   <Design.DataContext>
-    <!- - This only sets the DataContext for the previewer in an IDE,
-         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+    <!- -
+      This is not needed by Prism.Avalonia to set the DataContext IDE's previewer.
+      Instead we use, `prism:ViewModelLocator.AutoWireViewModel="True"`
     - ->
     <vm:MainViewModel />
   </Design.DataContext>
   -->
-  <StackPanel VerticalAlignment="Center">
+  <StackPanel VerticalAlignment="Center" Spacing="5">
+    <Image Source="/Assets/Logo.png" Width="100" />
+
     <TextBlock Text="{Binding Greeting}"
+               FontWeight="Bold"
                HorizontalAlignment="Center"
                VerticalAlignment="Center" />
 
