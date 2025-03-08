@@ -12,6 +12,8 @@ Website: [suesslabs.com](https://suesslabs.com)
 
 Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in .NET MAUI, Avalonia, WPF, and Windows 10 UWP. Separate releases are available for each platform and those will be developed on independent timelines. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others. Prism's core functionality is a shared code base in a Portable Class Library targeting these platforms.
 
+For more examples, check out [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) end-to-end (e2e) samples, which I also maintain.
+
 ![](PrismAvalonia-Preview.png)
 
 ## Samples Table
