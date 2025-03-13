@@ -2,9 +2,9 @@
 
 namespace SampleApp.Views;
 
-public partial class DocumentView : UserControl
+public partial class SettingsView : UserControl
 {
-  public DocumentView()
+  public SettingsView()
   {
     InitializeComponent();
   }

@@ -44,18 +44,19 @@ public partial class App : PrismApplication
 
     // Register Views to Region it will appear in. Don't register them in the ViewModel.
     var regionManager = Container.Resolve<IRegionManager>();
-    regionManager.RegisterViewWithRegion(RegionNames.DocumentTabRegion, typeof(DocumentView));
 
+    // Tabs to display - Note, the ViewModels are Auto-Wired.
+    regionManager.RegisterViewWithRegion(RegionNames.DocumentTabRegion, typeof(DocumentView));
+    regionManager.RegisterViewWithRegion(RegionNames.DocumentTabRegion, typeof(SettingsView));
   }
 
   protected override void RegisterTypes(IContainerRegistry containerRegistry)
   {
     // Add Services and ViewModel registrations here
-
     Console.WriteLine("RegisterTypes()");
 
     // We will have multiple DocumentViews opened
-    containerRegistry.RegisterInstance(typeof(DocumentViewModel));
+    ////containerRegistry.RegisterInstance(typeof(DocumentViewModel));
 
     // -=[ Sample ]=-
     //
