@@ -34,7 +34,28 @@
                   HorizontalAlignment="Stretch"
                   BorderThickness="1"
                   SelectedIndex="{Binding SelectedTabIndex}"
-                  SelectedItem="{Binding SelectedTabItem}" />
+                  SelectedItem="{Binding SelectedTabItem}">
+        <TabControl.Styles>
+          <!-- Custom tab item header with "X" for closing-->
+          <Style Selector="TabItem">
+            <Setter Property="HeaderTemplate">
+              <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                  <!-- Normal content -->
+                  <ContentControl Content="{Binding}" />
+
+                  <Button Content="X">
+                  </Button>
+                </StackPanel>
+              
+              </DataTemplate>
+            
+            </Setter>
+          
+          </Style>
+        
+        </TabControl.Styles>
+      </TabControl>
     </Border>
   </DockPanel>
 </Window>
