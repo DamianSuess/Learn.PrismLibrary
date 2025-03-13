@@ -1,5 +1,4 @@
 ﻿using Prism.Mvvm;
-using Prism.Regions;
 
 namespace SampleApp.ViewModels;
 

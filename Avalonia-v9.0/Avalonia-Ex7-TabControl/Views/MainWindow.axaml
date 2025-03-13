@@ -12,21 +12,29 @@
         Title="{Binding Title}"
         Icon="/Assets/avalonia-logo.ico"
         mc:Ignorable="d">
+  <DockPanel>
 
-  <!--
-    Vanilla Avalonia requires you to use the following to set the DataContext for the previewer in an IDE.
+    <StackPanel Margin="5"
+                DockPanel.Dock="Left"
+                Spacing="5">
+      <StackPanel.Styles>
+        <Style Selector="Button">
+          <Setter Property="HorizontalAlignment" Value="Stretch" />
+          <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+      </StackPanel.Styles>
 
-      <Design.DataContext>
-        <vm:MainWindowViewModel />
-      </Design.DataContext>
+      <Button Command="{Binding CmdAddTab}" Content="Add Tab" />
+      <Button Command="{Binding CmdRemoveTab}" Content="Close Active" />
+    </StackPanel>
 
-   With Prism.Avalonia use the following in `<Window ...>` to AutoWire the ViewModel in.
-
-      xmlns:prism="http://prismlibrary.com/"
-      prism:ViewModelLocator.AutoWireViewModel="True"
-  -->
-
-  <TextBlock Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <Border>
+      <TabControl prism:RegionManager.RegionName="DocumentTabRegion"
+                  Margin="5"
+                  HorizontalAlignment="Stretch"
+                  BorderThickness="1"
+                  SelectedIndex="{Binding SelectedTabIndex}"
+                  SelectedItem="{Binding SelectedTabItem}" />
+    </Border>
+  </DockPanel>
 </Window>

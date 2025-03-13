@@ -5,6 +5,9 @@ using SampleApp.ViewModels;
 using SampleApp.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Navigation.Regions;
+using Avalonia.Controls;
+using SampleApp.Adapters;
 
 namespace SampleApp;
 
@@ -27,11 +30,32 @@ public partial class App : PrismApplication
     return Container.Resolve<MainWindow>();
   }
 
+  protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
+  {
+    base.ConfigureRegionAdapterMappings(regionAdapterMappings);
+
+    // Custom adapter mappers
+    regionAdapterMappings.RegisterMapping(typeof(TabControl), Container.Resolve<TabControlAdapter>());
+  }
+
+  protected override void OnInitialized()
+  {
+    base.OnInitialized();
+
+    // Register Views to Region it will appear in. Don't register them in the ViewModel.
+    var regionManager = Container.Resolve<IRegionManager>();
+    regionManager.RegisterViewWithRegion(RegionNames.DocumentTabRegion, typeof(DocumentView));
+
+  }
+
   protected override void RegisterTypes(IContainerRegistry containerRegistry)
   {
     // Add Services and ViewModel registrations here
 
     Console.WriteLine("RegisterTypes()");
+
+    // We will have multiple DocumentViews opened
+    containerRegistry.RegisterInstance(typeof(DocumentViewModel));
 
     // -=[ Sample ]=-
     //
@@ -41,25 +65,4 @@ public partial class App : PrismApplication
     //  // Views - Region Navigation
     //  containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
   }
-
-  /**
-   * NOT NEEDED:
-   *  The following is used by vanilla Avalonia. Prism.Avalonia only needs, `CreateShell()`
-   *  
-  public override void OnFrameworkInitializationCompleted()
-  {
-    if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-    {
-      // Line below is needed to remove Avalonia data validation.
-      // Without this line you will get duplicate validations from both Avalonia and CT
-      BindingPlugins.DataValidators.RemoveAt(0);
-      desktop.MainWindow = new MainWindow
-      {
-        DataContext = new MainWindowViewModel(),
-      };
-    }
-
-    base.OnFrameworkInitializationCompleted();
-  }
-  */
 }
