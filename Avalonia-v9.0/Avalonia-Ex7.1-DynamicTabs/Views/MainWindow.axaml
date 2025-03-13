@@ -48,15 +48,15 @@
     <Border>
       <!--
         The region name coming from the RegionName class.
-          prism:RegionManager.RegionName="DocumentTabRegion"
-          prism:RegionManager.RegionName="{x:Static local:RegionNames.ValidatorRegion}"
+        prism:RegionManager.RegionName="DocumentTabRegion"
+        prism:RegionManager.RegionName="{x:Static local:RegionNames.ValidatorRegion}"
       -->
       <TabControl prism:RegionManager.RegionName="{x:Static local:RegionNames.DocumentTabRegion}"
                   Margin="5"
                   HorizontalAlignment="Stretch"
                   SelectedItem="{Binding SelectedTabItem}">
         <TabControl.Styles>
-          <!-- Custom tab item header with "X" for closing-->
+          <!-- Custom tab item header with "X" for closing -->
           <Style Selector="TabItem">
             <Setter Property="HeaderTemplate">
               <DataTemplate>
@@ -64,16 +64,16 @@
                   <!-- Normal content -->
                   <ContentControl Content="{Binding}" />
 
-                  <Button Content="X">
-                  </Button>
+                  <!-- Close button (unstyled) -->
+                  <!-- Needs EventTrigger for CloseAction -->
+                  <Button Content="X"/>
                 </StackPanel>
-              
               </DataTemplate>
-            
+
             </Setter>
-          
+
           </Style>
-        
+
         </TabControl.Styles>
       </TabControl>
     </Border>

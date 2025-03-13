@@ -12,6 +12,8 @@
              Tag="{Binding Title}"
              mc:Ignorable="d">
   <StackPanel Margin="20">
+    <Label Content="{Binding Title}" />
+
     <Label Content="Document tab selected!" />
     <Label Content="Note, we use 'Tag' for the Tab's Title. This one is binded to the ViewModel." />
   </StackPanel>

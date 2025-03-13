@@ -1,6 +1,8 @@
 ﻿using Avalonia.Controls;
 using Prism.Commands;
+using Prism.Navigation;
 using Prism.Navigation.Regions;
+using SampleApp.Views;
 
 namespace SampleApp.ViewModels;
 
@@ -10,6 +12,7 @@ public class MainWindowViewModel : ViewModelBase
 
   private int _selectedTabIndex;
   private TabItem _selectedTabItem;
+  private int _documentCounter;
 
   public MainWindowViewModel(IRegionManager regionManager)
   {
@@ -20,7 +23,14 @@ public class MainWindowViewModel : ViewModelBase
 
   public DelegateCommand CmdAddTab => new(() =>
   {
-    ;
+    _documentCounter++;
+
+    var p = new NavigationParameters
+    {
+      { "DocumentIndex", _documentCounter }
+    };
+
+    _regionManager.RequestNavigate(RegionNames.DocumentTabRegion, nameof(DocumentView), p);
   });
 
   public DelegateCommand CmdRemoveTab => new(() =>

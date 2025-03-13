@@ -55,8 +55,9 @@ public partial class App : PrismApplication
     // Add Services and ViewModel registrations here
     Console.WriteLine("RegisterTypes()");
 
-    // We will have multiple DocumentViews opened
-    ////containerRegistry.RegisterInstance(typeof(DocumentViewModel));
+    
+    // Register DocumentView for navigation
+    containerRegistry.RegisterForNavigation<DocumentView, DocumentViewModel>();
 
     // -=[ Sample ]=-
     //
