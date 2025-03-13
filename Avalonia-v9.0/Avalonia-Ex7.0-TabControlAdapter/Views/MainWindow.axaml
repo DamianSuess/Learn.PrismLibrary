@@ -25,6 +25,14 @@
                 Spacing="5">
       <TextBlock Text="TabControlAdapter" FontWeight="Bold" />
       <TextBlock Text="Specified Views are associated as their own TabItem" TextWrapping="Wrap" />
+
+      <Label Content="Selected Tab:">
+        <Label.Content>
+          <MultiBinding StringFormat="{}Selected Tab: {0}">
+            <Binding Path="SelectedTabIndex" />
+          </MultiBinding>
+        </Label.Content>
+      </Label>
     </StackPanel>
 
     <Border>

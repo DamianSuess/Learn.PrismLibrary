@@ -17,17 +17,6 @@ public class MainWindowViewModel : ViewModelBase
 
     Title = "Tab Region Adapter for Prism.Avalonia by Suess Labs!";
   }
-
-  public DelegateCommand CmdAddTab => new(() =>
-  {
-    ;
-  });
-
-  public DelegateCommand CmdRemoveTab => new(() =>
-  {
-    ;
-  });
-
   public string Greeting => "Welcome to Prism.Avalonia!";
 
   public int SelectedTabIndex { get => _selectedTabIndex; set => SetProperty(ref _selectedTabIndex, value); }
