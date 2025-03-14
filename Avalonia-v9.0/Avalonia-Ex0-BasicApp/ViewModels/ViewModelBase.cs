@@ -1,7 +1,6 @@
-﻿using Prism.Mvvm;
-using Prism.Regions;
+using Prism.Mvvm;
 
-namespace SampleBaseApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class ViewModelBase : BindableBase
 {

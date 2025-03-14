@@ -1,4 +1,4 @@
-﻿namespace SampleBaseApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {

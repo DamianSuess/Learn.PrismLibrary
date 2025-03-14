@@ -1,12 +1,11 @@
-﻿using System;
+using System;
 using Avalonia;
 using Avalonia.Markup.Xaml;
-using SampleBaseApp.ViewModels;
-using SampleBaseApp.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
+using SampleApp.Views;
 
-namespace SampleBaseApp;
+namespace SampleApp;
 
 public partial class App : PrismApplication
 {
@@ -16,7 +15,7 @@ public partial class App : PrismApplication
 
     AvaloniaXamlLoader.Load(this);
 
-    // Required to initialize Prism.Avalonia - DO NOT REMOVE
+    // Required to initialize Prism.Avalonia
     base.Initialize();
   }
 
@@ -45,7 +44,7 @@ public partial class App : PrismApplication
   /**
    * NOT NEEDED:
    *  The following is used by vanilla Avalonia. Prism.Avalonia only needs, `CreateShell()`
-   *  
+   *
   public override void OnFrameworkInitializationCompleted()
   {
     if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
