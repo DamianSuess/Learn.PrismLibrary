@@ -1,12 +1,13 @@
-# Copyright 2022 Xeno Innovations, Inc.
+# Copyright 2024 Xeno Innovations, Inc.
 # https://github.com/xenoinc/CodeDevOps
-# Revision: 6.3
+# Revision: 6.4
 #
 # This EditorConfig file provides consistent coding styles and formatting
 # structures for your team's projects while preserving your personal defaults.
 #
 # Revision Log
-# 6.3 2024-12-16 - Reduced warnings, ignore generated XAML bullshit, added SVG
+# 6.4 2024-08-31 - Removed changed C# charset from utf-8-bom to utf-8
+# 6.3 2023-12-16 - Reduced warnings, ignore generated XAML bullshit, added SVG
 # 6.2 2023-xx-xx - Upgraded vsspell_code_analyzer into EditorConfig
 # 6.1 2022-01-21 - Updated rules to include StyleCopAnalyzers. Added Static ReadOnly PascalCase from _camelCase.
 # 6.0 2022-01-10 - Included defaults from Microsoft to override custom settings
@@ -57,7 +58,7 @@ vsspell_code_analyzer_apply_to_all_c_style_languages = true
 indent_style = space
 indent_size = 2
 tab_width = 2
-charset = utf-8-bom
+charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
