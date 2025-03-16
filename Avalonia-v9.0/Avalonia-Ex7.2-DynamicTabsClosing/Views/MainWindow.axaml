@@ -35,7 +35,7 @@
       <TextBlock Text="Specified Views are associated as their own TabItem" TextWrapping="Wrap" />
 
       <Button Command="{Binding CmdAddTab}" Content="Add Tab" />
-      <Button Command="{Binding CmdRemoveTab}" Content="Close Active" />
+      <Button Command="{Binding CmdRemoveActiveTab}" Content="Close Active" />
 
       <Label Content="Selected Tab:">
         <Label.Content>
@@ -75,6 +75,7 @@
 
                   <!-- Close button (unstyled) -->
                   <!-- Needs EventTrigger for CloseAction -->
+                  <!-- Passes the ViewModel via Parameter, we need to pass the View object -->
                   <Button Command="{Binding CmdClose}"
                           CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
                           Content="X" />

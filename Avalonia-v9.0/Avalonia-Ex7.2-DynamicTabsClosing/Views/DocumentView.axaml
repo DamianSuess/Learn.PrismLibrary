@@ -9,7 +9,6 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             
              mc:Ignorable="d">
   <!-- Tag="{Binding Title}"-->
   <StackPanel Margin="20">

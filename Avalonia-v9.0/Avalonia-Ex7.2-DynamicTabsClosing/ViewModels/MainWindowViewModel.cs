@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using System.Diagnostics;
+using Avalonia.Controls;
 using Prism.Commands;
 using Prism.Navigation;
 using Prism.Navigation.Regions;
@@ -33,9 +34,21 @@ public class MainWindowViewModel : ViewModelBase
     _regionManager.RequestNavigate(RegionNames.DocumentTabRegion, nameof(DocumentView), p);
   });
 
-  public DelegateCommand CmdRemoveTab => new(() =>
+  public DelegateCommand CmdRemoveActiveTab => new(() =>
   {
-    ;
+    var items = _regionManager.Regions[RegionNames.DocumentTabRegion];
+
+    // Find our view
+    foreach (var view in items.ActiveViews)
+    {
+      // Convert to UserControl, as that's whats stored in DocumentTabRegion.
+      var uc = view as UserControl;
+      if (uc is not null)
+      {
+        Debug.WriteLine($"Closing View: {uc}");
+        _regionManager.Regions[RegionNames.DocumentTabRegion].Remove(view);
+      }
+    }
   });
 
   public string Greeting => "Welcome to Prism.Avalonia!";

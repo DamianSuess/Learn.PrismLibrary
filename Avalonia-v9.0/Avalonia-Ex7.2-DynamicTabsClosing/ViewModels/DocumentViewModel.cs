@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
-using Avalonia.Controls;
 using Prism.Commands;
 using Prism.Navigation.Regions;
 using SampleApp.Views;
@@ -32,6 +30,7 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
   public DelegateCommand<object> CmdClose => new((object tabItem) =>
   {
+    Debug.WriteLine("Close - Clicked from X button");
     var items = _regionManager.Regions[RegionNames.DocumentTabRegion];
 
     // NO!
@@ -41,7 +40,17 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
     try
     {
-      _regionManager.Regions[RegionNames.DocumentTabRegion].Remove(tabItem);
+      // NOPE
+      //var current = _journal.CurrentEntry;
+
+      var vm = tabItem; //// as DocumentViewModel;
+
+      // NOTE: Unique Region "Name" is NULL because TabControlAdapter never sets it.
+      var view = items.GetView(nameof(DocumentView));
+      if (view is null)
+        return;
+
+      _regionManager.Regions[RegionNames.DocumentTabRegion].Remove(view);
     }
     catch (Exception ex)
     {
@@ -52,6 +61,8 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
   public DelegateCommand CmdCloseInternal => new(() =>
   {
+    Debug.WriteLine("Close - Clicked from internal");
+
     var items = _regionManager.Regions[RegionNames.DocumentTabRegion];
 
     var current = _journal.CurrentEntry;
