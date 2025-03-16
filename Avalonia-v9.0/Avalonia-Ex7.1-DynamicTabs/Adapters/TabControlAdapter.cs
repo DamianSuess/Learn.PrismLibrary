@@ -18,6 +18,9 @@ namespace SampleApp.Adapters;
 /// </summary>
 public class TabControlAdapter : RegionAdapterBase<TabControl>
 {
+  private const int Deactivating = 0;
+  private const int Activating = 1;
+
   public TabControlAdapter(IRegionBehaviorFactory regionBehaviorFactory) : base(regionBehaviorFactory)
   {
   }
@@ -38,14 +41,14 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
       {
         // NOTE: The selected item isn't always a TabItem, if the region contains
         //       a ListBox, it's SelectionChange gets picked up.
-        TargetSelectionChanged("Deactivating", item);
+        TargetSelectionChanged(region, Deactivating, item);
         //// region.Deactivate(item);
       }
 
       // The view navigating to
       foreach (var item in e.AddedItems)
       {
-        TargetSelectionChanged("Activating", item);
+        TargetSelectionChanged(region, Activating, item);
         ////region.Activate(item);
       }
     };
@@ -58,9 +61,20 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
         foreach (UserControl item in e.NewItems)
         {
           var items = regionTarget.Items.Cast<TabItem>().ToList();
-          items.Add(new TabItem { Header = item.Tag, Content = item });
-          regionTarget.ItemsSource = items;           // Avalonia v0.10.x
-          //// regionTarget.Items.Set(items);   // Avalonia v11
+
+          // Set the ViewModel for our tab items
+          //// var vm = item.DataContext as ViewModelBase; // NOT NEEDED
+          var vm = item.DataContext;
+
+          items.Add(new TabItem
+          {
+            DataContext = vm,
+            // Header = vm.Title, // No need to enforce title. Let AXAML drive Header
+            Content = item,
+          });
+
+          regionTarget.ItemsSource = items;     // Avalonia v11.x and v0.10.x
+          //// regionTarget.Items.Set(items);   // From old preview release
         }
       }
       else if (e.Action == NotifyCollectionChangedAction.Remove)
@@ -86,17 +100,28 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
   /// <returns>Region</returns>
   protected override IRegion CreateRegion() => new SingleActiveRegion();
 
-  private void TargetSelectionChanged(string changeAction, object itemChanged)
+  /// <summary>Handle activating or deactivating the Region.</summary>
+  /// <param name="changeAction"></param>
+  /// <param name="itemChanged"></param>
+  private void TargetSelectionChanged(IRegion region, int changeAction, object itemChanged)
   {
     // The selected item isn't always a TabItem.
     // In some cases, it could be the Region's ListBox item
-
-    TabItem item = itemChanged as TabItem;
+    TabItem? item = itemChanged as TabItem;
     if (item is null)
       return;
 
     System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (Header):    " + item.Header);
     System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (View):      " + item.Content);
     System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (ViewModel): " + item.DataContext);
+
+    if (changeAction == Deactivating)
+    {
+      // region.Deactivate(item);
+    }
+    else if (changeAction == Activating)
+    {
+      // region.Activate(item);
+    }
   }
 }
