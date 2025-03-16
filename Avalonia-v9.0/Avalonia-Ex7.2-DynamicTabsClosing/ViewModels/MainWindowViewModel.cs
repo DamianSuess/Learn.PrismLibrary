@@ -27,7 +27,7 @@ public class MainWindowViewModel : ViewModelBase
 
     var p = new NavigationParameters
     {
-      { "DocumentIndex", _documentCounter.ToString() }
+      { ParameterNames.DocumentIndex, _documentCounter.ToString() }
     };
 
     _regionManager.RequestNavigate(RegionNames.DocumentTabRegion, nameof(DocumentView), p);

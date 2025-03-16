@@ -8,6 +8,7 @@ namespace SampleApp.ViewModels;
 public class DocumentViewModel : ViewModelBase, INavigationAware
 {
   private readonly IRegionManager _regionManager;
+  private int _documentIndex;
   private string _fileName = string.Empty;
 
   public DocumentViewModel(IRegionManager regionManager)
@@ -20,7 +21,7 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
   public DelegateCommand CmdChangeTitle => new(() =>
   {
-    Title = "1235";
+    Title = $"Updated #{_documentIndex}";
     Debug.WriteLine($"Title: {Title}");
   });
 
@@ -46,14 +47,19 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
   public void OnNavigatedTo(NavigationContext navigationContext)
   {
-    if (!navigationContext.Parameters.ContainsKey("DocumentIndex"))
+    if (!navigationContext.Parameters.ContainsKey(ParameterNames.DocumentIndex))
       return;
 
-    var ndx = navigationContext.Parameters["DocumentIndex"] as string;
+    var ndx = navigationContext.Parameters[ParameterNames.DocumentIndex] as string;
     if (ndx is not null)
     {
       FileName = "NEW";
       Title = $"Doc #{ndx}";
+
+      // Lets store the index for fun
+      if (int.TryParse(ndx, out var intIndex))
+        _documentIndex = intIndex;
+
       Debug.WriteLine($"Title: {Title}");
     }
   }
