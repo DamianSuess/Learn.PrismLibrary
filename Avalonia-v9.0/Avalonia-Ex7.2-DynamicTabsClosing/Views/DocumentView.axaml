@@ -1,0 +1,24 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:vm="using:SampleApp.ViewModels"
+             x:Class="SampleApp.Views.DocumentView"
+             x:DataType="vm:DocumentViewModel"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             
+             mc:Ignorable="d">
+  <!-- Tag="{Binding Title}"-->
+  <StackPanel Margin="20">
+    <Label Content="{Binding Title}" />
+
+    <Label Content="Document tab selected!" />
+    <Label Content="Note, we use 'Tag' for the Tab's Title. This one is binded to the ViewModel." />
+
+    <Button Command="{Binding CmdChangeTitle}" Content="Update" />
+    <Button Command="{Binding CmdClose}" Content="Close Me" />
+  </StackPanel>
+</UserControl>
