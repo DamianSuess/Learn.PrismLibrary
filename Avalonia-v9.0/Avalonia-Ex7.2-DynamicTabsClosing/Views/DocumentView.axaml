@@ -19,6 +19,6 @@
     <Label Content="Note, we use 'Tag' for the Tab's Title. This one is binded to the ViewModel." />
 
     <Button Command="{Binding CmdChangeTitle}" Content="Update" />
-    <Button Command="{Binding CmdClose}" Content="Close Me" />
+    <Button Command="{Binding CmdCloseInternal}" Content="Close Me" />
   </StackPanel>
 </UserControl>

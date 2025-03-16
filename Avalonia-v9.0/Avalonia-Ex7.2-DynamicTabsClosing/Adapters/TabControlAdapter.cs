@@ -115,13 +115,17 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (View):      " + item.Content);
     System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (ViewModel): " + item.DataContext);
 
+    UserControl? view = item.Content as UserControl;
+    if (view is null)
+      return;
+
     if (changeAction == Deactivating)
     {
-      // region.Deactivate(item);
+      region.Deactivate(view);
     }
     else if (changeAction == Activating)
     {
-      // region.Activate(item);
+      region.Activate(view);
     }
   }
 }
