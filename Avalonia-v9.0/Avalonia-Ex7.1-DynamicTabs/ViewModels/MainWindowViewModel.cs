@@ -10,9 +10,9 @@ public class MainWindowViewModel : ViewModelBase
 {
   private readonly IRegionManager _regionManager;
 
-  private int _selectedTabIndex;
-  private TabItem _selectedTabItem;
   private int _documentCounter;
+  private int _tabIndexSelected;
+  private TabItem _tabItemSelected;
 
   public MainWindowViewModel(IRegionManager regionManager)
   {
@@ -27,7 +27,7 @@ public class MainWindowViewModel : ViewModelBase
 
     var p = new NavigationParameters
     {
-      { "DocumentIndex", _documentCounter }
+      { "DocumentIndex", _documentCounter.ToString() }
     };
 
     _regionManager.RequestNavigate(RegionNames.DocumentTabRegion, nameof(DocumentView), p);
@@ -40,7 +40,7 @@ public class MainWindowViewModel : ViewModelBase
 
   public string Greeting => "Welcome to Prism.Avalonia!";
 
-  public int SelectedTabIndex { get => _selectedTabIndex; set => SetProperty(ref _selectedTabIndex, value); }
+  public int TabIndexSelected { get => _tabIndexSelected; set => SetProperty(ref _tabIndexSelected, value); }
 
-  public TabItem SelectedTabItem { get => _selectedTabItem; set => SetProperty(ref _selectedTabItem, value); }
+  public TabItem TabItemSelected { get => _tabItemSelected; set => SetProperty(ref _tabItemSelected, value); }
 }
