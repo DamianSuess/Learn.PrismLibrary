@@ -18,20 +18,14 @@ namespace SampleApp.Adapters;
 /// </summary>
 public class TabControlAdapter : RegionAdapterBase<TabControl>
 {
-  private const int Deactivating = 0;
-  private const int Activating = 1;
-
   public TabControlAdapter(IRegionBehaviorFactory regionBehaviorFactory) : base(regionBehaviorFactory)
   {
   }
 
   protected override void Adapt(IRegion region, TabControl regionTarget)
   {
-    if (region == null)
-      throw new ArgumentNullException(nameof(region));
-
-    if (regionTarget == null)
-      throw new ArgumentNullException(nameof(regionTarget));
+    ArgumentNullException.ThrowIfNull(region);
+    ArgumentNullException.ThrowIfNull(regionTarget);
 
     // Detect a Tab Selection Changed
     regionTarget.SelectionChanged += (object s, SelectionChangedEventArgs e) =>
@@ -41,14 +35,14 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
       {
         // NOTE: The selected item isn't always a TabItem, if the region contains
         //       a ListBox, it's SelectionChange gets picked up.
-        TargetSelectionChanged(region, Deactivating, item);
+        TargetSelectionChanged(region, isActivating: false, item);
         //// region.Deactivate(item);
       }
 
       // The view navigating to
       foreach (var item in e.AddedItems)
       {
-        TargetSelectionChanged(region, Activating, item);
+        TargetSelectionChanged(region, isActivating: true, item);
         ////region.Activate(item);
       }
     };
@@ -58,6 +52,9 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     {
       if (e.Action == NotifyCollectionChangedAction.Add)
       {
+        if (e.NewItems is null)
+          return;
+
         foreach (UserControl item in e.NewItems)
         {
           var items = regionTarget.Items.Cast<TabItem>().ToList();
@@ -79,13 +76,19 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
       }
       else if (e.Action == NotifyCollectionChangedAction.Remove)
       {
+        if (e.OldItems is null)
+          return;
+
         foreach (UserControl item in e.OldItems)
         {
           var tabToDelete = regionTarget.Items.OfType<TabItem>().FirstOrDefault(n => n.Content == item);
           // regionTarget.Items.Remove(tabToDelete);  // WPF
 
           var items = regionTarget.Items.Cast<TabItem>().ToList();
+
+          if (tabToDelete is not null)
           items.Remove(tabToDelete);
+
           regionTarget.ItemsSource = items;
           //// regionTarget.Items.Set(items);   // Avalonia v11
         }
@@ -103,7 +106,7 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
   /// <summary>Handle activating or deactivating the Region.</summary>
   /// <param name="changeAction"></param>
   /// <param name="itemChanged"></param>
-  private void TargetSelectionChanged(IRegion region, int changeAction, object itemChanged)
+  private void TargetSelectionChanged(IRegion region, bool isActivating, object itemChanged)
   {
     // The selected item isn't always a TabItem.
     // In some cases, it could be the Region's ListBox item
@@ -111,15 +114,15 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     if (item is null)
       return;
 
-    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (Header):    " + item.Header);
-    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (View):      " + item.Content);
-    System.Diagnostics.Debug.WriteLine($"Tab {changeAction} (ViewModel): " + item.DataContext);
+    System.Diagnostics.Debug.WriteLine($"Tab {isActivating} (Header):    " + item.Header);
+    System.Diagnostics.Debug.WriteLine($"Tab {isActivating} (View):      " + item.Content);
+    System.Diagnostics.Debug.WriteLine($"Tab {isActivating} (ViewModel): " + item.DataContext);
 
-    if (changeAction == Deactivating)
+    if (!isActivating)
     {
       // region.Deactivate(item);
     }
-    else if (changeAction == Activating)
+    else
     {
       // region.Activate(item);
     }
