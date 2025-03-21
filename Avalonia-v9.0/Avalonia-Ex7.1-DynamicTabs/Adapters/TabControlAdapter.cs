@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using Avalonia.Controls;
 using Prism.Navigation.Regions;
+using SampleApp.ViewModels;
 
 namespace SampleApp.Adapters;
 
@@ -18,7 +20,8 @@ namespace SampleApp.Adapters;
 /// </summary>
 public class TabControlAdapter : RegionAdapterBase<TabControl>
 {
-  public TabControlAdapter(IRegionBehaviorFactory regionBehaviorFactory) : base(regionBehaviorFactory)
+  public TabControlAdapter(IRegionBehaviorFactory regionBehaviorFactory)
+    : base(regionBehaviorFactory)
   {
   }
 
@@ -33,17 +36,26 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
       // The view navigating away from
       foreach (var item in e.RemovedItems)
       {
-        // NOTE: The selected item isn't always a TabItem, if the region contains
-        //       a ListBox, it's SelectionChange gets picked up.
-        TargetSelectionChanged(region, isActivating: false, item);
-        //// region.Deactivate(item);
+        // NOTE:
+        //  The selected item isn't always a TabItem, if the region contains
+        //  a ListBox, it's SelectionChange gets picked up.
+        if (item is not TabItem tabItem || tabItem.Content is not UserControl view)
+          break;
+
+        ////Debug.WriteLine($"TabControAdapter: Deactivating Tab ({tabItem.TabIndex})");
+        Debug.WriteLine($"TabControAdapter: Deactivating Tab ({(view.DataContext as DocumentViewModel).Title})");
+        region.Deactivate(view);
       }
 
-      // The view navigating to
+      // Activate the view navigating to
       foreach (var item in e.AddedItems)
       {
-        TargetSelectionChanged(region, isActivating: true, item);
-        ////region.Activate(item);
+        if (item is not TabItem tabItem || tabItem.Content is not UserControl view)
+          break;
+
+        ////Debug.WriteLine($"TabControAdapter: Activating Tab ({tabItem.TabIndex})");
+        Debug.WriteLine($"TabControAdapter: Activating Tab ({(view.DataContext as DocumentViewModel).Title})");
+        region.Activate(view);
       }
     };
 
@@ -85,9 +97,8 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
           // regionTarget.Items.Remove(tabToDelete);  // WPF
 
           var items = regionTarget.Items.Cast<TabItem>().ToList();
-
           if (tabToDelete is not null)
-          items.Remove(tabToDelete);
+            items.Remove(tabToDelete);
 
           regionTarget.ItemsSource = items;
           //// regionTarget.Items.Set(items);   // Avalonia v11
@@ -104,8 +115,8 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
   protected override IRegion CreateRegion() => new SingleActiveRegion();
 
   /// <summary>Handle activating or deactivating the Region.</summary>
-  /// <param name="changeAction"></param>
-  /// <param name="itemChanged"></param>
+  /// <param name="isActivating">Is target being activated (selected).</param>
+  /// <param name="itemChanged"><see cref="TabItem"/> being changed.</param>
   private void TargetSelectionChanged(IRegion region, bool isActivating, object itemChanged)
   {
     // The selected item isn't always a TabItem.
@@ -118,13 +129,17 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
     System.Diagnostics.Debug.WriteLine($"Tab {isActivating} (View):      " + item.Content);
     System.Diagnostics.Debug.WriteLine($"Tab {isActivating} (ViewModel): " + item.DataContext);
 
+    UserControl? view = item.Content as UserControl;
+    if (view is null)
+      return;
+
     if (!isActivating)
     {
-      // region.Deactivate(item);
+      region.Deactivate(view);
     }
-    else
+    else if (isActivating)
     {
-      // region.Activate(item);
+      region.Activate(view);
     }
   }
 }

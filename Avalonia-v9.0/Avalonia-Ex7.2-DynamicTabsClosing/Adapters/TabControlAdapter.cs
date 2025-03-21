@@ -39,7 +39,6 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
         // NOTE:
         //  The selected item isn't always a TabItem, if the region contains
         //  a ListBox, it's SelectionChange gets picked up.
-
         if (item is not TabItem tabItem || tabItem.Content is not UserControl view)
           break;
 
@@ -94,7 +93,9 @@ public class TabControlAdapter : RegionAdapterBase<TabControl>
           // regionTarget.Items.Remove(tabToDelete);  // WPF
 
           var items = regionTarget.Items.Cast<TabItem>().ToList();
-          items.Remove(tabToDelete);
+          if (tabToDelete is not null)
+            items.Remove(tabToDelete);
+
           regionTarget.ItemsSource = items;     // Avalonia v11.x and v0.10
           //// regionTarget.Items.Set(items);   // From old preview release of Avalonia v11
         }
