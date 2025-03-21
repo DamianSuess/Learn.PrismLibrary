@@ -7,5 +7,14 @@
 
   <Application.Styles>
     <FluentTheme />
+
+    <!-- Custom Controls/Tempaltes -->
+    <Style>
+      <Style.Resources>
+        <SolidColorBrush x:Key="LoadingIconForeground" Color="#0077FA" />
+        <SolidColorBrush x:Key="LoadingMaskBackground" Opacity="0.12" Color="#2E3238" />
+      </Style.Resources>
+    </Style>
+
   </Application.Styles>
 </Application>
