@@ -1,0 +1,29 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="using:SampleApp.Controls"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:vm="using:SampleApp.ViewModels"
+        x:Class="SampleApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        d:DesignHeight="350"
+        d:DesignWidth="600"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}"
+        Icon="/Assets/avalonia-logo.ico"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+  <StackPanel HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Spacing="10">
+    <TextBlock Text="{Binding Greeting}" />
+
+    <ctrl:LoadingContainer IsLoading="True">
+      <StackPanel>
+        <Label Content="I'm loading" />
+        <TextBox Text="I'm loading too" />
+      </StackPanel>
+    </ctrl:LoadingContainer>
+  </StackPanel>
+</Window>
