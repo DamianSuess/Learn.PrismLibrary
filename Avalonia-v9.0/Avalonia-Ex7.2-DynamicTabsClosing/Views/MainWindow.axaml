@@ -75,10 +75,16 @@
 
                   <!-- Close button (unstyled) -->
                   <!-- Needs EventTrigger for CloseAction -->
-                  <!-- Passes the ViewModel via Parameter, we need to pass the View object -->
+                  <Button Command="{Binding CmdClose}"
+                          CommandParameter="{Binding Path=Content, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                          Content="X" />
+                  <!--
+                  NOTE: Passes the ViewModel via Parameter, we need to pass the View object
                   <Button Command="{Binding CmdClose}"
                           CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
                           Content="X" />
+                  -->
+
                 </StackPanel>
               </DataTemplate>
             </Setter>

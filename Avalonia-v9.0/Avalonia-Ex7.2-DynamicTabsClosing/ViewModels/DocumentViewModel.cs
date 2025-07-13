@@ -40,22 +40,22 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
     try
     {
-      // NOPE
-      //var current = _journal.CurrentEntry;
-
-      var vm = tabItem; //// as DocumentViewModel;
+      var view = tabItem as DocumentView;
+      if (_regionManager.Regions[RegionNames.DocumentTabRegion].Views.Contains(view))
+        _regionManager.Regions[RegionNames.DocumentTabRegion].Remove(view);
 
       // NOTE: Unique Region "Name" is NULL because TabControlAdapter never sets it.
-      var view = items.GetView(nameof(DocumentView));
-      if (view is null)
-        return;
-
-      _regionManager.Regions[RegionNames.DocumentTabRegion].Remove(view);
+      ////var view = items.GetView(nameof(DocumentView));
+      ////if (view is null)
+      ////  return;
+      ////
+      ////_regionManager.Regions[RegionNames.DocumentTabRegion].Remove(view);
     }
     catch (Exception ex)
     {
-      Debug.WriteLine($"Unable to remove Tab from RegionManager. {ex.Message}");
-      Debugger.Break();
+      // NOTE: If there are no more views
+      Debug.WriteLine($"[CmdClose] Unable to remove Tab from RegionManager. {ex.Message}");
+      //// Debugger.Break();
     }
   });
 
@@ -85,6 +85,9 @@ public class DocumentViewModel : ViewModelBase, INavigationAware
 
   public bool IsNavigationTarget(NavigationContext navigationContext)
   {
+    // Determine which instance to use (INavagtionAware.IsNavigationTarget)
+    // True - Use existing instance
+    // False - Create new instance
     return false;
   }
 
