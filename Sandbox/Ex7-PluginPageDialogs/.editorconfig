@@ -1,12 +1,9 @@
-# Copyright Omnicell, Inc.
+# Copyright Xeno Innovations, Inc.
 # Rev 3 - 2017-07-31
 #
 # Used by Visual Studio add-in for EditorConfig http://EditorConfig.org
 # This file provides formatting rules for the project so you can
 # keep your own personal defaults for others 
-#
-# This configuration matches the formatting rules set forth by both
-# Thorn Hill's (Ctrl-Alt-Del) control software team.
 #
 # Download:
 # VS Add-in     https://visualstudiogallery.msdn.microsoft.com/c8bccfe2-650c-4b42-bc5c-845e21f96328

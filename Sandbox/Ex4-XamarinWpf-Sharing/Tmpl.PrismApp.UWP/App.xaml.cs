@@ -1,4 +1,4 @@
-﻿/* Copyright Omnicell, Inc. 2017-2019
+﻿/* Copyright Xeno Innovations, Inc. 2017-2019
  * Author:  Damian Suess
  * Date:    2019-1-8
  * File:    App.xaml.cs
@@ -66,6 +66,7 @@ namespace Tmpl.PrismApp.UWP
         // parameter
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
       }
+
       // Ensure the current window is active
       Window.Current.Activate();
     }

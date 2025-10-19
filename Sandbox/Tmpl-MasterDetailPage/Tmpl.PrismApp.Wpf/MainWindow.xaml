@@ -1,5 +1,5 @@
 ﻿<!--
-Copyright Omnicell, Inc. 2017-2019
+Copyright Xeno Innovations, Inc. 2017-2019
  * Author:  Damian Suess
  * Date:    2019-1-8
  * File:    MainWindow.xaml
@@ -15,8 +15,7 @@ Copyright Omnicell, Inc. 2017-2019
         xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
         xmlns:local="clr-namespace:Tmpl.PrismApp.WPF"
         mc:Ignorable="d"
-        Title="XR2 Mobile Bridge" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Sample App" Height="450" Width="800">
+	<Grid>
+	</Grid>
 </wpf:FormsApplicationPage>
